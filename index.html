@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Супермаркет "Живков" - Рударци</title>
+    <meta name="description" content="Супермаркет Живков в Рударци – местен магазин с ежедневни доставки, пресни продукти и коректно обслужване. Паркинг пред магазина. Работим за Рударци.">
+    
+    <!-- Open Graph (OG) мета тагове за социални мрежи -->
+    <meta property="og:title" content="Супермаркет Живков – Рударци">
+    <meta property="og:description" content="Местният магазин за ежедневни покупки в Рударци.">
+    <meta property="og:image" content="magazin.otvyn2.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://супермаркет-живков.рударци.бг">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            overflow-x: hidden;
+            padding-top: 80px; /* За да не се скрива съдържанието зад фиксираното меню */
+        }
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Навигация */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #ff6b35;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #ff6b35;
+            background: rgba(255, 107, 53, 0.1);
+        }
+        .nav-links a.active {
+            color: white;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: #333;
+            cursor: pointer;
+        }
+        
+        header { 
+            background: linear-gradient(
+                rgba(0,0,0,0.55),
+                rgba(0,0,0,0.55)
+            ),
+            url('magazin.otvyn2.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white; 
+            text-align: center; 
+            padding: 120px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: -80px; /* Компенсира фиксираното меню */
+        }
+        header h1 { 
+            font-size: 3.5em; 
+            font-weight: 700; 
+            margin-bottom: 20px; 
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            max-width: 800px;
+        }
+        header .subtitle {
+            font-size: 1.4em; 
+            font-weight: 400; 
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            opacity: 0.95;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+        .hero-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .hero-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { 
+            background: rgba(255,255,255,0.95); 
+            margin: 40px 0; 
+            padding: 45px 35px; 
+            border-radius: 16px; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            scroll-margin-top: 100px; /* За да не се скрива зад менюто при anchor навигация */
+        }
+        .contact {
+            background: rgba(255,255,255,0.95);
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .about-image {
+            flex: 0 0 400px;
+            width: 400px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-highlight {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+            font-size: 1.2em;
+            font-weight: 500;
+            text-align: center;
+        }
+        .about-standards {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 5px solid #ff6b35;
+        }
+        .about-standards h3 {
+            color: #ff6b35;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .about-standards h3 i {
+            font-size: 1.4em;
+        }
+        .about-standards ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .about-standards li {
+            padding: 12px 0;
+            position: relative;
+            padding-left: 25px;
+            font-weight: 500;
+        }
+        .about-standards li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .human-touch {
+            font-style: italic;
+            color: #666;
+            font-size: 1.1em;
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #ff6b35;
+        }
+        .map-container {
+            height: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            margin-top: 30px;
+        }
+        .parking-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border-left: 5px solid #28a745;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .promotions {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            text-align: center;
+            padding: 35px;
+        }
+        .promotions h2 {
+            color: white;
+            margin-bottom: 25px;
+        }
+        .promotions p {
+            font-size: 1.3em;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .promotions .cta {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: background 0.3s;
+        }
+        .promotions .cta:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        h2 { 
+            color: #ff6b35; 
+            font-size: 2.5em; 
+            margin-bottom: 30px; 
+            text-align: center;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+        .assortment-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+            list-style: none;
+            padding: 0;
+        }
+        .assortment-item { 
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); 
+            padding: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+        .contact p { 
+            font-size: 1.2em; 
+            margin-bottom: 20px; 
+            display: flex; 
+            align-items: center; 
+            gap: 15px;
+        }
+        .contact i { 
+            font-size: 1.5em; 
+            color: #28a745; 
+            width: 30px;
+        }
+        .parking-info i {
+            font-size: 1.4em;
+            color: #28a745;
+        }
+        footer { 
+            background: linear-gradient(135deg, #333 0%, #222 100%); 
+            color: white; 
+            text-align: center; 
+            padding: 40px 20px; 
+            font-size: 1.1em;
+        }
+        .shop-photo {
+            background: rgba(255,255,255,0.95);
+            margin: 40px auto;
+            max-width: 900px;
+            padding: 45px 35px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .shop-photo img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+        }
+        
+        @media (max-width: 768px) { 
+            nav {
+                padding: 10px 0;
+            }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            body {
+                padding-top: 70px;
+            }
+            header { 
+                padding: 80px 20px;
+                min-height: 80vh;
+                margin-top: -70px;
+            }
+            header h1 { 
+                font-size: 2.5em; 
+                max-width: 100%;
+            }
+            header .subtitle { 
+                font-size: 1.2em; 
+                max-width: 100%;
+            }
+            .hero-button {
+                padding: 14px 30px;
+                font-size: 1em;
+            }
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-image {
+                width: 100%;
+                max-width: 400px;
+                flex: none;
+            }
+            .map-container {
+                height: 250px;
+            }
+            section, .shop-photo { 
+                margin: 20px auto; 
+                padding: 25px 20px; 
+                max-width: 900px; 
+                border-radius: 12px; 
+            }
+            h2 { font-size: 2em; }
+            .assortment-grid { grid-template-columns: 1fr; }
+            .promotions { padding: 25px 20px; }
+            .promotions p { font-size: 1.1em; }
+            .human-touch {
+                font-size: 1em;
+                padding: 15px;
+            }
+            .parking-info {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            section {
+                scroll-margin-top: 80px;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 { 
+                font-size: 2em; 
+            }
+            header .subtitle { 
+                font-size: 1.1em; 
+            }
+            .hero-button {
+                padding: 12px 25px;
+                font-size: 0.95em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Живков</a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="#home" class="active">Начало</a>
+                <a href="#assortment">Асортимент</a>
+                <a href="#about">За нас</a>
+                <a href="#contact">Контакти</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Херо секция -->
+    <header id="home">
+        <h1>Супермаркет „Живков" – Рударци</h1>
+        <p class="subtitle">Местният магазин за ежедневни покупки</p>
+        <a href="#assortment" class="hero-button">Виж какво предлагаме</a>
+    </header>
+    
+    <div class="container">
+        <!-- Асортимент -->
+        <section id="assortment">
+            <h2>Нашият асортимент</h2>
+            <ul class="assortment-grid">
+                <li class="assortment-item">Свежи плодове и зеленчуци – от градина директно на щанда</li>
+                <li class="assortment-item">Млечни продукти и сирена – само от проверени ферми</li>
+                <li class="assortment-item">Хляб и сладкарски изделия – всеки ден пресни</li>
+                <li class="assortment-item">Месо и колбаси – домашно производство</li>
+                <li class="assortment-item">Напитки и алкохол – пълна гама вина от региона</li>
+                <li class="assortment-item">Домакински химикали и хигиена – най-добрите марки</li>
+            </ul>
+        </section>
+        
+        <!-- За нас -->
+        <section id="about">
+            <h2>За нас</h2>
+            <div class="about-content">
+                <img src="image1.png" alt="Супермаркет Живков - Рударци" class="about-image">
+                <div class="about-text">
+                    <div class="about-highlight">
+                        Местен магазин, не верига. Познаваме клиентите си.
+                    </div>
+                    
+                    <div class="about-standards">
+                        <h3><i class="fas fa-bolt"></i>Нашите правила</h3>
+                        <ul>
+                            <li>Не продаваме всичко — продаваме това, което бихме дали на семейството си</li>
+                            <li>Ако нещо не става — го махаме, дори да се продава</li>
+                            <li>По-добре по-малък избор, отколкото компромис</li>
+                        </ul>
+                    </div>
+
+                    <div class="human-touch">
+                        „Работим тук всеки ден и държим магазинът да е такъв, в какъвто бихме искали ние да пазаруваме."
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Контакти -->
+        <section id="contact" class="contact">
+            <h2>Контакти и адрес</h2>
+            <p><i class="fas fa-map-marker-alt"></i><strong>Адрес:</strong> с. Рударци, обл. Перник, ул. "Михаил Дойчев" №4, п.к. 2343</p>
+            <p><i class="fas fa-phone"></i><strong>Телефон:</strong> 0888 390 088 (Христо Живков)</p>
+            <p><i class="fas fa-clock"></i><strong>Работно време:</strong> Понеделник - Неделя: 8:00 - 20:30 ч.</p>
+            <div class="map-container">
+                <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=23.16%2C42.58%2C23.17%2C42.585&layer=mapnik&marker=42.5839949%2C23.1658921" 
+                        style="border: 0; width:100%; height:100%;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Карта на супермаркета Живков в Рударци">
+                </iframe>
+            </div>
+            <div class="parking-info">
+                <i class="fas fa-parking"></i>
+                <strong>Паркиране пред магазина</strong>
+            </div>
+        </section>
+        
+        <!-- Промоции -->
+        <section class="promotions">
+            <h2>Предложения</h2>
+            <p><strong>Седмични промоции – на място в магазина</strong></p>
+            <p>Вижте актуалните цени директно на щанда. Винаги имаме изненади!</p>
+            <a href="#contact" class="cta">Заповядай в магазина</a>
+        </section>
+    </div>
+
+    <!-- Допълнителна снимка -->
+    <section class="shop-photo">
+        <img src="magazin.otvyn1.jpg" alt="Супермаркет Живков отвън - реална снимка">
+    </section>
+    
+    <!-- Футър -->
+    <footer>
+        <p>&copy; 2026 Супермаркет "Живков" - Рударци. Всички права запазени.</p>
+    </footer>
+
+    <script>
+        // Мобилно меню
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Затваряне на мобилното меню при клик на линк
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
+        // Активен линк в навигацията при скрол
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Специален случай за началната страница
+            if (window.pageYOffset < 100) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                document.querySelector('.nav-links a[href="#home"]').classList.add('active');
+            }
+        });
+        
+        // Плавно скролиране
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
