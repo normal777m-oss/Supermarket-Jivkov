@@ -151,6 +151,9 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.25);
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        main {
+            display: block;
+        }
         section { 
             background: rgba(255,255,255,0.95); 
             margin: 40px 0; 
@@ -227,7 +230,7 @@
         }
         .human-touch {
             font-style: italic;
-            color: #666;
+            color: #444; /* Повишен контраст от #666 на #444 */
             font-size: 1.1em;
             text-align: center;
             margin-top: 30px;
@@ -253,6 +256,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            color: #222; /* Повишен контраст */
         }
         .promotions {
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
@@ -445,18 +449,24 @@
                 font-size: 1.8em;
             }
         }
+
+        /* Добавени стилове за фокус състояния за по-добра достъпност */
+        a:focus-visible, button:focus-visible {
+            outline: 3px solid #ff6b35;
+            outline-offset: 3px;
+        }
     </style>
 </head>
 <body>
     <!-- Навигация -->
-    <nav>
+    <nav aria-label="Главна навигация">
         <div class="nav-container">
-            <a href="#" class="logo">Живков</a>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+            <a href="#" class="logo" aria-label="Начална страница">Живков</a>
+            <button class="mobile-menu-btn" aria-label="Отвори менюто" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
-            <div class="nav-links">
-                <a href="#home" class="active">Начало</a>
+            <div class="nav-links" role="list">
+                <a href="#home" class="active" aria-current="page">Начало</a>
                 <a href="#assortment">Асортимент</a>
                 <a href="#about">За нас</a>
                 <a href="#contact">Контакти</a>
@@ -464,89 +474,94 @@
         </div>
     </nav>
 
-    <!-- Херо секция -->
-    <header id="home">
-        <h1>Супермаркет „Живков" – Рударци</h1>
-        <p class="subtitle">Местният магазин за ежедневни покупки</p>
-        <a href="#assortment" class="hero-button">Виж какво предлагаме</a>
-    </header>
-    
-    <div class="container">
-        <!-- Асортимент -->
-        <section id="assortment">
-            <h2>Нашият асортимент</h2>
-            <ul class="assortment-grid">
-                <li class="assortment-item">Свежи плодове и зеленчуци – от градина директно на щанда</li>
-                <li class="assortment-item">Млечни продукти и сирена – само от проверени ферми</li>
-                <li class="assortment-item">Хляб и сладкарски изделия – всеки ден пресни</li>
-                <li class="assortment-item">Месо и колбаси – домашно производство</li>
-                <li class="assortment-item">Напитки и алкохол – пълна гама вина от региона</li>
-                <li class="assortment-item">Домакински химикали и хигиена – най-добрите марки</li>
-            </ul>
-        </section>
+    <!-- Основно съдържание -->
+    <main>
+        <!-- Херо секция -->
+        <header id="home">
+            <h1>Супермаркет „Живков" – Рударци</h1>
+            <p class="subtitle">Местният магазин за ежедневни покупки</p>
+            <a href="#assortment" class="hero-button" aria-label="Виж какво предлагаме в магазина">Виж какво предлагаме</a>
+        </header>
         
-        <!-- За нас -->
-        <section id="about">
-            <h2>За нас</h2>
-            <div class="about-content">
-                <!-- Добавени width и height за предотвратяване на разместване при зареждане -->
-                <img src="image1.png" width="400" height="300" alt="Супермаркет Живков - Рударци" class="about-image">
-                <div class="about-text">
-                    <div class="about-highlight">
-                        Местен магазин, не верига. Познаваме клиентите си.
-                    </div>
-                    
-                    <div class="about-standards">
-                        <h3><i class="fas fa-bolt"></i>Нашите правила</h3>
-                        <ul>
-                            <li>Не продаваме всичко — продаваме това, което бихме дали на семейството си</li>
-                            <li>Ако нещо не става — го махаме, дори да се продава</li>
-                            <li>По-добре по-малък избор, отколкото компромис</li>
-                        </ul>
-                    </div>
+        <div class="container">
+            <!-- Асортимент -->
+            <section id="assortment" aria-labelledby="assortment-heading">
+                <h2 id="assortment-heading">Нашият асортимент</h2>
+                <ul class="assortment-grid">
+                    <li class="assortment-item">Свежи плодове и зеленчуци – от градина директно на щанда</li>
+                    <li class="assortment-item">Млечни продукти и сирена – само от проверени ферми</li>
+                    <li class="assortment-item">Хляб и сладкарски изделия – всеки ден пресни</li>
+                    <li class="assortment-item">Месо и колбаси – домашно производство</li>
+                    <li class="assortment-item">Напитки и алкохол – пълна гама вина от региона</li>
+                    <li class="assortment-item">Домакински химикали и хигиена – най-добрите марки</li>
+                </ul>
+            </section>
+            
+            <!-- За нас -->
+            <section id="about" aria-labelledby="about-heading">
+                <h2 id="about-heading">За нас</h2>
+                <div class="about-content">
+                    <!-- Добавени width и height за предотвратяване на разместване при зареждане -->
+                    <img src="image1.png" width="400" height="300" alt="Снимка на Супермаркет Живков - магазинът отвътре" class="about-image">
+                    <div class="about-text">
+                        <div class="about-highlight">
+                            Местен магазин, не верига. Познаваме клиентите си.
+                        </div>
+                        
+                        <div class="about-standards">
+                            <h3><i class="fas fa-bolt" aria-hidden="true"></i>Нашите правила</h3>
+                            <ul>
+                                <li>Не продаваме всичко — продаваме това, което бихме дали на семейството си</li>
+                                <li>Ако нещо не става — го махаме, дори да се продава</li>
+                                <li>По-добре по-малък избор, отколкото компромис</li>
+                            </ul>
+                        </div>
 
-                    <div class="human-touch">
-                        „Работим тук всеки ден и държим магазинът да е такъв, в какъвто бихме искали ние да пазаруваме."
+                        <div class="human-touch">
+                            „Работим тук всеки ден и държим магазинът да е такъв, в какъвто бихме искали ние да пазаруваме."
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-        <!-- Контакти -->
-        <section id="contact" class="contact">
-            <h2>Контакти и адрес</h2>
-            <p><i class="fas fa-map-marker-alt"></i><strong>Адрес:</strong> с. Рударци, обл. Перник, ул. "Михаил Дойчев" №4, п.к. 2343</p>
-            <p><i class="fas fa-phone"></i><strong>Телефон:</strong> 0888 390 088 (Христо Живков)</p>
-            <p><i class="fas fa-clock"></i><strong>Работно време:</strong> Понеделник - Неделя: 8:00 - 20:30 ч.</p>
-            <div class="map-container">
-                <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=23.16%2C42.58%2C23.17%2C42.585&layer=mapnik&marker=42.5839949%2C23.1658921" 
-                        style="border: 0; width:100%; height:100%;" 
-                        allowfullscreen="" 
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Карта на супермаркета Живков в Рударци">
-                </iframe>
-            </div>
-            <div class="parking-info">
-                <i class="fas fa-parking"></i>
-                <strong>Паркиране пред магазина</strong>
-            </div>
-        </section>
-        
-        <!-- Промоции -->
-        <section class="promotions">
-            <h2>Предложения</h2>
-            <p><strong>Седмични промоции – на място в магазина</strong></p>
-            <p>Вижте актуалните цени директно на щанда. Винаги имаме изненади!</p>
-            <a href="#contact" class="cta">Заповядай в магазина</a>
-        </section>
-    </div>
+            </section>
+            
+            <!-- Контакти -->
+            <section id="contact" class="contact" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Контакти и адрес</h2>
+                <address style="font-style: normal;">
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i><strong>Адрес:</strong> с. Рударци, обл. Перник, ул. "Михаил Дойчев" №4, п.к. 2343</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i><strong>Телефон:</strong> <a href="tel:+359888390088" style="color: inherit; text-decoration: none;">0888 390 088</a> (Христо Живков)</p>
+                    <p><i class="fas fa-clock" aria-hidden="true"></i><strong>Работно време:</strong> Понеделник - Неделя: 8:00 - 20:30 ч.</p>
+                </address>
+                <div class="map-container">
+                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=23.16%2C42.58%2C23.17%2C42.585&layer=mapnik&marker=42.5839949%2C23.1658921" 
+                            style="border: 0; width:100%; height:100%;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Карта на супермаркета Живков в Рударци">
+                    </iframe>
+                </div>
+                <div class="parking-info">
+                    <i class="fas fa-parking" aria-hidden="true"></i>
+                    <strong>Паркиране пред магазина</strong>
+                </div>
+            </section>
+            
+            <!-- Промоции -->
+            <section class="promotions" aria-labelledby="promo-heading">
+                <h2 id="promo-heading">Предложения</h2>
+                <p><strong>Седмични промоции – на място в магазина</strong></p>
+                <p>Вижте актуалните цени директно на щанда. Винаги имаме изненади!</p>
+                <a href="#contact" class="cta" aria-label="Заповядайте в магазина за повече информация">Заповядай в магазина</a>
+            </section>
+        </div>
 
-    <!-- Допълнителна снимка -->
-    <section class="shop-photo">
-        <!-- Добавени width и height за предотвратяване на разместване при зареждане -->
-        <img src="magazin.otvyn1.jpg" width="800" height="600" alt="Супермаркет Живков отвън - реална снимка">
-    </section>
+        <!-- Допълнителна снимка -->
+        <section class="shop-photo" aria-label="Снимка на магазина отвън">
+            <!-- Добавени width и height за предотвратяване на разместване при зареждане -->
+            <img src="magazin.otvyn1.jpg" width="800" height="600" alt="Супермаркет Живков отвън - фасада на магазина">
+        </section>
+    </main>
     
     <!-- Футър -->
     <footer>
@@ -555,14 +570,22 @@
 
     <script>
         // Мобилно меню
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            navLinks.classList.toggle('active');
+            this.setAttribute('aria-expanded', !isExpanded);
+            this.setAttribute('aria-label', isExpanded ? 'Отвори менюто' : 'Затвори менюто');
         });
         
         // Затваряне на мобилното меню при клик на линк
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function() {
-                document.querySelector('.nav-links').classList.remove('active');
+                navLinks.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.setAttribute('aria-label', 'Отвори менюто');
             });
         });
         
@@ -583,15 +606,21 @@
             
             navLinks.forEach(link => {
                 link.classList.remove('active');
+                link.removeAttribute('aria-current');
                 if (link.getAttribute('href').substring(1) === current) {
                     link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
                 }
             });
             
             // Специален случай за началната страница
             if (window.pageYOffset < 100) {
-                navLinks.forEach(link => link.classList.remove('active'));
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    link.removeAttribute('aria-current');
+                });
                 document.querySelector('.nav-links a[href="#home"]').classList.add('active');
+                document.querySelector('.nav-links a[href="#home"]').setAttribute('aria-current', 'page');
             }
         });
         
@@ -609,6 +638,10 @@
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
+                    
+                    // Фокусиране върху секцията за по-добра достъпност
+                    targetElement.setAttribute('tabindex', '-1');
+                    targetElement.focus({ preventScroll: true });
                 }
             });
         });
