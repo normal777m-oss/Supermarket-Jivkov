@@ -33,8 +33,8 @@
     <meta property="og:url" content="https://супермаркет-живков.рударци.бг">
     
     <!-- Favicon - предотвратява 404 грешки -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff6b35'>🛒</text></svg>">
-    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff6b35'>🛒</text></svg>">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23e65100'>🛒</text></svg>">
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23e65100'>🛒</text></svg>">
     
     <!-- Брояч за посещения Count.bg с внедрен API ключ -->
     <script 
@@ -52,7 +52,7 @@
         body { 
             font-family: 'Poppins', sans-serif; 
             line-height: 1.6; 
-            color: #1a202e; /* Максимален контраст */
+            color: #1a202c; /* Почти черно за максимален контраст */
             overflow-x: hidden;
             padding-top: 80px;
         }
@@ -60,7 +60,7 @@
             font-family: 'Playfair Display', serif;
         }
         
-        /* Навигация */
+        /* Навигация - поправена ARIA структура */
         nav {
             position: fixed;
             top: 0;
@@ -83,36 +83,44 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.8em;
             font-weight: 700;
-            color: #ff6b35;
+            color: #e65100; /* Наситено оранжево за по-добър контраст */
             text-decoration: none;
         }
         .nav-links {
             display: flex;
             gap: 30px;
+            list-style: none; /* Премахване на точките от списъка */
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            margin: 0;
+            padding: 0;
         }
         .nav-links a {
-            color: #2d3748; /* По-тъмен текст */
+            color: #1a202c; /* Почти черен текст */
             text-decoration: none;
             font-weight: 500;
             font-size: 1.1em;
             padding: 8px 15px;
             border-radius: 20px;
             transition: all 0.3s ease;
+            display: inline-block;
         }
         .nav-links a:hover {
-            color: #ff6b35;
-            background: rgba(255, 107, 53, 0.1);
+            color: #e65100; /* Наситено оранжево при hover */
+            background: rgba(230, 81, 0, 0.1);
         }
         .nav-links a.active {
             color: white;
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            background: linear-gradient(135deg, #e65100 0%, #fb8c00 100%);
         }
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
             font-size: 1.5em;
-            color: #2d3748; /* По-тъмен текст */
+            color: #1a202c;
             cursor: pointer;
         }
         
@@ -151,7 +159,7 @@
         }
         .hero-button {
             display: inline-block;
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            background: linear-gradient(135deg, #e65100 0%, #fb8c00 100%);
             color: white;
             padding: 16px 40px;
             border-radius: 30px;
@@ -199,20 +207,21 @@
             min-width: 300px;
         }
         /* ПОВИШЕН КОНТРАСТ - Всички текстове с максимална четливост */
-        .about-text p, 
         .section-desc, 
+        .about-text p, 
         .human-touch,
+        address p,
         .assortment-item,
         .contact p,
         .parking-info,
         .about-standards li,
         .about-text {
-            color: #1a202e !important; /* Най-тъмното възможно сиво, почти черно */
+            color: #1a202c !important; /* Почти черно за максимална четливост */
         }
         
         .about-highlight {
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
-            color: white;
+            background: linear-gradient(135deg, #e65100, #fb8c00);
+            color: #ffffff; /* Бял текст върху тъмен фон */
             padding: 20px;
             border-radius: 12px;
             margin: 30px 0;
@@ -225,10 +234,10 @@
             padding: 25px;
             border-radius: 12px;
             margin: 25px 0;
-            border-left: 5px solid #ff6b35;
+            border-left: 5px solid #e65100;
         }
         .about-standards h3 {
-            color: #ff6b35;
+            color: #e65100;
             font-size: 1.3em;
             margin-bottom: 15px;
             display: flex;
@@ -252,7 +261,7 @@
             content: '⚡';
             position: absolute;
             left: 0;
-            color: #ff6b35;
+            color: #e65100;
             font-weight: bold;
             font-size: 1.1em;
         }
@@ -264,7 +273,7 @@
             padding: 20px;
             background: #f8f9fa;
             border-radius: 12px;
-            border-left: 4px solid #ff6b35;
+            border-left: 4px solid #e65100;
         }
         .map-container {
             height: 350px;
@@ -289,7 +298,7 @@
             color: #28a745;
         }
         .promotions {
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            background: linear-gradient(135deg, #e65100 0%, #fb8c00 100%);
             color: white;
             text-align: center;
             padding: 35px;
@@ -318,7 +327,7 @@
             background: rgba(255,255,255,0.3);
         }
         h2 { 
-            color: #ff6b35; 
+            color: #e65100; /* Наситено оранжево */
             font-size: 2.5em; 
             margin-bottom: 30px; 
             text-align: center;
@@ -329,7 +338,7 @@
             display: block;
             width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, #ff6b35, #f7931e);
+            background: linear-gradient(90deg, #e65100, #fb8c00);
             margin: 20px auto 0;
             border-radius: 2px;
         }
@@ -399,9 +408,18 @@
                 flex-direction: column;
                 padding: 20px;
                 box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                gap: 15px;
             }
             .nav-links.active {
                 display: flex;
+            }
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+            .nav-links a {
+                display: block;
+                padding: 12px 20px;
             }
             .mobile-menu-btn {
                 display: block;
@@ -479,7 +497,7 @@
 
         /* Добавени стилове за фокус състояния за по-добра достъпност */
         a:focus-visible, button:focus-visible {
-            outline: 3px solid #ff6b35;
+            outline: 3px solid #e65100;
             outline-offset: 3px;
         }
 
@@ -490,23 +508,23 @@
     </style>
 </head>
 <body>
-    <!-- Навигация -->
+    <!-- Навигация - поправена с правилна ARIA структура -->
     <nav aria-label="Главна навигация">
         <div class="nav-container">
-            <a href="#" class="logo" aria-label="Начална страница">Живков</a>
+            <a href="#" class="logo">Живков</a>
             <button class="mobile-menu-btn" aria-label="Меню">
                 <i class="fas fa-bars"></i>
             </button>
-            <div class="nav-links" role="list">
-                <a href="#home" class="active" aria-current="page">Начало</a>
-                <a href="#assortment">Асортимент</a>
-                <a href="#about">За нас</a>
-                <a href="#contact">Контакти</a>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active" aria-current="page">Начало</a></li>
+                <li><a href="#assortment">Асортимент</a></li>
+                <li><a href="#about">За нас</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Основно съдържание -->
+    <!-- Основно съдържание в <main> таг -->
     <main>
         <!-- Херо секция -->
         <header id="home">
