@@ -3,6 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 1. ПРИОРИТИЗИРАНЕ НА ИЗОБРАЖЕНИЕТО (FETCH PRIORITY) - най-важно за LCP -->
+    <link rel="preload" as="image" href="magazin.otvyn2.webp" fetchpriority="high">
+    
+    <!-- 2. ПРЕМАХВАНЕ НА БЛОКЕРИТЕ (ASYNC FONTS & ICONS) -->
+    <!-- Font Awesome - асинхронно зареждане -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Google Fonts - асинхронно зареждане -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Noscript варианти за потребители без JavaScript -->
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap">
+    </noscript>
+    
     <title>Супермаркет "Живков" - Рударци</title>
     <meta name="description" content="Супермаркет Живков в Рударци – местен магазин с ежедневни доставки, пресни продукти и коректно обслужване. Паркинг пред магазина. Работим за Рударци.">
     
@@ -17,9 +36,6 @@
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff6b35'>🛒</text></svg>">
     <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff6b35'>🛒</text></svg>">
     
-    <!-- Preload на hero изображението с най-висок приоритет -->
-    <link rel="preload" as="image" href="magazin.otvyn2.webp" fetchpriority="high">
-    
     <!-- Брояч за посещения Count.bg с внедрен API ключ -->
     <script 
         data-host="https://count.bg" 
@@ -30,27 +46,6 @@
         async 
         defer>
     </script>
-    
-    <!-- Preconnect за Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Google Fonts - асинхронно зареждане за предотвратяване на блокирането на рендерирането -->
-    <link 
-        rel="stylesheet" 
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" 
-        media="print" 
-        onload="this.media='all'">
-    
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap">
-    </noscript>
-    
-    <!-- Font Awesome зареден асинхронно -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </noscript>
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
