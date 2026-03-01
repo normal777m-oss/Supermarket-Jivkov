@@ -275,13 +275,55 @@
             border-radius: 12px;
             border-left: 4px solid #e65100;
         }
+        
+        /* Оптимизация за OpenStreetMap карта - зарежда се със закъснение */
         .map-container {
             height: 350px;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0,0,0,0.12);
             margin-top: 30px;
+            background-color: #f0f0f0; /* Цвят на фона докато се зареди картата */
+            position: relative;
         }
+        
+        /* Плейсхолдер за картата */
+        .map-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e9ecef;
+            color: #4a5568;
+            font-size: 1.2em;
+            z-index: 1;
+        }
+        
+        .map-placeholder i {
+            font-size: 2em;
+            color: #e65100;
+            margin-right: 10px;
+        }
+        
+        /* IFRAME на картата - скрит до зареждане */
+        .map-frame {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .map-frame.loaded {
+            opacity: 1;
+        }
+        
         .parking-info {
             background: #f8f9fa;
             padding: 20px;
@@ -582,15 +624,23 @@
                     <p><i class="fas fa-phone" aria-hidden="true"></i><strong>Телефон:</strong> <a href="tel:+359888390088" style="color: inherit; text-decoration: none;">0888 390 088</a> (Христо Живков)</p>
                     <p><i class="fas fa-clock" aria-hidden="true"></i><strong>Работно време:</strong> Понеделник - Неделя: 8:00 - 20:30 ч.</p>
                 </address>
-                <div class="map-container">
-                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=23.16%2C42.58%2C23.17%2C42.585&layer=mapnik&marker=42.5839949%2C23.1658921" 
-                            style="border: 0; width:100%; height:100%;" 
-                            allowfullscreen="" 
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Карта на супермаркета Живков в Рударци">
+                
+                <!-- Оптимизирана карта - зарежда се след 2 секунди -->
+                <div class="map-container" id="map-container">
+                    <div class="map-placeholder" id="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Картата се зарежда...</span>
+                    </div>
+                    <iframe 
+                        id="map-frame"
+                        class="map-frame"
+                        data-src="https://www.openstreetmap.org/export/embed.html?bbox=23.16%2C42.58%2C23.17%2C42.585&layer=mapnik&marker=42.5839949%2C23.1658921" 
+                        title="Карта на супермаркета Живков в Рударци"
+                        allowfullscreen=""
+                        loading="lazy">
                     </iframe>
                 </div>
+                
                 <div class="parking-info">
                     <i class="fas fa-parking" aria-hidden="true"></i>
                     <strong>Паркиране пред магазина</strong>
@@ -697,6 +747,28 @@
                     }
                 });
             });
+            
+            // 3. ОПТИМИЗАЦИЯ ЗА КАРТАТА - зарежда се 2 секунди след зареждане на страницата
+            setTimeout(function() {
+                const mapFrame = document.getElementById('map-frame');
+                const mapPlaceholder = document.getElementById('map-placeholder');
+                
+                if (mapFrame && mapFrame.dataset.src) {
+                    // Задаваме src от data-src атрибута
+                    mapFrame.src = mapFrame.dataset.src;
+                    
+                    // Маркираме като заредена за CSS анимация
+                    setTimeout(function() {
+                        mapFrame.classList.add('loaded');
+                        if (mapPlaceholder) {
+                            mapPlaceholder.style.opacity = '0';
+                            setTimeout(function() {
+                                mapPlaceholder.style.display = 'none';
+                            }, 300);
+                        }
+                    }, 100);
+                }
+            }, 2000); // Зарежда се след 2 секунди
         })();
     </script>
 </body>
