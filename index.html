@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts - оптимизирана една заявка -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Font Awesome зареден асинхронно за предотвратяване на блокирането на рендерирането -->
@@ -188,6 +188,10 @@
             flex: 1;
             min-width: 300px;
         }
+        /* Повишен контраст за текст в about секцията */
+        .about-text p {
+            color: #4a5568; /* По-тъмно сиво за по-добра четливост */
+        }
         .about-highlight {
             background: linear-gradient(135deg, #ff6b35, #f7931e);
             color: white;
@@ -225,6 +229,7 @@
             position: relative;
             padding-left: 25px;
             font-weight: 500;
+            color: #2d3748; /* По-тъмен текст за по-добра четливост */
         }
         .about-standards li::before {
             content: '⚡';
@@ -236,7 +241,7 @@
         }
         .human-touch {
             font-style: italic;
-            color: #444;
+            color: #2d3748; /* Още по-тъмен за максимален контраст */
             font-size: 1.1em;
             text-align: center;
             margin-top: 30px;
@@ -262,7 +267,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            color: #222;
+            color: #1a202e; /* Максимален контраст */
         }
         .promotions {
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
@@ -321,6 +326,7 @@
             padding: 25px; 
             border-radius: 12px; 
             box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            color: #2d3748; /* По-тъмен текст */
         }
         .contact p { 
             font-size: 1.2em; 
@@ -328,6 +334,7 @@
             display: flex; 
             align-items: center; 
             gap: 15px;
+            color: #2d3748; /* По-тъмен текст */
         }
         .contact i { 
             font-size: 1.5em; 
@@ -460,6 +467,11 @@
         a:focus-visible, button:focus-visible {
             outline: 3px solid #ff6b35;
             outline-offset: 3px;
+        }
+
+        /* Леко подобрение на производителността - само най-необходимите анимации */
+        .hero-button {
+            will-change: transform;
         }
     </style>
 </head>
