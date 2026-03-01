@@ -13,6 +13,10 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://супермаркет-живков.рударци.бг">
     
+    <!-- Favicon - предотвратява 404 грешки -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff6b35'>🛒</text></svg>">
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff6b35'>🛒</text></svg>">
+    
     <!-- Preload на hero изображението с най-висок приоритет -->
     <link rel="preload" as="image" href="magazin.otvyn2.webp" fetchpriority="high">
     
@@ -53,7 +57,7 @@
         body { 
             font-family: 'Poppins', sans-serif; 
             line-height: 1.6; 
-            color: #333; 
+            color: #1a202e; /* Максимален контраст */
             overflow-x: hidden;
             padding-top: 80px;
         }
@@ -92,7 +96,7 @@
             gap: 30px;
         }
         .nav-links a {
-            color: #333;
+            color: #2d3748; /* По-тъмен текст */
             text-decoration: none;
             font-weight: 500;
             font-size: 1.1em;
@@ -113,7 +117,7 @@
             background: none;
             border: none;
             font-size: 1.5em;
-            color: #333;
+            color: #2d3748; /* По-тъмен текст */
             cursor: pointer;
         }
         
@@ -199,10 +203,18 @@
             flex: 1;
             min-width: 300px;
         }
-        /* Повишен контраст за текст в about секцията */
-        .about-text p {
-            color: #4a5568; /* По-тъмно сиво за по-добра четливост */
+        /* ПОВИШЕН КОНТРАСТ - Всички текстове с максимална четливост */
+        .about-text p, 
+        .section-desc, 
+        .human-touch,
+        .assortment-item,
+        .contact p,
+        .parking-info,
+        .about-standards li,
+        .about-text {
+            color: #1a202e !important; /* Най-тъмното възможно сиво, почти черно */
         }
+        
         .about-highlight {
             background: linear-gradient(135deg, #ff6b35, #f7931e);
             color: white;
@@ -240,7 +252,6 @@
             position: relative;
             padding-left: 25px;
             font-weight: 500;
-            color: #2d3748; /* По-тъмен текст за по-добра четливост */
         }
         .about-standards li::before {
             content: '⚡';
@@ -252,7 +263,6 @@
         }
         .human-touch {
             font-style: italic;
-            color: #2d3748; /* Още по-тъмен за максимален контраст */
             font-size: 1.1em;
             text-align: center;
             margin-top: 30px;
@@ -278,7 +288,10 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            color: #1a202e; /* Максимален контраст */
+        }
+        .parking-info i {
+            font-size: 1.4em;
+            color: #28a745;
         }
         .promotions {
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
@@ -337,7 +350,7 @@
             padding: 25px; 
             border-radius: 12px; 
             box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            color: #2d3748; /* По-тъмен текст */
+            font-weight: 500;
         }
         .contact p { 
             font-size: 1.2em; 
@@ -345,16 +358,11 @@
             display: flex; 
             align-items: center; 
             gap: 15px;
-            color: #2d3748; /* По-тъмен текст */
         }
         .contact i { 
             font-size: 1.5em; 
             color: #28a745; 
             width: 30px;
-        }
-        .parking-info i {
-            font-size: 1.4em;
-            color: #28a745;
         }
         footer { 
             background: linear-gradient(135deg, #333 0%, #222 100%); 
