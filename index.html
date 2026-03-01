@@ -25,7 +25,12 @@
     </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome зареден асинхронно за предотвратяване на блокирането на рендерирането -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
@@ -484,7 +489,8 @@
         <section id="about">
             <h2>За нас</h2>
             <div class="about-content">
-                <img src="image1.png" alt="Супермаркет Живков - Рударци" class="about-image">
+                <!-- Добавени width и height за предотвратяване на разместване при зареждане -->
+                <img src="image1.png" width="400" height="300" alt="Супермаркет Живков - Рударци" class="about-image">
                 <div class="about-text">
                     <div class="about-highlight">
                         Местен магазин, не верига. Познаваме клиентите си.
@@ -538,7 +544,8 @@
 
     <!-- Допълнителна снимка -->
     <section class="shop-photo">
-        <img src="magazin.otvyn1.jpg" alt="Супермаркет Живков отвън - реална снимка">
+        <!-- Добавени width и height за предотвратяване на разместване при зареждане -->
+        <img src="magazin.otvyn1.jpg" width="800" height="600" alt="Супермаркет Живков отвън - реална снимка">
     </section>
     
     <!-- Футър -->
