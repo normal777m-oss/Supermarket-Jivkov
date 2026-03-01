@@ -598,77 +598,85 @@
     </footer>
 
     <script>
-        // Мобилно меню
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Затваряне на мобилното меню при клик на линк
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                navLinks.classList.remove('active');
-            });
-        });
-        
-        // Активен линк в навигацията при скрол
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
+        (function() {
+            // Мобилно меню
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
             
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - 150)) {
-                    current = section.getAttribute('id');
-                }
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
             });
             
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                link.removeAttribute('aria-current');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                    link.setAttribute('aria-current', 'page');
-                }
-            });
-            
-            // Специален случай за началната страница
-            if (window.pageYOffset < 100) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    link.removeAttribute('aria-current');
+            // Затваряне на мобилното меню при клик на линк
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
                 });
-                document.querySelector('.nav-links a[href="#home"]').classList.add('active');
-                document.querySelector('.nav-links a[href="#home"]').setAttribute('aria-current', 'page');
-            }
-        });
-        
-        // Плавно скролиране
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Фокусиране върху секцията за по-добра достъпност
-                    targetElement.setAttribute('tabindex', '-1');
-                    targetElement.focus({ preventScroll: true });
-                }
             });
-        });
+            
+            // Активен линк в навигацията при скрол - ОПТИМИЗИРАНА ВЕРСИЯ
+            const sections = document.querySelectorAll('section, header');
+            const navItems = document.querySelectorAll('.nav-links a');
+            let sectionPositions = [];
+
+            // 1. Изчисляваме позициите само веднъж (при зареждане и преоразмеряване)
+            function calculatePositions() {
+                sectionPositions = Array.from(sections).map(section => ({
+                    id: section.getAttribute('id'),
+                    top: section.offsetTop - 100, // отместване за sticky header
+                    bottom: section.offsetTop + section.offsetHeight - 100
+                }));
+            }
+
+            window.addEventListener('load', calculatePositions);
+            window.addEventListener('resize', calculatePositions);
+
+            // 2. При скрол само сравняваме числата (светкавично бързо)
+            function setActiveLink() {
+                const scrollPosition = window.scrollY;
+                let current = '';
+
+                for (const pos of sectionPositions) {
+                    if (scrollPosition >= pos.top && scrollPosition < pos.bottom) {
+                        current = pos.id;
+                    }
+                }
+
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    item.removeAttribute('aria-current');
+                    if (item.getAttribute('href') === `#${current}`) {
+                        item.classList.add('active');
+                        item.setAttribute('aria-current', 'page');
+                    }
+                });
+            }
+
+            // Използваме 'passive: true' за по-плавен скрол
+            window.addEventListener('scroll', setActiveLink, { passive: true });
+            
+            // Плавно скролиране
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Фокусиране върху секцията за по-добра достъпност
+                        targetElement.setAttribute('tabindex', '-1');
+                        targetElement.focus({ preventScroll: true });
+                    }
+                });
+            });
+        })();
     </script>
 </body>
 </html>
