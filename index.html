@@ -584,6 +584,100 @@
             right: 20px;
         }
         
+        /* ========== ПЛАВАЩ БУТОН ЗА ОБАЖДАНЕ (САМО ЗА МОБИЛНИ) ========== */
+        .floating-call-button {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #e65100, #fb8c00);
+            border-radius: 50%;
+            display: none; /* Скрит по подразбиране */
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 20px rgba(230, 81, 0, 0.4);
+            z-index: 999;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+        
+        .floating-call-button i {
+            color: white;
+            font-size: 32px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        .floating-call-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(230, 81, 0, 0.6);
+        }
+        
+        /* Tooltip/text до бутона */
+        .floating-call-button::after {
+            content: "Обадете се";
+            position: absolute;
+            right: 75px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .floating-call-button:hover::after {
+            opacity: 1;
+        }
+        
+        /* Анимация за привличане на вниманието */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(230, 81, 0, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(230, 81, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(230, 81, 0, 0);
+            }
+        }
+        
+        /* Мобилен вариант - показваме бутона само на малки екрани */
+        @media (max-width: 768px) {
+            .floating-call-button {
+                display: flex;
+            }
+            
+            /* Малко по-малък бутон на много малки екрани */
+            @media (max-width: 480px) {
+                .floating-call-button {
+                    width: 60px;
+                    height: 60px;
+                    bottom: 25px;
+                    right: 15px;
+                }
+                
+                .floating-call-button i {
+                    font-size: 28px;
+                }
+                
+                .floating-call-button::after {
+                    font-size: 13px;
+                    padding: 6px 12px;
+                    right: 70px;
+                }
+            }
+        }
+        
         /* Мобилен вариант за lightbox */
         @media (max-width: 768px) {
             .lightbox-close {
@@ -733,6 +827,11 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Плаващ бутон за обаждане (само за мобилни) -->
+    <a href="tel:+359888390088" class="floating-call-button" aria-label="Обадете ни се">
+        <i class="fas fa-phone-alt"></i>
+    </a>
 
     <!-- Основно съдържание в <main> таг -->
     <main>
