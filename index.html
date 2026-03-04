@@ -384,20 +384,38 @@
             margin: 20px auto 0;
             border-radius: 2px;
         }
+        
+        /* Асортимент грид със снимки */
         .assortment-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 20px; 
+            gap: 30px; 
             list-style: none;
             padding: 0;
         }
         .assortment-item { 
             background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); 
-            padding: 25px; 
-            border-radius: 12px; 
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            border-radius: 16px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             font-weight: 500;
         }
+        .assortment-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .assortment-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .assortment-text {
+            padding: 20px;
+            text-align: center;
+        }
+        
         .contact p { 
             font-size: 1.2em; 
             margin-bottom: 20px; 
@@ -726,17 +744,35 @@
         </header>
         
         <div class="container">
-            <!-- Асортимент -->
+            <!-- Асортимент със снимки -->
             <section id="assortment" aria-labelledby="assortment-heading">
                 <h2 id="assortment-heading">Нашият асортимент</h2>
-                <ul class="assortment-grid">
-                    <li class="assortment-item">Свежи плодове и зеленчуци – от градина директно на щанда</li>
-                    <li class="assortment-item">Млечни продукти и сирена – само от проверени ферми</li>
-                    <li class="assortment-item">Хляб и сладкарски изделия – всеки ден пресни</li>
-                    <li class="assortment-item">Месо и колбаси – домашно производство</li>
-                    <li class="assortment-item">Напитки и алкохол – пълна гама вина от региона</li>
-                    <li class="assortment-item">Домакински химикали и хигиена – най-добрите марки</li>
-                </ul>
+                <div class="assortment-grid">
+                    <div class="assortment-item">
+                        <img src="asortiment85.webp" alt="Свежи плодове и зеленчуци" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Свежи плодове и зеленчуци – от градина директно на щанда</div>
+                    </div>
+                    <div class="assortment-item">
+                        <img src="asortiment2.webp" alt="Млечни продукти" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Млечни продукти и сирена – само от проверени ферми</div>
+                    </div>
+                    <div class="assortment-item">
+                        <img src="asortiment3.webp" alt="Хляб и сладкарски изделия" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Хляб и сладкарски изделия – всеки ден пресни</div>
+                    </div>
+                    <div class="assortment-item">
+                        <img src="asortiment4.webp" alt="Месо и колбаси" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Месо и колбаси – домашно производство</div>
+                    </div>
+                    <div class="assortment-item">
+                        <img src="asortiment5.webp" alt="Напитки и алкохол" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Напитки и алкохол – пълна гама вина от региона</div>
+                    </div>
+                    <div class="assortment-item">
+                        <img src="asortiment6.webp" alt="Домакински химикали" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Домакински химикали и хигиена – най-добрите марки</div>
+                    </div>
+                </div>
             </section>
             
             <!-- За нас -->
