@@ -52,12 +52,14 @@
         body { 
             font-family: 'Poppins', sans-serif; 
             line-height: 1.6; 
-            color: #1a202c; /* Почти черно за максимален контраст */
+            color: #000000; /* Чисто черно за максимален контраст */
+            background-color: #ffffff;
             overflow-x: hidden;
             padding-top: 80px;
         }
         h1, h2 {
             font-family: 'Playfair Display', serif;
+            color: #000000; /* Черно за максимален контраст */
         }
         
         /* Навигация - поправена ARIA структура */
@@ -98,7 +100,7 @@
             padding: 0;
         }
         .nav-links a {
-            color: #1a202c; /* Почти черен текст */
+            color: #000000; /* Черен текст за максимален контраст */
             text-decoration: none;
             font-weight: 500;
             font-size: 1.1em;
@@ -120,7 +122,7 @@
             background: none;
             border: none;
             font-size: 1.5em;
-            color: #1a202c;
+            color: #000000;
             cursor: pointer;
         }
         
@@ -148,6 +150,7 @@
             margin-bottom: 20px; 
             text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
             max-width: 800px;
+            color: white; /* Бял текст върху тъмен фон */
         }
         header .subtitle {
             font-size: 1.4em; 
@@ -156,6 +159,7 @@
             margin: 0 auto 40px auto;
             opacity: 0.95;
             text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            color: white; /* Бял текст върху тъмен фон */
         }
         .hero-button {
             display: inline-block;
@@ -215,8 +219,9 @@
         .contact p,
         .parking-info,
         .about-standards li,
-        .about-text {
-            color: #1a202c !important; /* Почти черно за максимална четливост */
+        .about-text,
+        address a {
+            color: #000000 !important; /* Чисто черно за максимална четливост */
         }
         
         .about-highlight {
@@ -334,6 +339,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            color: #000000 !important; /* Черен текст за контраст */
         }
         .parking-info i {
             font-size: 1.4em;
@@ -353,6 +359,7 @@
             font-size: 1.3em;
             font-weight: 500;
             margin-bottom: 20px;
+            color: white; /* Бял текст върху оранжев фон */
         }
         .promotions .cta {
             display: inline-block;
@@ -422,15 +429,35 @@
             display: flex; 
             align-items: center; 
             gap: 15px;
+            color: #000000; /* Черен текст за контраст */
         }
         .contact i { 
             font-size: 1.5em; 
             color: #28a745; 
             width: 30px;
         }
-        /* Стил за Facebook иконата в контактите */
+        /* Стил за Facebook иконата и линка в контактите - с висок контраст */
         .contact .fa-facebook { 
-            color: #1877f2 !important; 
+            color: #0a5c9e !important; /* По-тъмен син за по-добър контраст (контрастно съотношение > 7:1) */
+        }
+        .contact a[href*="facebook.com"] {
+            color: #0a5c9e !important; /* Тъмносин за максимален контраст */
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .contact a[href*="facebook.com"]:hover {
+            color: #e65100 !important; /* Оранжев при hover */
+        }
+        /* Стил за телефонния линк */
+        .contact a[href^="tel:"] {
+            color: #000000 !important;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .contact a[href^="tel:"]:hover {
+            color: #e65100 !important;
         }
         
         footer { 
@@ -996,15 +1023,15 @@
                 </div>
             </section>
             
-            <!-- Контакти с добавен Facebook линк -->
+            <!-- Контакти с добавен Facebook линк и подобрен контраст -->
             <section id="contact" class="contact" aria-labelledby="contact-heading">
                 <h2 id="contact-heading">Контакти и адрес</h2>
                 <address style="font-style: normal;">
                     <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i><strong>Адрес:</strong> с. Рударци, обл. Перник, ул. "Михаил Дойчев" №4, п.к. 2343</p>
-                    <p><i class="fas fa-phone" aria-hidden="true"></i><strong>Телефон:</strong> <a href="tel:+359888390088" style="color: inherit; text-decoration: none;">0888 390 088</a> (Христо Живков)</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i><strong>Телефон:</strong> <a href="tel:+359888390088" style="color: #000000; text-decoration: underline; font-weight: 600;">0888 390 088</a> (Христо Живков)</p>
                     <p><i class="fas fa-clock" aria-hidden="true"></i><strong>Работно време:</strong> Понеделник - Неделя: 7:30 - 20:30 ч.</p>
-                    <!-- Добавен Facebook линк -->
-                    <p><i class="fab fa-facebook" aria-hidden="true"></i><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61587435893469" target="_blank" rel="noopener noreferrer" style="color: #1877f2; text-decoration: none;">Супермаркет Живков</a></p>
+                    <!-- Добавен Facebook линк с подобрен контраст -->
+                    <p><i class="fab fa-facebook" aria-hidden="true" style="color: #0a5c9e;"></i><strong style="color: #000000;">Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61587435893469" target="_blank" rel="noopener noreferrer" style="color: #0a5c9e; text-decoration: underline; font-weight: 600;">Супермаркет Живков</a></p>
                 </address>
                 
                 <div class="map-container" id="map-container">
