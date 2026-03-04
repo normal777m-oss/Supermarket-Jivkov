@@ -454,7 +454,7 @@
             box-shadow: 0 12px 35px rgba(0,0,0,0.12);
         }
         
-        /* ========== СЕКЦИЯ ГАЛЕРИЯ ========== */
+        /* ========== СЕКЦИЯ ГАЛЕРИЯ (ВЪРТЕЛЕЖКА) ========== */
         .gallery-section {
             background: rgba(255,255,255,0.95);
             margin: 40px 0;
@@ -462,13 +462,43 @@
             border-radius: 16px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.08);
         }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
+        
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
             margin-top: 30px;
         }
+
+        .gallery-grid {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding-bottom: 20px; /* Място за скролбара */
+            /* Красив оранжев скролбар за Firefox */
+            scrollbar-width: thin;
+            scrollbar-color: #e65100 #f1f1f1;
+            width: 100%;
+        }
+
+        /* Красив оранжев скролбар за Chrome/Safari/Edge */
+        .gallery-grid::-webkit-scrollbar {
+            height: 10px;
+        }
+        .gallery-grid::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+        .gallery-grid::-webkit-scrollbar-thumb {
+            background: #e65100;
+            border-radius: 5px;
+        }
+
         .gallery-item {
+            flex: 0 0 280px; /* Всяка снимка ще е с фиксирана ширина */
+            scroll-snap-align: start;
             position: relative;
             cursor: pointer;
             border-radius: 12px;
@@ -477,10 +507,12 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             aspect-ratio: 4/3;
         }
+        
         .gallery-item:hover {
             transform: translateY(-6px);
             box-shadow: 0 16px 30px rgba(0,0,0,0.15);
         }
+        
         .gallery-item img {
             width: 100%;
             height: 100%;
@@ -488,9 +520,39 @@
             display: block;
             transition: transform 0.5s ease;
         }
+        
         .gallery-item:hover img {
             transform: scale(1.05);
         }
+
+        /* Бутони за навигация на въртележката (за компютър) */
+        .carousel-btn {
+            position: absolute;
+            top: calc(50% - 10px); /* Центриране спрямо снимките, без скролбара */
+            transform: translateY(-50%);
+            background: white;
+            color: #e65100;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-btn:hover {
+            background: #e65100;
+            color: white;
+        }
+        
+        .carousel-btn.prev { left: -15px; }
+        .carousel-btn.next { right: -15px; }
 
         /* Lightbox - модален прозорец - подобрена версия */
         .lightbox {
@@ -678,7 +740,7 @@
             }
         }
         
-        /* Мобилен вариант за lightbox */
+        /* Мобилен вариант за lightbox и карусел */
         @media (max-width: 768px) {
             .lightbox-close {
                 top: 10px;
@@ -695,6 +757,10 @@
             .lightbox-next {
                 right: 10px;
             }
+            
+            .carousel-btn { display: none; } /* На телефон се скролва удобно с пръст */
+            .gallery-item { flex: 0 0 240px; } /* Малко по-малки снимки на телефон */
+            .gallery-grid { padding-bottom: 15px; }
         }
         
         @media (max-width: 768px) { 
@@ -911,11 +977,17 @@
                 </div>
             </section>
             
-            <!-- ========== ГАЛЕРИЯ ========== -->
+            <!-- ========== ГАЛЕРИЯ (ВЪРТЕЛЕЖКА) ========== -->
             <section id="gallery" class="gallery-section" aria-labelledby="gallery-heading">
                 <h2 id="gallery-heading">Галерия</h2>
-                <div class="gallery-grid" id="galleryGrid">
-                    <!-- Снимките ще се генерират динамично от JavaScript -->
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev" id="scrollPrev" aria-label="Превърти наляво"><i class="fas fa-chevron-left"></i></button>
+                    
+                    <div class="gallery-grid" id="galleryGrid">
+                        <!-- Снимките ще се генерират динамично от JavaScript -->
+                    </div>
+                    
+                    <button class="carousel-btn next" id="scrollNext" aria-label="Превърти надясно"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </section>
             
@@ -1083,6 +1155,20 @@
                     html += `<div class="gallery-item"><img src="asortiment${i}.webp" alt="Асортимент ${i}" loading="lazy"></div>`;
                 }
                 galleryGrid.innerHTML = html;
+            }
+            
+            // НОВО: Скролиране на въртележката чрез стрелките
+            const scrollPrevBtn = document.getElementById('scrollPrev');
+            const scrollNextBtn = document.getElementById('scrollNext');
+            
+            if (scrollPrevBtn && scrollNextBtn && galleryGrid) {
+                scrollPrevBtn.addEventListener('click', () => {
+                    galleryGrid.scrollBy({ left: -300, behavior: 'smooth' });
+                });
+                
+                scrollNextBtn.addEventListener('click', () => {
+                    galleryGrid.scrollBy({ left: 300, behavior: 'smooth' });
+                });
             }
             
             // Lightbox функционалност
