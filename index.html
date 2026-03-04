@@ -436,7 +436,7 @@
             box-shadow: 0 12px 35px rgba(0,0,0,0.12);
         }
         
-        /* ========== НОВА СЕКЦИЯ ГАЛЕРИЯ ========== */
+        /* ========== СЕКЦИЯ ГАЛЕРИЯ ========== */
         .gallery-section {
             background: rgba(255,255,255,0.95);
             margin: 40px 0;
@@ -474,7 +474,7 @@
             transform: scale(1.05);
         }
 
-        /* Lightbox - модален прозорец */
+        /* Lightbox - модален прозорец - подобрена версия */
         .lightbox {
             position: fixed;
             top: 0;
@@ -483,16 +483,19 @@
             height: 100%;
             background: rgba(0,0,0,0.92);
             backdrop-filter: blur(5px);
-            display: none;
+            display: flex;
+            visibility: hidden;
             justify-content: center;
             align-items: center;
             z-index: 2000;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            pointer-events: none;
         }
         .lightbox.active {
-            display: flex;
+            visibility: visible;
             opacity: 1;
+            pointer-events: auto;
         }
         .lightbox-content {
             position: relative;
@@ -562,6 +565,7 @@
         .lightbox-next {
             right: 20px;
         }
+        
         /* Мобилен вариант за lightbox */
         @media (max-width: 768px) {
             .lightbox-close {
@@ -580,7 +584,6 @@
                 right: 10px;
             }
         }
-        /* Край на стилове за галерия */
         
         @media (max-width: 768px) { 
             nav {
@@ -740,7 +743,6 @@
             <section id="about" aria-labelledby="about-heading">
                 <h2 id="about-heading">За нас</h2>
                 <div class="about-content">
-                    <!-- Добавени width и height за предотвратяване на разместване при зареждане - заменено с .webp -->
                     <img src="image1.webp" width="400" height="300" alt="Снимка на Супермаркет Живков - магазинът отвътре" class="about-image">
                     <div class="about-text">
                         <div class="about-highlight">
@@ -763,7 +765,7 @@
                 </div>
             </section>
             
-            <!-- ========== НОВА СЕКЦИЯ ГАЛЕРИЯ ========== -->
+            <!-- ========== ГАЛЕРИЯ ========== -->
             <section id="gallery" class="gallery-section" aria-labelledby="gallery-heading">
                 <h2 id="gallery-heading">Галерия</h2>
                 <div class="gallery-grid" id="galleryGrid">
@@ -780,7 +782,6 @@
                     <p><i class="fas fa-clock" aria-hidden="true"></i><strong>Работно време:</strong> Понеделник - Неделя: 8:00 - 20:30 ч.</p>
                 </address>
                 
-                <!-- Оптимизирана карта - зарежда се след 2 секунди -->
                 <div class="map-container" id="map-container">
                     <div class="map-placeholder" id="map-placeholder">
                         <i class="fas fa-map-marked-alt"></i>
@@ -811,9 +812,8 @@
             </section>
         </div>
 
-        <!-- Допълнителна снимка - заменено с .webp -->
+        <!-- Допълнителна снимка -->
         <section class="shop-photo" aria-label="Снимка на магазина отвън">
-            <!-- Добавени width и height за предотвратяване на разместване при зареждане -->
             <img src="magazin.otvyn1.webp" width="800" height="600" alt="Супермаркет Живков отвън - фасада на магазина">
         </section>
     </main>
@@ -823,7 +823,7 @@
         <p>&copy; 2026 Супермаркет "Живков" - Рударци. Всички права запазени.</p>
     </footer>
 
-    <!-- Lightbox структура (първоначално скрита) -->
+    <!-- Lightbox структура -->
     <div class="lightbox" id="lightbox">
         <div class="lightbox-content">
             <button class="lightbox-close" id="lightboxClose" aria-label="Затвори галерията"><i class="fas fa-times"></i></button>
@@ -843,23 +843,21 @@
                 navLinks.classList.toggle('active');
             });
             
-            // Затваряне на мобилното меню при клик на линк
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', function() {
                     navLinks.classList.remove('active');
                 });
             });
             
-            // Активен линк в навигацията при скрол - ОПТИМИЗИРАНА ВЕРСИЯ
+            // Активен линк в навигацията при скрол
             const sections = document.querySelectorAll('section, header');
             const navItems = document.querySelectorAll('.nav-links a');
             let sectionPositions = [];
 
-            // 1. Изчисляваме позициите само веднъж (при зареждане и преоразмеряване)
             function calculatePositions() {
                 sectionPositions = Array.from(sections).map(section => ({
                     id: section.getAttribute('id'),
-                    top: section.offsetTop - 100, // отместване за sticky header
+                    top: section.offsetTop - 100,
                     bottom: section.offsetTop + section.offsetHeight - 100
                 }));
             }
@@ -867,7 +865,6 @@
             window.addEventListener('load', calculatePositions);
             window.addEventListener('resize', calculatePositions);
 
-            // 2. При скрол само сравняваме числата (светкавично бързо)
             function setActiveLink() {
                 const scrollPosition = window.scrollY;
                 let current = '';
@@ -888,7 +885,6 @@
                 });
             }
 
-            // Използваме 'passive: true' за по-плавен скрол
             window.addEventListener('scroll', setActiveLink, { passive: true });
             
             // Плавно скролиране
@@ -906,23 +902,20 @@
                             behavior: 'smooth'
                         });
                         
-                        // Фокусиране върху секцията за по-добра достъпност
                         targetElement.setAttribute('tabindex', '-1');
                         targetElement.focus({ preventScroll: true });
                     }
                 });
             });
             
-            // 3. ОПТИМИЗАЦИЯ ЗА КАРТАТА - зарежда се 2 секунди след зареждане на страницата
+            // Карта - зарежда се след 2 секунди
             setTimeout(function() {
                 const mapFrame = document.getElementById('map-frame');
                 const mapPlaceholder = document.getElementById('map-placeholder');
                 
                 if (mapFrame && mapFrame.dataset.src) {
-                    // Задаваме src от data-src атрибута
                     mapFrame.src = mapFrame.dataset.src;
                     
-                    // Маркираме като заредена за CSS анимация
                     setTimeout(function() {
                         mapFrame.classList.add('loaded');
                         if (mapPlaceholder) {
@@ -933,94 +926,70 @@
                         }
                     }, 100);
                 }
-            }, 2000); // Зарежда се след 2 секунди
+            }, 2000);
 
             // ========== ГАЛЕРИЯ И LIGHTBOX ==========
+            // Генериране на 86 снимки
             const galleryGrid = document.getElementById('galleryGrid');
+            if (galleryGrid) {
+                let html = '';
+                for (let i = 1; i <= 86; i++) {
+                    html += `<div class="gallery-item"><img src="asortiment${i}.webp" alt="Асортимент ${i}" loading="lazy"></div>`;
+                }
+                galleryGrid.innerHTML = html;
+            }
+            
+            // Lightbox функционалност
+            const galleryItems = document.querySelectorAll('.gallery-item');
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightboxImage');
             const closeBtn = document.getElementById('lightboxClose');
             const prevBtn = document.getElementById('lightboxPrev');
             const nextBtn = document.getElementById('lightboxNext');
             
-            // Генериране на 12 снимки (asortiment1.webp ... asortiment12.webp) за примера
-            // В реалния случай може да са до asortiment86.webp, но за да не се натоварва излишно, ще покажем 16 броя.
-            const totalImages = 16; // Можете да промените на 86
-            const images = [];
-            
-            for (let i = 1; i <= totalImages; i++) {
-                images.push(`asortiment${i}.webp`);
-            }
-            
-            // Запълване на grid-а
-            images.forEach((imgSrc, index) => {
-                const item = document.createElement('div');
-                item.className = 'gallery-item';
-                item.setAttribute('data-index', index);
-                
-                const img = document.createElement('img');
-                img.src = imgSrc;
-                img.alt = `Снимка от магазина ${index + 1}`;
-                img.loading = 'lazy'; // подвързване на lazy load за производителност
-                
-                item.appendChild(img);
-                galleryGrid.appendChild(item);
-            });
-            
             let currentIndex = 0;
+            const images = Array.from(galleryItems).map(item => item.querySelector('img').src);
             
             function openLightbox(index) {
-                if (index < 0 || index >= images.length) return;
+                if (!images.length) return;
                 currentIndex = index;
                 lightboxImg.src = images[currentIndex];
-                lightboxImg.alt = `Снимка от магазина ${currentIndex + 1}`;
+                lightboxImg.alt = `Снимка ${currentIndex + 1}`;
                 lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden'; // предотвратява скрол на background
+                document.body.style.overflow = 'hidden';
             }
             
             function closeLightbox() {
                 lightbox.classList.remove('active');
-                document.body.style.overflow = ''; // връща скрола
+                document.body.style.overflow = '';
             }
             
             function showPrev() {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                } else {
-                    currentIndex = images.length - 1; // безкрайна навигация
-                }
+                if (!images.length) return;
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
                 lightboxImg.src = images[currentIndex];
-                lightboxImg.alt = `Снимка от магазина ${currentIndex + 1}`;
             }
             
             function showNext() {
-                if (currentIndex < images.length - 1) {
-                    currentIndex++;
-                } else {
-                    currentIndex = 0; // безкрайна навигация
-                }
+                if (!images.length) return;
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
                 lightboxImg.src = images[currentIndex];
-                lightboxImg.alt = `Снимка от магазина ${currentIndex + 1}`;
             }
             
-            // Event listeners за thumbnail клик
-            document.querySelectorAll('.gallery-item').forEach((item, idx) => {
+            galleryItems.forEach((item, idx) => {
                 item.addEventListener('click', () => openLightbox(idx));
             });
             
-            // Lightbox контроли
             closeBtn.addEventListener('click', closeLightbox);
             prevBtn.addEventListener('click', showPrev);
             nextBtn.addEventListener('click', showNext);
             
-            // Клик върху тъмния фон затваря lightbox
             lightbox.addEventListener('click', function(e) {
-                if (e.target === lightbox) {
+                if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
                     closeLightbox();
                 }
             });
             
-            // Клавиатурна навигация
             document.addEventListener('keydown', function(e) {
                 if (!lightbox.classList.contains('active')) return;
                 
