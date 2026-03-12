@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Прясно месо и колбаси в Рударци - Супермаркет Живков</title>
-    <meta name="description" content="Магазин за прясно месо и колбаси в Рударци - свинско, телешко, пилешко месо, сухи мезета, луканка, кебапчета и кюфтета от доказани български производители.">
+    <meta name="description" content="Магазин за прясно месо и колбаси в Рударци - свинско, телешко, пилешко месо, сухи мезета, луканка, кебапчета и кюфтета от доказани производители.">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Прясно месо и колбаси в Рударци - Супермаркет Живков">
@@ -197,6 +197,23 @@
             font-size: 0.95em;
         }
         
+        /* Стил за информационния бокс за наличност (Вариант 2) */
+        .availability-info {
+            background-color: #f9f9f9; 
+            border-left: 4px solid #b71c1c; 
+            padding: 15px 20px; 
+            margin: 30px auto; 
+            max-width: 800px; 
+            border-radius: 8px; 
+            font-size: 0.95em; 
+            color: #555;
+        }
+        
+        .availability-info i {
+            color: #b71c1c; 
+            margin-right: 10px;
+        }
+        
         /* Секции за различните видове месо */
         .meat-section, .sausages-section {
             margin-top: 50px;
@@ -242,7 +259,7 @@
     </style>
 </head>
 <body>
-    <!-- Навигация - СТЪПКА 3: Подобрено връщане назад -->
+    <!-- Навигация -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Живков</a>
@@ -253,28 +270,28 @@
         </div>
     </nav>
 
-    <!-- Хедър - СТЪПКА 1: Оптимизирано H1 с локация -->
+    <!-- Хедър - Оптимизирано H1 с локация -->
     <div class="category-header">
         <i class="fas fa-drumstick-bite"></i>
         <h1>Прясно Месо и Колбаси в Рударци</h1>
-        <p>Качествени месни продукти от доказани български производители</p>
+        <p>Качествени месни продукти от доказани производители</p>
     </div>
 
     <main class="container">
-        <!-- СТЪПКА 2: Локален SEO текст преди info-box -->
+        <!-- Локален SEO текст преди info-box -->
         <div class="seo-local">
             <h2>Месен щанд без компромис в качеството</h2>
             <p>За нас в Супермаркет "Живков" е важно какво слагате на масата си. Предлагаме богат избор от <strong>прясно свинско, телешко и пилешко месо</strong>, както и готови продукти за скара. За любителите на традиционния вкус сме подбрали <strong>сухи мезета, луканки и пресни колбаси</strong>. Заповядайте на място в <strong>с. Рударци</strong>.</p>
         </div>
 
-        <!-- Информационна кутия - СТЪПКА 2: Подобрена с корекция на правописа -->
+        <!-- Информационна кутия -->
         <div class="info-box">
             <i class="fas fa-award"></i>
             <h3>Подбрани български производители</h3>
             <p>Работим само с утвърдени родни ферми и месопреработватели. Всичко на нашия щанд е прясно, <strong>транспортирано</strong> при строги хладилни условия и с гарантиран, проследим произход.</p>
         </div>
 
-        <!-- Прясно месо - СТЪПКА 4: Подобрена подредба и описания -->
+        <!-- Прясно месо -->
         <div class="meat-section">
             <h2 class="section-title"><i class="fas fa-drumstick-bite" style="margin-right: 10px;"></i> Прясно месо</h2>
             <div class="products-grid">
@@ -415,7 +432,7 @@
             </div>
         </div>
 
-        <!-- Колбаси и деликатеси - с подобрени описания -->
+        <!-- Колбаси и деликатеси -->
         <div class="sausages-section">
             <h2 class="section-title"><i class="fas fa-utensils" style="margin-right: 10px;"></i> Колбаси и деликатеси</h2>
             <div class="products-grid">
@@ -424,7 +441,7 @@
                     <img src="asortiment66.webp" alt="Сурово-сушени колбаси луканка и суджук" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Сурово-сушени</div>
-                        <div class="product-desc">Луканка, суджук, говежда суджук</div>
+                        <div class="product-desc">Луканка, суджук</div>
                     </div>
                 </div>
                 
@@ -433,7 +450,7 @@
                     <img src="asortiment66.webp" alt="Варени колбаси руски и диетичен" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Варени колбаси</div>
-                        <div class="product-desc">Руски, диетичен, шунка, бургаски</div>
+                        <div class="product-desc">Шунка, бургаски</div>
                     </div>
                 </div>
                 
@@ -470,15 +487,6 @@
                     <div class="product-info">
                         <div class="product-name">Бекон</div>
                         <div class="product-desc">Пушен, варено-пушен, нарязан</div>
-                    </div>
-                </div>
-                
-                <!-- Пушени вратнички -->
-                <div class="product-card">
-                    <img src="asortiment66.webp" alt="Пушени свински вратнички" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Пушени вратнички</div>
-                        <div class="product-desc">Деликатес, тънко нарязани</div>
                     </div>
                 </div>
                 
@@ -519,11 +527,17 @@
                 </div>
             </div>
         </div>
+
+        <!-- ВАРИАНТ 2: Информационен бокс за наличието (съобразен с темата) -->
+        <div class="availability-info">
+            <i class="fas fa-info-circle"></i> 
+            <strong>Важно за наличността:</strong> Прясното месо и колбаси се доставят редовно, но наличността варира в зависимост от доставките. Някои продукти може да са сезонни или временно да не са налични. Питайте нашите продавач-консултанти – те ще ви насочат към най-прясното и ще ви кажат какво очакваме в следващата доставка!
+        </div>
         
-        <!-- Текст, че може да има и други -->
-        <p style="text-align: center; margin-top: 50px; color: #666; font-size: 1.1em;">
+        <!-- ВАРИАНТ 1: Текст, че може да има и други (разширен) -->
+        <p style="text-align: center; margin-top: 30px; color: #666; font-size: 1.1em;">
             <i class="fas fa-fire" style="color: #b71c1c;"></i> 
-            Предлагаме и други месни продукти – питайте на място в магазина в <strong>село Рударци</strong>!
+            Предлагаме и други месни продукти в зависимост от сезона и доставките. Ако търсите нещо конкретно – агнешко за празник, телешко за печене или домашни колбаси – свържете се с нас или питайте на място в магазина в <strong>село Рударци</strong>! Очакваме ви всеки ден от <strong>6:00 до 20:30 ч.</strong>
         </p>
     </main>
 
