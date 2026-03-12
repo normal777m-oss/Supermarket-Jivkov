@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Истински млечни продукти и сирена в Рударци - Супермаркет Живков</title>
-    <meta name="description" content="Магазин за млечни продукти в Рударци - традиционно българско сирене, кашкавал, кисело мляко и прясно мляко от проверени ферми. Без палмово масло!">
+    <meta name="description" content="Магазин за млечни продукти в Рударци - традиционно българско сирене, кашкавал, кисело мляко и прясно мляко от проверени доставчици.">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Истински млечни продукти и сирена в Рударци - Супермаркет Живков">
-    <meta property="og:description" content="Магазин за млечни продукти в Рударци - традиционно българско сирене, кашкавал, кисело мляко и прясно мляко от проверени ферми.">
+    <meta property="og:description" content="Магазин за млечни продукти в Рударци - традиционно българско сирене, кашкавал, кисело мляко и прясно мляко от проверени доставчици.">
     <meta property="og:image" content="asortiment57.webp">
     
     <!-- Font Awesome -->
@@ -197,6 +197,23 @@
             font-size: 0.95em;
         }
         
+        /* Стил за информационния бокс за наличност (Вариант 2) */
+        .availability-info {
+            background-color: #f9f9f9; 
+            border-left: 4px solid #0277bd; 
+            padding: 15px 20px; 
+            margin: 30px auto; 
+            max-width: 800px; 
+            border-radius: 8px; 
+            font-size: 0.95em; 
+            color: #555;
+        }
+        
+        .availability-info i {
+            color: #0277bd; 
+            margin-right: 10px;
+        }
+        
         /* Footer */
         footer {
             background: #333;
@@ -228,7 +245,7 @@
     </style>
 </head>
 <body>
-    <!-- Навигация - СТЪПКА 3: Подобрено връщане назад с насочване към асортимента -->
+    <!-- Навигация -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Живков</a>
@@ -239,41 +256,41 @@
         </div>
     </nav>
 
-    <!-- Хедър - СТЪПКА 1: Оптимизирано H1 с локация -->
+    <!-- Хедър - Оптимизирано H1 с локация -->
     <div class="category-header">
         <i class="fas fa-cheese"></i>
         <h1>Качествени Млечни Продукти и Сирена в Рударци</h1>
-        <p>Богат избор на истинско сирене, кашкавал и прясно мляко от проверени ферми</p>
+        <p>Богат избор на истинско сирене, кашкавал и прясно мляко от проверени доставчици</p>
     </div>
 
     <main class="container">
-        <!-- СТЪПКА 2: Локален SEO текст преди info-box -->
+        <!-- Локален SEO текст преди info-box -->
         <div class="seo-local">
             <h2>Истински млечни продукти близо до вас</h2>
-            <p>В Супермаркет "Живков" в <strong>с. Рударци</strong> държим на истинския вкус. Предлагаме богат асортимент от <strong>традиционно българско сирене</strong>, зрял кашкавал, домашно кисело мляко и прясно масло. Всичко е от ферми и мандри, които познаваме лично.</p>
+            <p>В Супермаркет "Живков" в <strong>с. Рударци</strong> държим на истинския вкус. Предлагаме богат асортимент от <strong>традиционно българско сирене</strong>, зрял кашкавал, домашно кисело мляко и прясно масло. Всичко е от проверени доставчици.</p>
         </div>
 
         <!-- Информационна кутия - подобрена с ключови думи -->
         <div class="info-box">
             <i class="fas fa-certificate"></i>
             <h3>Проверено качество и произход</h3>
-            <p>Всички <strong>млечни продукти</strong> в нашия магазин идват от ферми и мандри, които лично познаваме и посещаваме. Без изкуствени подобрители, без палмово масло – само истински млечен вкус, гарантиран за клиентите ни от <strong>Рударци и област Перник</strong>.</p>
+            <p>Всички <strong>млечни продукти</strong> в нашия магазин идват от проверени доставчици. Само истински вкус, гарантиран за клиентите ни от <strong>Рударци и област Перник</strong>.</p>
         </div>
 
-        <!-- Продуктов каталог - с подобрени alt текстове и описания -->
+        <!-- Продуктов каталог -->
         <div class="products-grid">
             <!-- Сирене краве -->
             <div class="product-card">
                 <img src="asortiment57.webp" alt="Традиционно българско краве сирене от Рударци" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Бяло саламурено сирене</div>
-                    <div class="product-desc">Традиционно българско краве сирене, 400г</div>
+                    <div class="product-desc">Традиционно българско краве сирене</div>
                 </div>
             </div>
             
             <!-- Кашкавал -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Прясен български кашкавал от краве мляко" class="product-image">
+                <img src="asortiment57.webp" alt="Прясен кашкавал от краве мляко" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Кашкавал</div>
                     <div class="product-desc">Жълт кашкавал от краве мляко, зрял</div>
@@ -285,7 +302,7 @@
                 <img src="asortiment57.webp" alt="Домашно кисело мляко от Рударци" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Кисело мляко</div>
-                    <div class="product-desc">Домашно, гъсто, с Lactobacillus bulgaricus</div>
+                    <div class="product-desc">Гъсто, с Lactobacillus bulgaricus</div>
                 </div>
             </div>
             
@@ -294,7 +311,7 @@
                 <img src="asortiment57.webp" alt="Прясно краве мляко 3.6%" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Прясно мляко</div>
-                    <div class="product-desc">Краве, 3.6% масленост, от ферма</div>
+                    <div class="product-desc">Краве, 3.6% масленост</div>
                 </div>
             </div>
             
@@ -303,7 +320,7 @@
                 <img src="asortiment57.webp" alt="Българско краве масло 82%" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Краве масло</div>
-                    <div class="product-desc">82% масленост, истинско</div>
+                    <div class="product-desc">Висока масленост</div>
                 </div>
             </div>
             
@@ -406,16 +423,22 @@
                 </div>
             </div>
         </div>
+
+        <!-- ВАРИАНТ 2: Информационен бокс за наличието -->
+        <div class="availability-info">
+            <i class="fas fa-info-circle"></i> 
+            <strong>Важно за наличността:</strong> Асортиментът ни от млечни продукти се променя според доставките. Някои продукти може временно да не са налични. Питайте нашите продавач-консултанти – те с радост ще ви кажат какво е прясно днес!
+        </div>
         
-        <!-- Текст, че може да има и други продукти -->
-        <p style="text-align: center; margin-top: 50px; color: #666; font-size: 1.1em;">
+        <!-- ВАРИАНТ 1: Текст, че може да има и други (разширен) -->
+        <p style="text-align: center; margin-top: 30px; color: #666; font-size: 1.1em;">
             <i class="fas fa-tint" style="color: #0277bd;"></i> 
-            Предлагаме и други млечни продукти – питайте на място в магазина ни в <strong>село Рударци</strong>!
+            Предлагаме и други млечни продукти. Асортиментът ни варира според доставките – ако търсите нещо конкретно, питайте на място в магазина ни в <strong>село Рударци</strong>! Очакваме ви всеки ден от <strong>6:00 до 20:30 ч.</strong>
         </p>
     </main>
 
     <footer>
-        <p>© 2026 Супермаркет "Живков" – Рударци. <a href="index.html#assortment">Млечни продукти от проверени ферми</a>.</p>
+        <p>© 2026 Супермаркет "Живков" – Рударци. <a href="index.html#assortment">Млечни продукти от проверени доставчици</a>.</p>
         <p style="margin-top: 10px; opacity: 0.8;">
             <i class="fas fa-map-marker-alt"></i> с. Рударци, ул. "Михаил Дойчев" №4, обл. Перник | 
             <i class="fas fa-clock"></i> Пон-Нед: 6:00-20:30
