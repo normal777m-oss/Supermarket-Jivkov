@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Хляб и сладкарски изделия - Супермаркет Живков</title>
-    <meta name="description" content="Хляб и сладкарски изделия в Супермаркет Живков – всеки ден пресни">
+    <title>Пресен хляб и сладкарски изделия в Рударци - Супермаркет Живков</title>
+    <meta name="description" content="Магазин за хляб и сладкиши в Рударци - ежедневно пресен хляб, баници, закуски, тутманик, медени сладки и други тестени изделия от местни пекарни.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Хляб и сладкарски изделия - Супермаркет Живков">
-    <meta property="og:description" content="Пресен хляб и сладкиши всеки ден">
+    <meta property="og:title" content="Пресен хляб и сладкарски изделия в Рударци - Супермаркет Живков">
+    <meta property="og:description" content="Магазин за хляб и сладкиши в Рударци - ежедневно пресен хляб, баници, закуски и сладкарски изделия.">
     <meta property="og:image" content="asortiment34.webp">
     
     <!-- Font Awesome -->
@@ -109,7 +109,50 @@
             padding: 40px 20px;
         }
         
-        /* Продуктова мрежа - само каталог */
+        /* SEO текст - локален */
+        .seo-local {
+            text-align: center; 
+            max-width: 800px; 
+            margin: 0 auto 30px auto; 
+            color: #444; 
+            font-size: 1.1em;
+        }
+        
+        .seo-local h2 {
+            color: #8d6e63; 
+            margin-bottom: 15px; 
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Информационна секция */
+        .info-box {
+            background: #efebe9;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0 20px;
+            text-align: center;
+            border-left: 5px solid #8d6e63;
+        }
+        
+        .info-box i {
+            font-size: 2.5em;
+            color: #8d6e63;
+            margin-bottom: 15px;
+        }
+        
+        .info-box h3 {
+            color: #8d6e63;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .info-box p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1em;
+        }
+        
+        /* Продуктова мрежа */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -154,34 +197,6 @@
             font-size: 0.95em;
         }
         
-        /* Информационна секция */
-        .info-box {
-            background: #efebe9;
-            border-radius: 16px;
-            padding: 30px;
-            margin: 40px 0 20px;
-            text-align: center;
-            border-left: 5px solid #8d6e63;
-        }
-        
-        .info-box i {
-            font-size: 2.5em;
-            color: #8d6e63;
-            margin-bottom: 15px;
-        }
-        
-        .info-box h3 {
-            color: #8d6e63;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        
-        .info-box p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1em;
-        }
-        
         /* Секция за хляб */
         .bread-section, .pastry-section {
             margin-top: 50px;
@@ -204,6 +219,15 @@
             margin-top: 60px;
         }
         
+        footer a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
         @media (max-width: 768px) {
             .category-header h1 { font-size: 2.2em; }
             .category-header p { font-size: 1.1em; }
@@ -218,57 +242,63 @@
     </style>
 </head>
 <body>
-    <!-- Навигация -->
+    <!-- Навигация - СТЪПКА 3: Подобрено връщане назад -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Живков</a>
-            <a href="index.html" class="back-link">
+            <a href="index.html#assortment" class="back-link">
                 <i class="fas fa-arrow-left"></i>
-                <span>Обратно</span>
+                <span>Обратно към асортимента</span>
             </a>
         </div>
     </nav>
 
-    <!-- Хедър -->
+    <!-- Хедър - СТЪПКА 1: Оптимизирано H1 с локация -->
     <div class="category-header">
         <i class="fas fa-bread-slice"></i>
-        <h1>Хляб и сладкарски изделия</h1>
-        <p>Всеки ден пресни – печем с внимание</p>
+        <h1>Пресен Хляб и Сладкарски Изделия в Рударци</h1>
+        <p>Доставяме всяка сутрин – топъл хляб, домашни баници и вкусни сладкиши</p>
     </div>
 
     <main class="container">
-        <!-- Кратка информация -->
-        <div class="info-box">
-            <i class="fas fa-oven"></i>
-            <h3>Всеки ден свежо</h3>
-            <p>Нашите хлябове и сладкиши се доставят всяка сутрин от местни пекарни. Без консерванти, без подобрители – само истински домашен вкус.</p>
+        <!-- СТЪПКА 2: Локален SEO текст преди info-box -->
+        <div class="seo-local">
+            <h2>Топли тестени изделия близо до вас</h2>
+            <p>В Супермаркет "Живков" в <strong>с. Рударци</strong> знаем, че няма нищо по-хубаво от аромата на пресен хляб. Затова работим с най-добрите местни фурни, за да ви предложим разнообразие от <strong>хляб, баници, закуски и сладкарски изделия</strong>.</p>
         </div>
 
-        <!-- Хлябове -->
+        <!-- Информационна кутия - подобрена -->
+        <div class="info-box">
+            <i class="fas fa-oven"></i>
+            <h3>Всеки ден свежо и вкусно</h3>
+            <p>Нашите хлябове и сладкиши се доставят всяка сутрин директно от местни пекарни в района на Перник. Без излишни консерванти, без подобрители – само истински домашен вкус, с който да започнете деня си.</p>
+        </div>
+
+        <!-- Хлябове - с подобрени alt и описания -->
         <div class="bread-section">
-            <h2 class="section-title"><i class="fas fa-bread-slice" style="margin-right: 10px;"></i> Хляб</h2>
+            <h2 class="section-title"><i class="fas fa-bread-slice" style="margin-right: 10px;"></i> Пресен хляб</h2>
             <div class="products-grid">
                 <!-- Бял хляб -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Бял хляб" class="product-image">
+                    <img src="asortiment34.webp" alt="Традиционен бял хляб от Рударци" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Бял хляб</div>
-                        <div class="product-desc">Традиционен бял хляб, 600г</div>
+                        <div class="product-desc">Традиционен, 600г, от бяло брашно</div>
                     </div>
                 </div>
                 
                 <!-- Типов хляб -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Типов хляб" class="product-image">
+                    <img src="asortiment34.webp" alt="Пълнозърнест типов хляб с трици" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Типов хляб</div>
-                        <div class="product-desc">Пълнозърнест, с трици</div>
+                        <div class="product-desc">Пълнозърнест, с трици и семена</div>
                     </div>
                 </div>
                 
                 <!-- Ръжен хляб -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Ръжен хляб" class="product-image">
+                    <img src="asortiment34.webp" alt="Ръжен хляб от ръжено брашно" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Ръжен хляб</div>
                         <div class="product-desc">От ръжено брашно, 500г</div>
@@ -277,85 +307,85 @@
                 
                 <!-- Домашен хляб -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Домашен хляб" class="product-image">
+                    <img src="asortiment34.webp" alt="Домашен хляб по стара българска рецепта" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Домашен хляб</div>
-                        <div class="product-desc">По стара българска рецепта</div>
+                        <div class="product-desc">По стара българска рецепта, с квас</div>
                     </div>
                 </div>
                 
                 <!-- Френски хляб -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Френски хляб" class="product-image">
+                    <img src="asortiment34.webp" alt="Френски хляб багета" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Френски хляб</div>
-                        <div class="product-desc">Багета, хрупкава коричка</div>
+                        <div class="product-desc">Багета с хрупкава коричка</div>
                     </div>
                 </div>
                 
                 <!-- Безглутенов хляб -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Безглутенов хляб" class="product-image">
+                    <img src="asortiment34.webp" alt="Безглутенов хляб за хора с непоносимост" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Безглутенов хляб</div>
-                        <div class="product-desc">За хора с непоносимост</div>
+                        <div class="product-desc">За хора с непоносимост към глутен</div>
                     </div>
                 </div>
                 
                 <!-- Кифли солени -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Солени кифли" class="product-image">
+                    <img src="asortiment34.webp" alt="Солени кифли със сирене и масло" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Солени кифли</div>
-                        <div class="product-desc">Със сирене и масло</div>
+                        <div class="product-desc">Със сирене и масло, за закуска</div>
                     </div>
                 </div>
                 
                 <!-- Питки -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Питки" class="product-image">
+                    <img src="asortiment34.webp" alt="Малки питки за закуска" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Питки</div>
-                        <div class="product-desc">Малки питки за закуска</div>
+                        <div class="product-desc">Малки, меки, за закуска и барбекю</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Сладкарски изделия -->
+        <!-- Сладкарски изделия - с подобрени alt и описания -->
         <div class="pastry-section">
-            <h2 class="section-title"><i class="fas fa-cake" style="margin-right: 10px;"></i> Сладкарски изделия</h2>
+            <h2 class="section-title"><i class="fas fa-cake" style="margin-right: 10px;"></i> Сладкарски изделия и десерти</h2>
             <div class="products-grid">
                 <!-- Медени сладки -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Медени сладки" class="product-image">
+                    <img src="asortiment34.webp" alt="Медени сладки с мед и орехи" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Медени сладки</div>
-                        <div class="product-desc">С мед и орехи</div>
+                        <div class="product-desc">С мед и орехи, традиционни</div>
                     </div>
                 </div>
                 
                 <!-- Масленки -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Масленки" class="product-image">
+                    <img src="asortiment34.webp" alt="Масленки сладки с масло и сладко" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Масленки</div>
-                        <div class="product-desc">Сладки с масло и сладко</div>
+                        <div class="product-desc">С масло и сладко, домашни</div>
                     </div>
                 </div>
                 
                 <!-- Вафли -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Вафли" class="product-image">
+                    <img src="asortiment34.webp" alt="Вафли различни видове" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Вафли</div>
-                        <div class="product-desc">Различни видове</div>
+                        <div class="product-desc">Различни видове и вкусове</div>
                     </div>
                 </div>
                 
                 <!-- Понички -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Понички" class="product-image">
+                    <img src="asortiment34.webp" alt="Понички с пудра захар" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Понички</div>
                         <div class="product-desc">Поръсени с пудра захар</div>
@@ -364,73 +394,73 @@
                 
                 <!-- Милинки -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Милинки" class="product-image">
+                    <img src="asortiment34.webp" alt="Милинки соленки с кашкавал" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Милинки</div>
-                        <div class="product-desc">Соленки с кашкавал</div>
+                        <div class="product-desc">Соленки с кашкавал, топли</div>
                     </div>
                 </div>
                 
                 <!-- Кекс -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Кекс" class="product-image">
+                    <img src="asortiment34.webp" alt="Домашен кекс със стафиди" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Кекс</div>
-                        <div class="product-desc">Домашен кекс със стафиди</div>
+                        <div class="product-desc">Домашен кекс със стафиди и орехи</div>
                     </div>
                 </div>
                 
                 <!-- Баница -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Баница" class="product-image">
+                    <img src="asortiment34.webp" alt="Домашна баница със сирене и масло" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Баница</div>
-                        <div class="product-desc">Със сирене и масло</div>
+                        <div class="product-desc">Със сирене и масло, точена</div>
                     </div>
                 </div>
                 
                 <!-- Торта -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Торта" class="product-image">
+                    <img src="asortiment34.webp" alt="Торти по поръчка в Рударци" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Торта</div>
-                        <div class="product-desc">Различни видове по поръчка</div>
+                        <div class="product-desc">Различни видове, по поръчка</div>
                     </div>
                 </div>
                 
                 <!-- Сладкиши -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Сладкиши" class="product-image">
+                    <img src="asortiment34.webp" alt="Еклери, пасти и други сладкиши" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Сладкиши</div>
-                        <div class="product-desc">Еклери, пасти, торти</div>
+                        <div class="product-desc">Еклери, пасти, мини торти</div>
                     </div>
                 </div>
                 
                 <!-- тутманик -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Тутманик" class="product-image">
+                    <img src="asortiment34.webp" alt="Тутманик със сирене и кашкавал" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Тутманик</div>
-                        <div class="product-desc">Със сирене и кашкавал</div>
+                        <div class="product-desc">Със сирене и кашкавал, топъл</div>
                     </div>
                 </div>
                 
                 <!-- Гевреци -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Гевреци" class="product-image">
+                    <img src="asortiment34.webp" alt="Гевреци поръсени със сусам" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Гевреци</div>
-                        <div class="product-desc">Поръсени със сусам</div>
+                        <div class="product-desc">Поръсени със сусам, свежи</div>
                     </div>
                 </div>
                 
-                <!-- Бисквити -->
+                <!-- Бисквити - СТЪПКА 4: Правописна корекция -->
                 <div class="product-card">
-                    <img src="asortiment34.webp" alt="Бисквити" class="product-image">
+                    <img src="asortiment34.webp" alt="Бисквити различни видове" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Бисквити</div>
-                        <div class="product-desc">Различни видови</div>
+                        <div class="product-desc">Различни видове и вкусове</div>
                     </div>
                 </div>
             </div>
@@ -439,14 +469,15 @@
         <!-- Текст, че може да има и други -->
         <p style="text-align: center; margin-top: 50px; color: #666; font-size: 1.1em;">
             <i class="fas fa-cookie-bite" style="color: #8d6e63;"></i> 
-            Всеки ден свежи хлебни и сладкарски изделия – заповядайте!
+            Всеки ден свежи хлебни и сладкарски изделия в <strong>Рударци</strong> – заповядайте рано сутрин!
         </p>
     </main>
 
     <footer>
-        <p>© 2026 Супермаркет "Живков" – Рударци. Пресен хляб и сладкиши всеки ден.</p>
+        <p>© 2026 Супермаркет "Живков" – Рударци. <a href="index.html#assortment">Пресен хляб и сладкиши всеки ден</a>.</p>
         <p style="margin-top: 10px; opacity: 0.8;">
-            <i class="fas fa-map-marker-alt"></i> с. Рударци, ул. "Михаил Дойчев" №4
+            <i class="fas fa-map-marker-alt"></i> с. Рударци, ул. "Михаил Дойчев" №4, обл. Перник | 
+            <i class="fas fa-clock"></i> Пон-Нед: 6:00-20:30
         </p>
     </footer>
 </body>
