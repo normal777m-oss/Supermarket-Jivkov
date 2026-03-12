@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Напитки и алкохол - Супермаркет Живков</title>
-    <meta name="description" content="Напитки и алкохол в Супермаркет Живков – пълна гама вина и спиртни напитки">
+    <title>Напитки и алкохол в Рударци - Супермаркет Живков</title>
+    <meta name="description" content="Магазин за напитки в Рударци - богат избор от български и вносни вина, твърд алкохол, бира и безалкохолни напитки за всеки повод.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Напитки и алкохол - Супермаркет Живков">
-    <meta property="og:description" content="Пълна гама вина и алкохолни напитки">
+    <meta property="og:title" content="Напитки и алкохол в Рударци - Супермаркет Живков">
+    <meta property="og:description" content="Богат избор от вина, спиртни напитки, бира и безалкохолни в Рударци.">
     <meta property="og:image" content="asortiment2.webp">
     
     <!-- Font Awesome -->
@@ -109,7 +109,50 @@
             padding: 40px 20px;
         }
         
-        /* Продуктова мрежа - само каталог */
+        /* SEO текст - локален */
+        .seo-local {
+            text-align: center; 
+            max-width: 800px; 
+            margin: 0 auto 30px auto; 
+            color: #444; 
+            font-size: 1.1em;
+        }
+        
+        .seo-local h2 {
+            color: #6a1b9a; 
+            margin-bottom: 15px; 
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Информационна секция */
+        .info-box {
+            background: #f3e5f5;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0 20px;
+            text-align: center;
+            border-left: 5px solid #6a1b9a;
+        }
+        
+        .info-box i {
+            font-size: 2.5em;
+            color: #6a1b9a;
+            margin-bottom: 15px;
+        }
+        
+        .info-box h3 {
+            color: #6a1b9a;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .info-box p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1em;
+        }
+        
+        /* Продуктова мрежа */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -154,36 +197,8 @@
             font-size: 0.95em;
         }
         
-        /* Информационна секция */
-        .info-box {
-            background: #f3e5f5;
-            border-radius: 16px;
-            padding: 30px;
-            margin: 40px 0 20px;
-            text-align: center;
-            border-left: 5px solid #6a1b9a;
-        }
-        
-        .info-box i {
-            font-size: 2.5em;
-            color: #6a1b9a;
-            margin-bottom: 15px;
-        }
-        
-        .info-box h3 {
-            color: #6a1b9a;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        
-        .info-box p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1em;
-        }
-        
         /* Секции за различните видове напитки */
-        .wines-section, .spirits-section, .non-alcoholic-section {
+        .wines-section, .spirits-section, .beer-section, .non-alcoholic-section {
             margin-top: 50px;
         }
         
@@ -213,6 +228,15 @@
             margin-top: 60px;
         }
         
+        footer a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
         @media (max-width: 768px) {
             .category-header h1 { font-size: 2.2em; }
             .category-header p { font-size: 1.1em; }
@@ -228,33 +252,39 @@
     </style>
 </head>
 <body>
-    <!-- Навигация -->
+    <!-- Навигация - СТЪПКА 3: Подобрено връщане назад -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Живков</a>
-            <a href="index.html" class="back-link">
+            <a href="index.html#assortment" class="back-link">
                 <i class="fas fa-arrow-left"></i>
-                <span>Обратно</span>
+                <span>Обратно към асортимента</span>
             </a>
         </div>
     </nav>
 
-    <!-- Хедър -->
+    <!-- Хедър - СТЪПКА 1: Оптимизирано H1 с локация -->
     <div class="category-header">
         <i class="fas fa-wine-bottle"></i>
-        <h1>Напитки и алкохол</h1>
-        <p>Пълна гама вина и спиртни напитки</p>
+        <h1>Напитки и Алкохол в Рударци</h1>
+        <p>Богат избор на вина, спиртни напитки и безалкохолни за всеки повод</p>
     </div>
 
     <main class="container">
-        <!-- Кратка информация -->
+        <!-- СТЪПКА 2: Локален SEO текст преди info-box -->
+        <div class="seo-local">
+            <h2>Напитки за вашата трапеза и празник</h2>
+            <p>В Супермаркет "Живков" (<strong>с. Рударци</strong>) ще откриете всичко необходимо за вашето ежедневие или специален повод. От <strong>качествени български и вносни вина</strong>, през разнообразие от <strong>твърд алкохол</strong>, до освежаващи <strong>безалкохолни напитки и сокове</strong>.</p>
+        </div>
+
+        <!-- Информационна кутия - подобрена -->
         <div class="info-box">
             <i class="fas fa-grapes"></i>
             <h3>Богат избор от вина</h3>
-            <p>Предлагаме вина от най-добрите български изби, както и внос от световноизвестни винени региони. За всеки вкус и повод.</p>
+            <p>Гордеем се с нашата селекция. Предлагаме вина от най-добрите български изби, както и внос от световноизвестни винени региони. Открийте перфектното допълнение към вашата вечеря.</p>
         </div>
 
-        <!-- Вина - Червени -->
+        <!-- Вина - Червени - с подобрени alt и описания -->
         <div class="wines-section">
             <h2 class="section-title"><i class="fas fa-wine-glass-alt" style="margin-right: 10px;"></i> Вина</h2>
             
@@ -262,61 +292,61 @@
             <div class="products-grid">
                 <!-- Каберне Совиньон -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Каберне Совиньон" class="product-image">
+                    <img src="asortiment2.webp" alt="Българско червено вино Каберне Совиньон" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Каберне Совиньон</div>
-                        <div class="product-desc">Българско червено вино</div>
+                        <div class="product-desc">Българско червено вино, плътен вкус</div>
                     </div>
                 </div>
                 
                 <!-- Мерло -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Мерло" class="product-image">
+                    <img src="asortiment2.webp" alt="Червено вино Мерло отлежало" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Мерло</div>
-                        <div class="product-desc">Отлежало, плътно</div>
+                        <div class="product-desc">Отлежало, плътно, с дъбови нотки</div>
                     </div>
                 </div>
                 
                 <!-- Сира -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Сира" class="product-image">
+                    <img src="asortiment2.webp" alt="Червено вино Сира" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Сира</div>
-                        <div class="product-desc">Ароматно, подправъчно</div>
+                        <div class="product-desc">Ароматно, с подправъчни нюанси</div>
                     </div>
                 </div>
                 
                 <!-- Памид -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Памид" class="product-image">
+                    <img src="asortiment2.webp" alt="Традиционно българско вино Памид" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Памид</div>
-                        <div class="product-desc">Традиционно българско</div>
+                        <div class="product-desc">Традиционно българско, леко и свежо</div>
                     </div>
                 </div>
                 
                 <!-- Мавруд -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Мавруд" class="product-image">
+                    <img src="asortiment2.webp" alt="Емблематичен български сорт Мавруд" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Мавруд</div>
-                        <div class="product-desc">Емблематичен български сорт</div>
+                        <div class="product-desc">Емблематичен български сорт, наситен</div>
                     </div>
                 </div>
                 
                 <!-- Пино Ноар -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Пино Ноар" class="product-image">
+                    <img src="asortiment2.webp" alt="Френско вино Пино Ноар" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Пино Ноар</div>
-                        <div class="product-desc">Елегантно, френско</div>
+                        <div class="product-desc">Елегантно, френско, за ценители</div>
                     </div>
                 </div>
                 
                 <!-- Мелник -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Мелник" class="product-image">
+                    <img src="asortiment2.webp" alt="Българско вино Мелник" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Мелник</div>
                         <div class="product-desc">Широко прочут български сорт</div>
@@ -325,10 +355,10 @@
                 
                 <!-- Рубин -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Рубин" class="product-image">
+                    <img src="asortiment2.webp" alt="Български хибрид Рубин" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Рубин</div>
-                        <div class="product-desc">Български хибрид</div>
+                        <div class="product-desc">Български хибрид, уникален вкус</div>
                     </div>
                 </div>
             </div>
@@ -337,73 +367,73 @@
             <div class="products-grid">
                 <!-- Шардоне -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Шардоне" class="product-image">
+                    <img src="asortiment2.webp" alt="Бяло вино Шардоне" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Шардоне</div>
-                        <div class="product-desc">Класическо бяло вино</div>
+                        <div class="product-desc">Класическо бяло вино, плодово</div>
                     </div>
                 </div>
                 
                 <!-- Совиньон Блан -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Совиньон Блан" class="product-image">
+                    <img src="asortiment2.webp" alt="Бяло вино Совиньон Блан" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Совиньон Блан</div>
-                        <div class="product-desc">Свежо, цитрусово</div>
+                        <div class="product-desc">Свежо, с цитрусови нотки</div>
                     </div>
                 </div>
                 
                 <!-- Мускат -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Мускат" class="product-image">
+                    <img src="asortiment2.webp" alt="Ароматно вино Мускат" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Мускат</div>
-                        <div class="product-desc">Ароматно, сладникаво</div>
+                        <div class="product-desc">Ароматно, сладникаво, десертно</div>
                     </div>
                 </div>
                 
                 <!-- Ризлинг -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Ризлинг" class="product-image">
+                    <img src="asortiment2.webp" alt="Бяло вино Ризлинг" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Ризлинг</div>
-                        <div class="product-desc">Германски сорт</div>
+                        <div class="product-desc">Германски сорт, свеж и елегантен</div>
                     </div>
                 </div>
                 
                 <!-- Тамянка -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Тамянка" class="product-image">
+                    <img src="asortiment2.webp" alt="Българско ароматно вино Тамянка" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Тамянка</div>
-                        <div class="product-desc">Български ароматен сорт</div>
+                        <div class="product-desc">Български ароматен сорт, цветист</div>
                     </div>
                 </div>
                 
                 <!-- Димят -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Димят" class="product-image">
+                    <img src="asortiment2.webp" alt="Традиционно българско вино Димят" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Димят</div>
-                        <div class="product-desc">Традиционно българско</div>
+                        <div class="product-desc">Традиционно българско, леко</div>
                     </div>
                 </div>
                 
                 <!-- Мискет -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Мискет" class="product-image">
+                    <img src="asortiment2.webp" alt="Бяло вино Мискет" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Мискет</div>
-                        <div class="product-desc">Свежо и плодово</div>
+                        <div class="product-desc">Свежо и плодово, ароматно</div>
                     </div>
                 </div>
                 
                 <!-- Гевюрцтраминер -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Гевюрцтраминер" class="product-image">
+                    <img src="asortiment2.webp" alt="Ароматно вино Гевюрцтраминер" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Гевюрцтраминер</div>
-                        <div class="product-desc">Сильно ароматно</div>
+                        <div class="product-desc">Сильно ароматно, с подправки</div>
                     </div>
                 </div>
             </div>
@@ -412,184 +442,226 @@
             <div class="products-grid">
                 <!-- Розе -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Розе" class="product-image">
+                    <img src="asortiment2.webp" alt="Розе вино свежо и плодово" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Розе</div>
-                        <div class="product-desc">Свежо, плодово</div>
+                        <div class="product-desc">Свежо, плодово, за летни вечери</div>
                     </div>
                 </div>
                 
                 <!-- Искрящо вино -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Искрящо вино" class="product-image">
+                    <img src="asortiment2.webp" alt="Искрящо вино за специални поводи" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Искрящо вино</div>
-                        <div class="product-desc">За специални поводи</div>
+                        <div class="product-desc">За специални поводи и тържества</div>
                     </div>
                 </div>
                 
                 <!-- Десертно вино -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Десертно вино" class="product-image">
+                    <img src="asortiment2.webp" alt="Десертно вино сладко" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Десертно вино</div>
-                        <div class="product-desc">Сладко, плътно</div>
+                        <div class="product-desc">Сладко, плътно, за десерт</div>
                     </div>
                 </div>
                 
                 <!-- Портвайн -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Портвайн" class="product-image">
+                    <img src="asortiment2.webp" alt="Подсилено вино Портвайн" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Портвайн</div>
-                        <div class="product-desc">Подсилено вино</div>
+                        <div class="product-desc">Подсилено вино, сладко и силно</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Спиртни напитки -->
+        <!-- СТЪПКА 4: Нова секция за бира -->
+        <div class="beer-section">
+            <h2 class="section-title"><i class="fas fa-beer" style="margin-right: 10px;"></i> Бира</h2>
+            <div class="products-grid">
+                <!-- Светла бира -->
+                <div class="product-card">
+                    <img src="asortiment2.webp" alt="Светла бира български марки" class="product-image">
+                    <div class="product-info">
+                        <div class="product-name">Светла бира</div>
+                        <div class="product-desc">Български и вносни марки, бутилки и кенове</div>
+                    </div>
+                </div>
+                
+                <!-- Тъмна бира -->
+                <div class="product-card">
+                    <img src="asortiment2.webp" alt="Тъмна бира сезонна" class="product-image">
+                    <div class="product-info">
+                        <div class="product-name">Тъмна бира</div>
+                        <div class="product-desc">Сезонни предложения, карамелен вкус</div>
+                    </div>
+                </div>
+                
+                <!-- Жива бира -->
+                <div class="product-card">
+                    <img src="asortiment2.webp" alt="Крафт и жива бира нефилтрирана" class="product-image">
+                    <div class="product-info">
+                        <div class="product-name">Крафт и жива бира</div>
+                        <div class="product-desc">Нефилтрирана, за ценители</div>
+                    </div>
+                </div>
+                
+                <!-- Безалкохолна бира -->
+                <div class="product-card">
+                    <img src="asortiment2.webp" alt="Безалкохолна бира" class="product-image">
+                    <div class="product-info">
+                        <div class="product-name">Безалкохолна бира</div>
+                        <div class="product-desc">Различни марки, 0.0% алкохол</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Спиртни напитки - с подобрени описания -->
         <div class="spirits-section">
             <h2 class="section-title"><i class="fas fa-glass-whiskey" style="margin-right: 10px;"></i> Спиртни напитки</h2>
             <div class="products-grid">
                 <!-- Ракия -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Ракия" class="product-image">
+                    <img src="asortiment2.webp" alt="Българска ракия гроздова и сливова" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Ракия</div>
-                        <div class="product-desc">Гроздова, сливова, кайсиева</div>
+                        <div class="product-desc">Гроздова, сливова, кайсиева, отлежала</div>
                     </div>
                 </div>
                 
                 <!-- Уиски -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Уиски" class="product-image">
+                    <img src="asortiment2.webp" alt="Уиски бленд и малц" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Уиски</div>
-                        <div class="product-desc">Бленд, малц, бърбън</div>
+                        <div class="product-desc">Бленд, малц, бърбън, различни марки</div>
                     </div>
                 </div>
                 
                 <!-- Водка -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Водка" class="product-image">
+                    <img src="asortiment2.webp" alt="Водка класическа и ароматизирана" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Водка</div>
-                        <div class="product-desc">Класическа, ароматизирана</div>
+                        <div class="product-desc">Класическа, ароматизирана, премиум</div>
                     </div>
                 </div>
                 
                 <!-- Джин -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Джин" class="product-image">
+                    <img src="asortiment2.webp" alt="Джин Лондон и ароматизиран" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Джин</div>
-                        <div class="product-desc">Лондон, ароматизиран</div>
+                        <div class="product-desc">Лондон, ароматизиран, за коктейли</div>
                     </div>
                 </div>
                 
                 <!-- Коняк -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Коняк" class="product-image">
+                    <img src="asortiment2.webp" alt="Коняк френски и български" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Коняк</div>
-                        <div class="product-desc">Френски, български</div>
+                        <div class="product-desc">Френски, български, V.S., V.S.O.P.</div>
                     </div>
                 </div>
                 
                 <!-- Бренди -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Бренди" class="product-image">
+                    <img src="asortiment2.webp" alt="Бренди отлежало" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Бренди</div>
-                        <div class="product-desc">Отлежало</div>
+                        <div class="product-desc">Отлежало, плодово, десертно</div>
                     </div>
                 </div>
                 
                 <!-- Ликьор -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Ликьор" class="product-image">
+                    <img src="asortiment2.webp" alt="Ликьор сладък и плодов" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Ликьор</div>
-                        <div class="product-desc">Сладък, плодов, крема</div>
+                        <div class="product-desc">Сладък, плодов, крема, за коктейли</div>
                     </div>
                 </div>
                 
                 <!-- Текила -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Текила" class="product-image">
+                    <img src="asortiment2.webp" alt="Текила бяла и отлежала" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Текила</div>
-                        <div class="product-desc">Бяла, отлежала</div>
+                        <div class="product-desc">Бяла, отлежала, 100% агаве</div>
                     </div>
                 </div>
                 
                 <!-- Ром -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Ром" class="product-image">
+                    <img src="asortiment2.webp" alt="Ром бял и тъмен" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Ром</div>
-                        <div class="product-desc">Бял, тъмен, подправен</div>
+                        <div class="product-desc">Бял, тъмен, подправен, за коктейли</div>
                     </div>
                 </div>
                 
                 <!-- Мастика -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Мастика" class="product-image">
+                    <img src="asortiment2.webp" alt="Българска мастика" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Мастика</div>
-                        <div class="product-desc">Българска традиционна</div>
+                        <div class="product-desc">Българска традиционна, със смола</div>
                     </div>
                 </div>
                 
                 <!-- Анасон -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Анасон" class="product-image">
+                    <img src="asortiment2.webp" alt="Анасон менте и узо" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Анасон</div>
-                        <div class="product-desc">Менте, узо</div>
+                        <div class="product-desc">Менте, узо, гръцки анасон</div>
                     </div>
                 </div>
                 
                 <!-- Вермут -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Вермут" class="product-image">
+                    <img src="asortiment2.webp" alt="Вермут червен и бял" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Вермут</div>
-                        <div class="product-desc">Червен, бял</div>
+                        <div class="product-desc">Червен, бял, за коктейли</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Безалкохолни напитки -->
+        <!-- Безалкохолни напитки - с подобрени описания -->
         <div class="non-alcoholic-section">
             <h2 class="section-title"><i class="fas fa-glass-water" style="margin-right: 10px;"></i> Безалкохолни напитки</h2>
             <div class="products-grid">
                 <!-- Газирани напитки -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Газирани напитки" class="product-image">
+                    <img src="asortiment2.webp" alt="Газирани напитки кола и фанта" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Газирани напитки</div>
-                        <div class="product-desc">Кола, фанта, спрайт</div>
+                        <div class="product-desc">Кола, фанта, спрайт, лимонада</div>
                     </div>
                 </div>
                 
                 <!-- Минерална вода -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Минерална вода" class="product-image">
+                    <img src="asortiment2.webp" alt="Минерална вода газирана и негазирана" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Минерална вода</div>
-                        <div class="product-desc">Газирана, негазирана</div>
+                        <div class="product-desc">Газирана, негазирана, трапезна</div>
                     </div>
                 </div>
                 
                 <!-- Сокове -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Сокове" class="product-image">
+                    <img src="asortiment2.webp" alt="Плодови сокове и нектари" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Сокове</div>
-                        <div class="product-desc">Плодови, зеленчукови</div>
+                        <div class="product-desc">Плодови, зеленчукови, нектари</div>
                     </div>
                 </div>
                 
@@ -598,43 +670,43 @@
                     <img src="asortiment2.webp" alt="Енергийни напитки" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Енергийни напитки</div>
-                        <div class="product-desc">Различни марки</div>
+                        <div class="product-desc">Различни марки, без захар варианти</div>
                     </div>
                 </div>
                 
                 <!-- Студен чай -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Студен чай" class="product-image">
+                    <img src="asortiment2.webp" alt="Студен чай лимон и праскова" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Студен чай</div>
-                        <div class="product-desc">Лимон, праскова</div>
+                        <div class="product-desc">Лимон, праскова, горски плодове</div>
                     </div>
                 </div>
                 
                 <!-- Фреш -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Фреш" class="product-image">
+                    <img src="asortiment2.webp" alt="Прясно изцеден фреш" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Фреш</div>
-                        <div class="product-desc">Портокалов, ябълков</div>
+                        <div class="product-desc">Портокалов, ябълков, мултивитамин</div>
                     </div>
                 </div>
                 
                 <!-- Сиропи -->
                 <div class="product-card">
-                    <img src="asortiment2.webp" alt="Сиропи" class="product-image">
+                    <img src="asortiment2.webp" alt="Сиропи за разреждане" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Сиропи</div>
-                        <div class="product-desc">За разреждане</div>
+                        <div class="product-desc">За разреждане, различни вкусове</div>
                     </div>
                 </div>
                 
-                <!-- Бира безалкохолна -->
+                <!-- Бира безалкохолна (вече е в новата секция, но можем да я оставим и тук за пълнота) -->
                 <div class="product-card">
                     <img src="asortiment2.webp" alt="Безалкохолна бира" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Безалкохолна бира</div>
-                        <div class="product-desc">Различни марки</div>
+                        <div class="product-desc">Различни марки, 0.0%</div>
                     </div>
                 </div>
             </div>
@@ -643,14 +715,15 @@
         <!-- Текст, че може да има и други -->
         <p style="text-align: center; margin-top: 50px; color: #666; font-size: 1.1em;">
             <i class="fas fa-wine-bottle" style="color: #6a1b9a;"></i> 
-            Богат избор от вина и напитки – заповядайте да изберете!
+            Богат избор от вина и напитки в <strong>Рударци</strong> – заповядайте да изберете!
         </p>
     </main>
 
     <footer>
-        <p>© 2026 Супермаркет "Живков" – Рударци. Пълна гама вина и спиртни напитки.</p>
+        <p>© 2026 Супермаркет "Живков" – Рударци. <a href="index.html#assortment">Пълна гама вина и спиртни напитки</a>.</p>
         <p style="margin-top: 10px; opacity: 0.8;">
-            <i class="fas fa-map-marker-alt"></i> с. Рударци, ул. "Михаил Дойчев" №4
+            <i class="fas fa-map-marker-alt"></i> с. Рударци, ул. "Михаил Дойчев" №4, обл. Перник | 
+            <i class="fas fa-clock"></i> Пон-Нед: 6:00-20:30
         </p>
     </footer>
 </body>
