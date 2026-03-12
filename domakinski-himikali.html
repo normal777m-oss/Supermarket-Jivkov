@@ -197,6 +197,23 @@
             font-size: 0.95em;
         }
         
+        /* Стил за информационния бокс за наличност (Вариант 2) */
+        .availability-info {
+            background-color: #f9f9f9; 
+            border-left: 4px solid #00796b; 
+            padding: 15px 20px; 
+            margin: 30px auto; 
+            max-width: 800px; 
+            border-radius: 8px; 
+            font-size: 0.95em; 
+            color: #555;
+        }
+        
+        .availability-info i {
+            color: #00796b; 
+            margin-right: 10px;
+        }
+        
         /* Секции за различните категории */
         .cleaning-section, .paper-section, .personal-care-section, .laundry-section, .kitchen-section {
             margin-top: 50px;
@@ -242,7 +259,7 @@
     </style>
 </head>
 <body>
-    <!-- Навигация - СТЪПКА 3: Подобрено връщане назад -->
+    <!-- Навигация -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Живков</a>
@@ -253,7 +270,7 @@
         </div>
     </nav>
 
-    <!-- Хедър - СТЪПКА 1: Оптимизирано H1 с локация -->
+    <!-- Хедър - Оптимизирано H1 с локация -->
     <div class="category-header">
         <i class="fas fa-soap"></i>
         <h1>Домакински Препарати и Козметика в Рударци</h1>
@@ -261,20 +278,20 @@
     </div>
 
     <main class="container">
-        <!-- СТЪПКА 2: Локален SEO текст преди info-box -->
+        <!-- Локален SEO текст преди info-box -->
         <div class="seo-local">
             <h2>Чистота и грижа без компромис</h2>
             <p>Спестете време и пазарувайте всичко за дома от едно място! В Супермаркет "Живков" (<strong>с. Рударци</strong>) поддържаме пълен асортимент от <strong>почистващи препарати, перилни средства, хартиени изделия и козметика</strong> за цялото семейство.</p>
         </div>
 
-        <!-- Информационна кутия - подобрена -->
+        <!-- Информационна кутия -->
         <div class="info-box">
             <i class="fas fa-sparkles"></i>
             <h3>Качествени продукти от утвърдени марки</h3>
             <p>Залагаме на познати и доказани брандове. Независимо дали търсите прах за пране, препарат за съдове или продукти за лична хигиена, при нас ще намерите отлично качество на добри цени.</p>
         </div>
 
-        <!-- Почистващи препарати - с подобрени alt и описания -->
+        <!-- Почистващи препарати -->
         <div class="cleaning-section">
             <h2 class="section-title"><i class="fas fa-spray-can-sparkles" style="margin-right: 10px;"></i> Почистващи препарати</h2>
             <div class="products-grid">
@@ -350,7 +367,7 @@
                     </div>
                 </div>
                 
-                <!-- Препарат за канали - СТЪПКА 4: Коригиран текст -->
+                <!-- Препарат за канали -->
                 <div class="product-card">
                     <img src="asortiment4.webp" alt="Препарат за канали и запушвания" class="product-image">
                     <div class="product-info">
@@ -361,7 +378,7 @@
             </div>
         </div>
 
-        <!-- Хартиени изделия и кърпи - с подобрени описания -->
+        <!-- Хартиени изделия и кърпи -->
         <div class="paper-section">
             <h2 class="section-title"><i class="fas fa-toilet-paper" style="margin-right: 10px;"></i> Хартиени изделия и кърпи</h2>
             <div class="products-grid">
@@ -428,15 +445,6 @@
                     </div>
                 </div>
                 
-                <!-- Салфетки платнени (еднократни) -->
-                <div class="product-card">
-                    <img src="asortiment4.webp" alt="Платнени салфетки еднократни" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Платнени салфетки</div>
-                        <div class="product-desc">Еднократни, меки, за гости и празници</div>
-                    </div>
-                </div>
-                
                 <!-- Фолио и хартия за печене -->
                 <div class="product-card">
                     <img src="asortiment4.webp" alt="Алуминиево фолио и хартия за печене" class="product-image">
@@ -457,7 +465,7 @@
             </div>
         </div>
 
-        <!-- Лична хигиена - с подобрени описания -->
+        <!-- Лична хигиена и козметика -->
         <div class="personal-care-section">
             <h2 class="section-title"><i class="fas fa-hand-holding-heart" style="margin-right: 10px;"></i> Лична хигиена и козметика</h2>
             <div class="products-grid">
@@ -578,15 +586,6 @@
                     </div>
                 </div>
                 
-                <!-- Препарати за интимна хигиена -->
-                <div class="product-card">
-                    <img src="asortiment4.webp" alt="Гел за интимна хигиена" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Интимна хигиена</div>
-                        <div class="product-desc">Гел, мляко, pH баланс</div>
-                    </div>
-                </div>
-                
                 <!-- Крем за ръце -->
                 <div class="product-card">
                     <img src="asortiment4.webp" alt="Крем за ръце подхранващ" class="product-image">
@@ -598,7 +597,7 @@
             </div>
         </div>
 
-        <!-- Перални препарати - с подобрени описания -->
+        <!-- Перални препарати -->
         <div class="laundry-section">
             <h2 class="section-title"><i class="fas fa-jug-detergent" style="margin-right: 10px;"></i> Перални препарати</h2>
             <div class="products-grid">
@@ -658,7 +657,7 @@
             </div>
         </div>
 
-        <!-- Кухненски принадлежности - с подобрени описания -->
+        <!-- Кухненски принадлежности -->
         <div class="kitchen-section">
             <h2 class="section-title"><i class="fas fa-kitchen-set" style="margin-right: 10px;"></i> Кухненски принадлежности</h2>
             <div class="products-grid">
@@ -670,49 +669,13 @@
                         <div class="product-desc">Меки, абразивни, целулозни, различни размери</div>
                     </div>
                 </div>
-                
-                <!-- Четки за съдове -->
-                <div class="product-card">
-                    <img src="asortiment4.webp" alt="Четки за съдове и бутилки" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Четки за съдове</div>
-                        <div class="product-desc">С дръжка, за бутилки, за тенджери</div>
-                    </div>
-                </div>
-                
-                <!-- Кърпи за сушене -->
-                <div class="product-card">
-                    <img src="asortiment4.webp" alt="Кърпи за сушене памучни" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Кърпи за сушене</div>
-                        <div class="product-desc">Памучни, микрофибър, за кухня</div>
-                    </div>
-                </div>
-                
+               
                 <!-- Ръкавици за почистване -->
                 <div class="product-card">
                     <img src="asortiment4.webp" alt="Ръкавици за почистване" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Ръкавици</div>
                         <div class="product-desc">Латексови, нитрилови, различни размери</div>
-                    </div>
-                </div>
-                
-                <!-- Четки тоалетна -->
-                <div class="product-card">
-                    <img src="asortiment4.webp" alt="Четки за тоалетна" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Четки тоалетна</div>
-                        <div class="product-desc">С поставка, за хигиена в банята</div>
-                    </div>
-                </div>
-                
-                <!-- Кошчета за боклук -->
-                <div class="product-card">
-                    <img src="asortiment4.webp" alt="Кошчета за боклук" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Кошчета за боклук</div>
-                        <div class="product-desc">Педални, пластмасови, различни вместимости</div>
                     </div>
                 </div>
                 
@@ -789,11 +752,17 @@
                 </div>
             </div>
         </div>
+
+        <!-- ВАРИАНТ 2: Информационен бокс за наличието (съобразен с темата) -->
+        <div class="availability-info">
+            <i class="fas fa-info-circle"></i> 
+            <strong>Важно за наличността:</strong> Асортиментът от домакински стоки и хигиенни продукти се обновява непрекъснато. Някои марки и артикули може да са с ограничена наличност или временно да не са налични. Питайте нашите продавач-консултанти – те ще ви насочат към подходяща алтернатива и ще ви кажат кога очакваме следващата доставка!
+        </div>
         
-        <!-- Текст, че може да има и други -->
-        <p style="text-align: center; margin-top: 50px; color: #666; font-size: 1.1em;">
+        <!-- ВАРИАНТ 1: Текст, че може да има и други (разширен) -->
+        <p style="text-align: center; margin-top: 30px; color: #666; font-size: 1.1em;">
             <i class="fas fa-broom" style="color: #00796b;"></i> 
-            Широк асортимент от домакински стоки и хигиенни продукти в <strong>Рударци</strong> – заповядайте да разгледате!
+            Широк асортимент от домакински стоки и хигиенни продукти в <strong>Рударци</strong>. Наличността варира според доставките – ако не откриете любимия си продукт, попитайте нас, ще се радваме да ви помогнем! Очакваме ви всеки ден от <strong>6:00 до 20:30 ч.</strong>
         </p>
     </main>
 
