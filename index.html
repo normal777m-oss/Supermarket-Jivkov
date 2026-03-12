@@ -400,6 +400,14 @@
             list-style: none;
             padding: 0;
         }
+        
+        /* Стилове за линковете в асортимент грида - запазваме оригиналния дизайн */
+        .assortment-grid a {
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        
         .assortment-item { 
             background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); 
             border-radius: 16px; 
@@ -407,7 +415,6 @@
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             font-weight: 500;
-            cursor: pointer; /* Показва, че може да се кликне */
         }
         .assortment-item:hover {
             transform: translateY(-5px);
@@ -833,45 +840,45 @@
         </header>
         
         <div class="container">
-            <!-- Асортимент със снимки - с кликване към подстраници -->
+            <!-- Асортимент със снимки - с кликване към подстраници (правилен SEO начин) -->
             <section id="assortment" aria-labelledby="assortment-heading">
                 <h2 id="assortment-heading">Нашият асортимент</h2>
                 <div class="assortment-grid">
                     <!-- Свежи плодове и зеленчуци - води към отделна страница -->
-                    <div class="assortment-item" onclick="window.location.href='plodove-i-zelenchuci.html'">
+                    <a href="plodove-i-zelenchuci.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
                         <img src="asortiment85.webp" alt="Свежи плодове и зеленчуци" class="assortment-img" loading="lazy">
                         <div class="assortment-text">Свежи плодове и зеленчуци – от градина директно на щанда</div>
-                    </div>
+                    </a>
                     
                     <!-- Млечни продукти и сирена - води към отделна страница -->
-                    <div class="assortment-item" onclick="window.location.href='mlechni-produkti.html'">
+                    <a href="mlechni-produkti.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
                         <img src="asortiment57.webp" alt="Млечни продукти и сирена" class="assortment-img" loading="lazy">
                         <div class="assortment-text">Млечни продукти и сирена – само от проверени ферми</div>
-                    </div>
+                    </a>
                     
                     <!-- Хляб и сладкарски изделия - води към отделна страница -->
-<div class="assortment-item" onclick="window.location.href='hlqb-i-sladki.html'">
-    <img src="asortiment34.webp" alt="Хляб и сладкарски изделия" class="assortment-img" loading="lazy">
-    <div class="assortment-text">Хляб и сладкарски изделия – всеки ден пресни</div>
-</div>
+                    <a href="hlqb-i-sladki.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                        <img src="asortiment34.webp" alt="Хляб и сладкарски изделия" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Хляб и сладкарски изделия – всеки ден пресни</div>
+                    </a>
                     
                     <!-- Месо и колбаси - води към отделна страница -->
-<div class="assortment-item" onclick="window.location.href='meso-i-kolbasi.html'">
-    <img src="asortiment66.webp" alt="Месо и колбаси" class="assortment-img" loading="lazy">
-    <div class="assortment-text">Месо и колбаси – подбрани марки</div>
-</div>
+                    <a href="meso-i-kolbasi.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                        <img src="asortiment66.webp" alt="Месо и колбаси" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Месо и колбаси – подбрани марки</div>
+                    </a>
                     
                     <!-- Напитки и алкохол - води към отделна страница -->
-<div class="assortment-item" onclick="window.location.href='napitki-i-alkohol.html'">
-    <img src="asortiment2.webp" alt="Напитки и алкохол" class="assortment-img" loading="lazy">
-    <div class="assortment-text">Напитки и алкохол – пълна гама вина</div>
-</div>
+                    <a href="napitki-i-alkohol.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                        <img src="asortiment2.webp" alt="Напитки и алкохол" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Напитки и алкохол – пълна гама вина</div>
+                    </a>
                     
                     <!-- Домакински химикали и хигиена - води към отделна страница -->
-<div class="assortment-item" onclick="window.location.href='domakinski-himikali.html'">
-    <img src="asortiment4.webp" alt="Домакински химикали и хигиена" class="assortment-img" loading="lazy">
-    <div class="assortment-text">Домакински химикали и хигиена – най-добрите марки</div>
-</div>
+                    <a href="domakinski-himikali.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                        <img src="asortiment4.webp" alt="Домакински химикали и хигиена" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Домакински химикали и хигиена – най-добрите марки</div>
+                    </a>
                 </div>
             </section>
             
