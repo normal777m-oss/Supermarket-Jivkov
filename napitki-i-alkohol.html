@@ -197,6 +197,23 @@
             font-size: 0.95em;
         }
         
+        /* Стил за информационния бокс за наличност (Вариант 2) */
+        .availability-info {
+            background-color: #f9f9f9; 
+            border-left: 4px solid #6a1b9a; 
+            padding: 15px 20px; 
+            margin: 30px auto; 
+            max-width: 800px; 
+            border-radius: 8px; 
+            font-size: 0.95em; 
+            color: #555;
+        }
+        
+        .availability-info i {
+            color: #6a1b9a; 
+            margin-right: 10px;
+        }
+        
         /* Секции за различните видове напитки */
         .wines-section, .spirits-section, .beer-section, .non-alcoholic-section {
             margin-top: 50px;
@@ -252,7 +269,7 @@
     </style>
 </head>
 <body>
-    <!-- Навигация - СТЪПКА 3: Подобрено връщане назад -->
+    <!-- Навигация -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Живков</a>
@@ -263,7 +280,7 @@
         </div>
     </nav>
 
-    <!-- Хедър - СТЪПКА 1: Оптимизирано H1 с локация -->
+    <!-- Хедър - Оптимизирано H1 с локация -->
     <div class="category-header">
         <i class="fas fa-wine-bottle"></i>
         <h1>Напитки и Алкохол в Рударци</h1>
@@ -271,20 +288,20 @@
     </div>
 
     <main class="container">
-        <!-- СТЪПКА 2: Локален SEO текст преди info-box -->
+        <!-- Локален SEO текст преди info-box -->
         <div class="seo-local">
             <h2>Напитки за вашата трапеза и празник</h2>
             <p>В Супермаркет "Живков" (<strong>с. Рударци</strong>) ще откриете всичко необходимо за вашето ежедневие или специален повод. От <strong>качествени български и вносни вина</strong>, през разнообразие от <strong>твърд алкохол</strong>, до освежаващи <strong>безалкохолни напитки и сокове</strong>.</p>
         </div>
 
-        <!-- Информационна кутия - подобрена -->
+        <!-- Информационна кутия -->
         <div class="info-box">
             <i class="fas fa-grapes"></i>
             <h3>Богат избор от вина</h3>
             <p>Гордеем се с нашата селекция. Предлагаме вина от най-добрите български изби, както и внос от световноизвестни винени региони. Открийте перфектното допълнение към вашата вечеря.</p>
         </div>
 
-        <!-- Вина - Червени - с подобрени alt и описания -->
+        <!-- Вина - Червени -->
         <div class="wines-section">
             <h2 class="section-title"><i class="fas fa-wine-glass-alt" style="margin-right: 10px;"></i> Вина</h2>
             
@@ -353,16 +370,6 @@
                     </div>
                 </div>
                 
-                <!-- Рубин -->
-                <div class="product-card">
-                    <img src="asortiment2.webp" alt="Български хибрид Рубин" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Рубин</div>
-                        <div class="product-desc">Български хибрид, уникален вкус</div>
-                    </div>
-                </div>
-            </div>
-
             <h3 class="sub-section-title">Бели вина</h3>
             <div class="products-grid">
                 <!-- Шардоне -->
@@ -389,15 +396,6 @@
                     <div class="product-info">
                         <div class="product-name">Мускат</div>
                         <div class="product-desc">Ароматно, сладникаво, десертно</div>
-                    </div>
-                </div>
-                
-                <!-- Ризлинг -->
-                <div class="product-card">
-                    <img src="asortiment2.webp" alt="Бяло вино Ризлинг" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Ризлинг</div>
-                        <div class="product-desc">Германски сорт, свеж и елегантен</div>
                     </div>
                 </div>
                 
@@ -428,16 +426,6 @@
                     </div>
                 </div>
                 
-                <!-- Гевюрцтраминер -->
-                <div class="product-card">
-                    <img src="asortiment2.webp" alt="Ароматно вино Гевюрцтраминер" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Гевюрцтраминер</div>
-                        <div class="product-desc">Сильно ароматно, с подправки</div>
-                    </div>
-                </div>
-            </div>
-
             <h3 class="sub-section-title">Розе и специални вина</h3>
             <div class="products-grid">
                 <!-- Розе -->
@@ -449,36 +437,7 @@
                     </div>
                 </div>
                 
-                <!-- Искрящо вино -->
-                <div class="product-card">
-                    <img src="asortiment2.webp" alt="Искрящо вино за специални поводи" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Искрящо вино</div>
-                        <div class="product-desc">За специални поводи и тържества</div>
-                    </div>
-                </div>
-                
-                <!-- Десертно вино -->
-                <div class="product-card">
-                    <img src="asortiment2.webp" alt="Десертно вино сладко" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Десертно вино</div>
-                        <div class="product-desc">Сладко, плътно, за десерт</div>
-                    </div>
-                </div>
-                
-                <!-- Портвайн -->
-                <div class="product-card">
-                    <img src="asortiment2.webp" alt="Подсилено вино Портвайн" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Портвайн</div>
-                        <div class="product-desc">Подсилено вино, сладко и силно</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- СТЪПКА 4: Нова секция за бира -->
+        <!-- Секция за бира -->
         <div class="beer-section">
             <h2 class="section-title"><i class="fas fa-beer" style="margin-right: 10px;"></i> Бира</h2>
             <div class="products-grid">
@@ -500,15 +459,6 @@
                     </div>
                 </div>
                 
-                <!-- Жива бира -->
-                <div class="product-card">
-                    <img src="asortiment2.webp" alt="Крафт и жива бира нефилтрирана" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Крафт и жива бира</div>
-                        <div class="product-desc">Нефилтрирана, за ценители</div>
-                    </div>
-                </div>
-                
                 <!-- Безалкохолна бира -->
                 <div class="product-card">
                     <img src="asortiment2.webp" alt="Безалкохолна бира" class="product-image">
@@ -520,7 +470,7 @@
             </div>
         </div>
 
-        <!-- Спиртни напитки - с подобрени описания -->
+        <!-- Спиртни напитки -->
         <div class="spirits-section">
             <h2 class="section-title"><i class="fas fa-glass-whiskey" style="margin-right: 10px;"></i> Спиртни напитки</h2>
             <div class="products-grid">
@@ -592,7 +542,7 @@
                     <img src="asortiment2.webp" alt="Текила бяла и отлежала" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Текила</div>
-                        <div class="product-desc">Бяла, отлежала, 100% агаве</div>
+                        <div class="product-desc">Бяла, отлежала</div>
                     </div>
                 </div>
                 
@@ -610,7 +560,7 @@
                     <img src="asortiment2.webp" alt="Българска мастика" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Мастика</div>
-                        <div class="product-desc">Българска традиционна, със смола</div>
+                        <div class="product-desc">Българска традиционна</div>
                     </div>
                 </div>
                 
@@ -634,7 +584,7 @@
             </div>
         </div>
 
-        <!-- Безалкохолни напитки - с подобрени описания -->
+        <!-- Безалкохолни напитки -->
         <div class="non-alcoholic-section">
             <h2 class="section-title"><i class="fas fa-glass-water" style="margin-right: 10px;"></i> Безалкохолни напитки</h2>
             <div class="products-grid">
@@ -683,15 +633,6 @@
                     </div>
                 </div>
                 
-                <!-- Фреш -->
-                <div class="product-card">
-                    <img src="asortiment2.webp" alt="Прясно изцеден фреш" class="product-image">
-                    <div class="product-info">
-                        <div class="product-name">Фреш</div>
-                        <div class="product-desc">Портокалов, ябълков, мултивитамин</div>
-                    </div>
-                </div>
-                
                 <!-- Сиропи -->
                 <div class="product-card">
                     <img src="asortiment2.webp" alt="Сиропи за разреждане" class="product-image">
@@ -701,7 +642,7 @@
                     </div>
                 </div>
                 
-                <!-- Бира безалкохолна (вече е в новата секция, но можем да я оставим и тук за пълнота) -->
+                <!-- Бира безалкохолна -->
                 <div class="product-card">
                     <img src="asortiment2.webp" alt="Безалкохолна бира" class="product-image">
                     <div class="product-info">
@@ -711,11 +652,17 @@
                 </div>
             </div>
         </div>
+
+        <!-- ВАРИАНТ 2: Информационен бокс за наличието (съобразен с темата) -->
+        <div class="availability-info">
+            <i class="fas fa-info-circle"></i> 
+            <strong>Важно за наличността:</strong> Асортиментът от вина и спиртни напитки варира според доставките и сезонните предложения. Някои марки и специални вина може да са с ограничена наличност. Питайте нашите продавач-консултанти – те ще ви насочат към подходящото вино за вашия повод и ще ви кажат какво ново сме получили!
+        </div>
         
-        <!-- Текст, че може да има и други -->
-        <p style="text-align: center; margin-top: 50px; color: #666; font-size: 1.1em;">
+        <!-- ВАРИАНТ 1: Текст, че може да има и други (разширен) -->
+        <p style="text-align: center; margin-top: 30px; color: #666; font-size: 1.1em;">
             <i class="fas fa-wine-bottle" style="color: #6a1b9a;"></i> 
-            Богат избор от вина и напитки в <strong>Рударци</strong> – заповядайте да изберете!
+            Богат избор от вина и напитки в <strong>Рударци</strong>. Асортиментът ни се обновява редовно с нови марки и сезонни предложения. Ако търсите нещо конкретно – попитайте ни, ще се радваме да ви помогнем! Очакваме ви всеки ден от <strong>6:00 до 20:30 ч.</strong>
         </p>
     </main>
 
