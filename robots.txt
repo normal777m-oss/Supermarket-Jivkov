@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://supermarket-rudartsi.eu/sitemap.xml
