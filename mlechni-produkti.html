@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Млечни продукти и сирена - Супермаркет Живков</title>
-    <meta name="description" content="Млечни продукти и сирена в Супермаркет Живков – само от проверени ферми">
+    <title>Истински млечни продукти и сирена в Рударци - Супермаркет Живков</title>
+    <meta name="description" content="Магазин за млечни продукти в Рударци - традиционно българско сирене, кашкавал, кисело мляко и прясно мляко от проверени ферми. Без палмово масло!">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Млечни продукти и сирена - Супермаркет Живков">
-    <meta property="og:description" content="Млечни продукти и сирена от проверени ферми">
+    <meta property="og:title" content="Истински млечни продукти и сирена в Рударци - Супермаркет Живков">
+    <meta property="og:description" content="Магазин за млечни продукти в Рударци - традиционно българско сирене, кашкавал, кисело мляко и прясно мляко от проверени ферми.">
     <meta property="og:image" content="asortiment57.webp">
     
     <!-- Font Awesome -->
@@ -75,7 +75,7 @@
             color: white;
         }
         
-        /* Хедър - млечна тематика */
+        /* Хедър - млечна тематика с подобрено H1 */
         .category-header {
             background: linear-gradient(135deg, #0277bd 0%, #039be5 100%);
             color: white;
@@ -109,7 +109,50 @@
             padding: 40px 20px;
         }
         
-        /* Продуктова мрежа - само каталог */
+        /* SEO текст - локален */
+        .seo-local {
+            text-align: center; 
+            max-width: 800px; 
+            margin: 0 auto 30px auto; 
+            color: #444; 
+            font-size: 1.1em;
+        }
+        
+        .seo-local h2 {
+            color: #0277bd; 
+            margin-bottom: 15px; 
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Информационна секция за качеството */
+        .info-box {
+            background: #e1f5fe;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0 20px;
+            text-align: center;
+            border-left: 5px solid #0277bd;
+        }
+        
+        .info-box i {
+            font-size: 2.5em;
+            color: #0277bd;
+            margin-bottom: 15px;
+        }
+        
+        .info-box h3 {
+            color: #0277bd;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .info-box p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1em;
+        }
+        
+        /* Продуктова мрежа */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -154,34 +197,6 @@
             font-size: 0.95em;
         }
         
-        /* Информационна секция за качеството (кратка, без цени и произход) */
-        .info-box {
-            background: #e1f5fe;
-            border-radius: 16px;
-            padding: 30px;
-            margin: 40px 0 20px;
-            text-align: center;
-            border-left: 5px solid #0277bd;
-        }
-        
-        .info-box i {
-            font-size: 2.5em;
-            color: #0277bd;
-            margin-bottom: 15px;
-        }
-        
-        .info-box h3 {
-            color: #0277bd;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        
-        .info-box p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1em;
-        }
-        
         /* Footer */
         footer {
             background: #333;
@@ -189,6 +204,15 @@
             text-align: center;
             padding: 30px;
             margin-top: 60px;
+        }
+        
+        footer a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
         }
         
         @media (max-width: 768px) {
@@ -204,118 +228,124 @@
     </style>
 </head>
 <body>
-    <!-- Навигация -->
+    <!-- Навигация - СТЪПКА 3: Подобрено връщане назад с насочване към асортимента -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Живков</a>
-            <a href="index.html" class="back-link">
+            <a href="index.html#assortment" class="back-link">
                 <i class="fas fa-arrow-left"></i>
-                <span>Обратно</span>
+                <span>Обратно към асортимента</span>
             </a>
         </div>
     </nav>
 
-    <!-- Хедър -->
+    <!-- Хедър - СТЪПКА 1: Оптимизирано H1 с локация -->
     <div class="category-header">
         <i class="fas fa-cheese"></i>
-        <h1>Млечни продукти и сирена</h1>
-        <p>Само от проверени ферми</p>
+        <h1>Качествени Млечни Продукти и Сирена в Рударци</h1>
+        <p>Богат избор на истинско сирене, кашкавал и прясно мляко от проверени ферми</p>
     </div>
 
     <main class="container">
-        <!-- Кратка информация (само обща, без конкретни ферми) -->
-        <div class="info-box">
-            <i class="fas fa-certificate"></i>
-            <h3>Проверено качество</h3>
-            <p>Всички млечни продукти в нашия магазин идват от ферми, които лично познаваме и посещаваме. Без изкуствени подобрители, без палмово масло – само истински млечен вкус.</p>
+        <!-- СТЪПКА 2: Локален SEO текст преди info-box -->
+        <div class="seo-local">
+            <h2>Истински млечни продукти близо до вас</h2>
+            <p>В Супермаркет "Живков" в <strong>с. Рударци</strong> държим на истинския вкус. Предлагаме богат асортимент от <strong>традиционно българско сирене</strong>, зрял кашкавал, домашно кисело мляко и прясно масло. Всичко е от ферми и мандри, които познаваме лично.</p>
         </div>
 
-        <!-- Продуктов каталог - само млечни продукти -->
+        <!-- Информационна кутия - подобрена с ключови думи -->
+        <div class="info-box">
+            <i class="fas fa-certificate"></i>
+            <h3>Проверено качество и произход</h3>
+            <p>Всички <strong>млечни продукти</strong> в нашия магазин идват от ферми и мандри, които лично познаваме и посещаваме. Без изкуствени подобрители, без палмово масло – само истински млечен вкус, гарантиран за клиентите ни от <strong>Рударци и област Перник</strong>.</p>
+        </div>
+
+        <!-- Продуктов каталог - с подобрени alt текстове и описания -->
         <div class="products-grid">
             <!-- Сирене краве -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Сирене краве" class="product-image">
+                <img src="asortiment57.webp" alt="Традиционно българско краве сирене от Рударци" class="product-image">
                 <div class="product-info">
-                    <div class="product-name">Сирене краве</div>
-                    <div class="product-desc">Традиционно бяло саламурено сирене</div>
+                    <div class="product-name">Бяло саламурено сирене</div>
+                    <div class="product-desc">Традиционно българско краве сирене, 400г</div>
                 </div>
             </div>
             
             <!-- Кашкавал -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Кашкавал" class="product-image">
+                <img src="asortiment57.webp" alt="Прясен български кашкавал от краве мляко" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Кашкавал</div>
-                    <div class="product-desc">Жълт кашкавал от краве мляко</div>
+                    <div class="product-desc">Жълт кашкавал от краве мляко, зрял</div>
                 </div>
             </div>
             
             <!-- Кисело мляко -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Кисело мляко" class="product-image">
+                <img src="asortiment57.webp" alt="Домашно кисело мляко от Рударци" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Кисело мляко</div>
-                    <div class="product-desc">Домашно, гъсто и вкусно</div>
+                    <div class="product-desc">Домашно, гъсто, с Lactobacillus bulgaricus</div>
                 </div>
             </div>
             
             <!-- Прясно мляко -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Прясно мляко" class="product-image">
+                <img src="asortiment57.webp" alt="Прясно краве мляко 3.6%" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Прясно мляко</div>
-                    <div class="product-desc">3.6% масленост, краве</div>
+                    <div class="product-desc">Краве, 3.6% масленост, от ферма</div>
                 </div>
             </div>
             
             <!-- Масло -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Масло" class="product-image">
+                <img src="asortiment57.webp" alt="Българско краве масло 82%" class="product-image">
                 <div class="product-info">
-                    <div class="product-name">Масло</div>
-                    <div class="product-desc">Краве масло, 82% масленост</div>
+                    <div class="product-name">Краве масло</div>
+                    <div class="product-desc">82% масленост, истинско</div>
                 </div>
             </div>
             
             <!-- Извара -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Извара" class="product-image">
+                <img src="asortiment57.webp" alt="Прясна извара за баници" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Извара</div>
-                    <div class="product-desc">Прясна извара за баници и сосове</div>
+                    <div class="product-desc">Прясна, за баници, сосове и салати</div>
                 </div>
             </div>
             
             <!-- Сметана -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Сметана" class="product-image">
+                <img src="asortiment57.webp" alt="Прясна сметана за готвене" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Сметана</div>
-                    <div class="product-desc">Прясна сметана за готвене и десерти</div>
+                    <div class="product-desc">Прясна, за готвене и десерти</div>
                 </div>
             </div>
             
             <!-- Сирене биволско -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Сирене биволско" class="product-image">
+                <img src="asortiment57.webp" alt="Биволско сирене от български ферми" class="product-image">
                 <div class="product-info">
-                    <div class="product-name">Сирене биволско</div>
+                    <div class="product-name">Биволско сирене</div>
                     <div class="product-desc">Специално сирене от биволско мляко</div>
                 </div>
             </div>
             
             <!-- Кашкавал пушен -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Кашкавал пушен" class="product-image">
+                <img src="asortiment57.webp" alt="Пушен кашкавал традиционен" class="product-image">
                 <div class="product-info">
-                    <div class="product-name">Кашкавал пушен</div>
-                    <div class="product-desc">Пушен кашкавал с характерен аромат</div>
+                    <div class="product-name">Пушен кашкавал</div>
+                    <div class="product-desc">С характерен аромат на опушване</div>
                 </div>
             </div>
             
             <!-- Айрян -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Айрян" class="product-image">
+                <img src="asortiment57.webp" alt="Традиционен български айрян" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Айрян</div>
                     <div class="product-desc">Традиционна млечна напитка</div>
@@ -324,55 +354,55 @@
             
             <!-- Сирене овче -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Сирене овче" class="product-image">
+                <img src="asortiment57.webp" alt="Овче сирене саламурено" class="product-image">
                 <div class="product-info">
-                    <div class="product-name">Сирене овче</div>
-                    <div class="product-desc">Салмурено сирене от овче мляко</div>
+                    <div class="product-name">Овче сирене</div>
+                    <div class="product-desc">Салмурено, от чисто овче мляко</div>
                 </div>
             </div>
             
             <!-- Маскарпоне -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Маскарпоне" class="product-image">
+                <img src="asortiment57.webp" alt="Крема сирене маскарпоне" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Маскарпоне</div>
-                    <div class="product-desc">Крема сирене за десерти</div>
+                    <div class="product-desc">Крема сирене за десерти и тирамису</div>
                 </div>
             </div>
             
             <!-- Моцарела -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Моцарела" class="product-image">
+                <img src="asortiment57.webp" alt="Прясна моцарела за салати" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Моцарела</div>
-                    <div class="product-desc">Прясна моцарела за салати</div>
+                    <div class="product-desc">Прясна, за салати Капрезе и пица</div>
                 </div>
             </div>
             
             <!-- Пармезан -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Пармезан" class="product-image">
+                <img src="asortiment57.webp" alt="Пармезан твърдо сирене" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Пармезан</div>
-                    <div class="product-desc">Твърдо италианско сирене</div>
+                    <div class="product-desc">Твърдо италианско сирене за паста</div>
                 </div>
             </div>
             
             <!-- Сирене за топене -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Сирене за топене" class="product-image">
+                <img src="asortiment57.webp" alt="Топено сирене крема" class="product-image">
                 <div class="product-info">
-                    <div class="product-name">Сирене за топене</div>
-                    <div class="product-desc">Топено сирене, крема</div>
+                    <div class="product-name">Топено сирене</div>
+                    <div class="product-desc">Крема, за намазване и сосове</div>
                 </div>
             </div>
             
-            <!-- Краве масло -->
+            <!-- Краве масло (българско) -->
             <div class="product-card">
-                <img src="asortiment57.webp" alt="Краве масло" class="product-image">
+                <img src="asortiment57.webp" alt="Българско краве масло" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Краве масло</div>
-                    <div class="product-desc">Българско краве масло</div>
+                    <div class="product-desc">Българско, от краве мляко</div>
                 </div>
             </div>
         </div>
@@ -380,14 +410,15 @@
         <!-- Текст, че може да има и други продукти -->
         <p style="text-align: center; margin-top: 50px; color: #666; font-size: 1.1em;">
             <i class="fas fa-tint" style="color: #0277bd;"></i> 
-            Предлагаме и други млечни продукти – питайте на място в магазина!
+            Предлагаме и други млечни продукти – питайте на място в магазина ни в <strong>село Рударци</strong>!
         </p>
     </main>
 
     <footer>
-        <p>© 2026 Супермаркет "Живков" – Рударци. Млечни продукти от проверени ферми.</p>
+        <p>© 2026 Супермаркет "Живков" – Рударци. <a href="index.html#assortment">Млечни продукти от проверени ферми</a>.</p>
         <p style="margin-top: 10px; opacity: 0.8;">
-            <i class="fas fa-map-marker-alt"></i> с. Рударци, ул. "Михаил Дойчев" №4
+            <i class="fas fa-map-marker-alt"></i> с. Рударци, ул. "Михаил Дойчев" №4, обл. Перник | 
+            <i class="fas fa-clock"></i> Пон-Нед: 6:00-20:30
         </p>
     </footer>
 </body>
