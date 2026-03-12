@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Плодове и Зеленчуци - Супермаркет Живков</title>
-    <meta name="description" content="Пресни плодове и зеленчуци в Супермаркет Живков – от градината на щанда">
+    <title>Пресни плодове и зеленчуци в Рударци - Супермаркет Живков</title>
+    <meta name="description" content="Магазин за плодове и зеленчуци в Рударци - ежедневни доставки на свежи български продукти. Домати, краставици, ягоди и сезонни плодове на щанд.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Плодове и Зеленчуци - Супермаркет Живков">
-    <meta property="og:description" content="Пресни плодове и зеленчуци">
+    <meta property="og:title" content="Пресни плодове и зеленчуци в Рударци - Супермаркет Живков">
+    <meta property="og:description" content="Магазин за плодове и зеленчуци в Рударци - ежедневни доставки на свежи български продукти.">
     <meta property="og:image" content="asortiment85.webp">
     
     <!-- Font Awesome -->
@@ -75,7 +75,7 @@
             color: white;
         }
         
-        /* Хедър */
+        /* Хедър - подобрен с локални ключови думи */
         .category-header {
             background: linear-gradient(135deg, #2e7d32 0%, #388e3c 100%);
             color: white;
@@ -109,7 +109,22 @@
             padding: 40px 20px;
         }
         
-        /* Продуктова мрежа - само каталог */
+        /* SEO текст - въвеждащ */
+        .seo-intro {
+            text-align: center; 
+            max-width: 800px; 
+            margin: 0 auto 30px auto; 
+            color: #444; 
+            font-size: 1.1em;
+        }
+        
+        .seo-intro h2 {
+            color: #2e7d32; 
+            margin-bottom: 15px; 
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Продуктова мрежа */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -163,6 +178,15 @@
             margin-top: 60px;
         }
         
+        footer a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
         @media (max-width: 768px) {
             .category-header h1 { font-size: 2.2em; }
             .category-header p { font-size: 1.1em; }
@@ -181,177 +205,184 @@
             <a href="index.html" class="logo">Живков</a>
             <a href="index.html" class="back-link">
                 <i class="fas fa-arrow-left"></i>
-                <span>Обратно</span>
+                <span>Обратно към магазина</span>
             </a>
         </div>
     </nav>
 
-    <!-- Хедър -->
+    <!-- Хедър - СТЪПКА 1: Добавени локални ключови думи -->
     <div class="category-header">
         <i class="fas fa-apple-alt"></i>
-        <h1>Плодове и Зеленчуци</h1>
-        <p>От градината директно на щанда</p>
+        <h1>Пресни Плодове и Зеленчуци в Рударци</h1>
+        <p>Ежедневни доставки на свежа продукция за вашата трапеза</p>
     </div>
 
     <main class="container">
-        <!-- Чисто и просто - само каталог -->
+        <!-- СТЪПКА 2: SEO текст с ключови думи -->
+        <div class="seo-intro">
+            <h2>Магазин за плодове и зеленчуци близо до вас</h2>
+            <p>В Супермаркет "Живков" знаем колко е важно храната на масата да бъде качествена. Затова всяка сутрин зареждаме нашия щанд с <strong>пресни плодове и зеленчуци</strong>. Стараем се да предлагаме родна българска стока, свежи салати, подбрани сортове домати и краставици, както и винаги пресни плодове за децата. Заповядайте на място в магазина ни в <strong>село Рударци (обл. Перник)</strong> и изберете най-доброто!</p>
+        </div>
+
+        <!-- Продуктов каталог - СТЪПКА 3: Подобрени описания -->
         <div class="products-grid">
             <!-- Домати -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Домати" class="product-image">
+                <img src="asortiment85.webp" alt="Български домати в Рударци" class="product-image">
                 <div class="product-info">
-                    <div class="product-name">Домати</div>
-                    <div class="product-desc">Свежи, български</div>
+                    <div class="product-name">Български домати</div>
+                    <div class="product-desc">Розови и червени сортове, идеални за салата</div>
                 </div>
             </div>
             
             <!-- Краставици -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Краставици" class="product-image">
+                <img src="asortiment85.webp" alt="Пресни краставици" class="product-image">
                 <div class="product-info">
-                    <div class="product-name">Краставици</div>
-                    <div class="product-desc">Пресни и хрупкави</div>
+                    <div class="product-name">Пресни краставици</div>
+                    <div class="product-desc">Хрупкави, български, за салата и туршия</div>
                 </div>
             </div>
             
             <!-- Чушки -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Чушки" class="product-image">
+                <img src="asortiment85.webp" alt="Капия и пиперки" class="product-image">
                 <div class="product-info">
-                    <div class="product-name">Чушки</div>
-                    <div class="product-desc">Капия и пиперки</div>
+                    <div class="product-name">Чушки капия</div>
+                    <div class="product-desc">Сочни и сладки, за печене и салати</div>
                 </div>
             </div>
             
             <!-- Ябълки -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Ябълки" class="product-image">
+                <img src="asortiment85.webp" alt="Пресни ябълки" class="product-image">
                 <div class="product-info">
-                    <div class="product-name">Ябълки</div>
-                    <div class="product-desc">Няколко сорта</div>
+                    <div class="product-name">Български ябълки</div>
+                    <div class="product-desc">Златна превъзходна, червени сортове</div>
                 </div>
             </div>
             
             <!-- Картофи -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Картофи" class="product-image">
+                <img src="asortiment85.webp" alt="Български картофи" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Картофи</div>
-                    <div class="product-desc">Български</div>
+                    <div class="product-desc">Ронливи, български, за варене и печене</div>
                 </div>
             </div>
             
             <!-- Моркови -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Моркови" class="product-image">
+                <img src="asortiment85.webp" alt="Пресни моркови" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Моркови</div>
-                    <div class="product-desc">Пресни</div>
+                    <div class="product-desc">Пресни, български, за супи и салати</div>
                 </div>
             </div>
             
             <!-- Ягоди -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Ягоди" class="product-image">
+                <img src="asortiment85.webp" alt="Пресни ягоди" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Ягоди</div>
-                    <div class="product-desc">Ароматни</div>
+                    <div class="product-desc">Ароматни, български, сезонни</div>
                 </div>
             </div>
             
             <!-- Лук -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Лук" class="product-image">
+                <img src="asortiment85.webp" alt="Лук кромид и пресен" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Лук</div>
-                    <div class="product-desc">Кромид и пресен</div>
+                    <div class="product-desc">Кромид и пресен лук, български</div>
                 </div>
             </div>
             
             <!-- Тиквички -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Тиквички" class="product-image">
+                <img src="asortiment85.webp" alt="Млади тиквички" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Тиквички</div>
-                    <div class="product-desc">Млади и свежи</div>
+                    <div class="product-desc">Млади и свежи, за готвене и печене</div>
                 </div>
             </div>
             
             <!-- Патладжан -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Патладжан" class="product-image">
+                <img src="asortiment85.webp" alt="Пресни патладжани" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Патладжан</div>
-                    <div class="product-desc">За печене и готвене</div>
+                    <div class="product-desc">За печене, готвене и кьопоолу</div>
                 </div>
             </div>
             
             <!-- Зеле -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Зеле" class="product-image">
+                <img src="asortiment85.webp" alt="Прясно и кисело зеле" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Зеле</div>
-                    <div class="product-desc">Прясно и кисело</div>
+                    <div class="product-desc">Прясно и кисело зеле за салата и готвене</div>
                 </div>
             </div>
             
             <!-- Спанак -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Спанак" class="product-image">
+                <img src="asortiment85.webp" alt="Пресен спанак" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Спанак</div>
-                    <div class="product-desc">Листен и свеж</div>
+                    <div class="product-desc">Листен и свеж, за баници и готвене</div>
                 </div>
             </div>
             
             <!-- Магданоз -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Магданоз" class="product-image">
+                <img src="asortiment85.webp" alt="Пресен магданоз" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Магданоз</div>
-                    <div class="product-desc">Връзка</div>
+                    <div class="product-desc">Връзка пресен магданоз</div>
                 </div>
             </div>
             
             <!-- Банани -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Банани" class="product-image">
+                <img src="asortiment85.webp" alt="Пресни банани" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Банани</div>
-                    <div class="product-desc">Внос</div>
+                    <div class="product-desc">Внос, пресни и ароматни</div>
                 </div>
             </div>
             
             <!-- Портокали -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Портокали" class="product-image">
+                <img src="asortiment85.webp" alt="Сочни портокали" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Портокали</div>
-                    <div class="product-desc">Сочни</div>
+                    <div class="product-desc">Сочни и сладки, за сок и консумация</div>
                 </div>
             </div>
             
             <!-- Лимони -->
             <div class="product-card">
-                <img src="asortiment85.webp" alt="Лимони" class="product-image">
+                <img src="asortiment85.webp" alt="Пресни лимони" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Лимони</div>
-                    <div class="product-desc">Пресни</div>
+                    <div class="product-desc">Пресни, за чай и готвене</div>
                 </div>
             </div>
         </div>
         
-        <!-- Кратък текст, че може да има и други -->
+        <!-- Текст, че може да има и други -->
         <p style="text-align: center; margin-top: 50px; color: #666; font-size: 1.1em;">
             <i class="fas fa-leaf" style="color: #2e7d32;"></i> 
-            Предлагаме и други сезонни плодове и зеленчуци – питайте на място!
+            Предлагаме и други сезонни плодове и зеленчуци – питайте на място в магазина ни в <strong>село Рударци</strong>!
         </p>
     </main>
 
     <footer>
-        <p>© 2026 Супермаркет "Живков" – Рударци. Пресни плодове и зеленчуци всеки ден.</p>
+        <p>© 2026 Супермаркет "Живков" – Рударци. <a href="index.html">Пресни плодове и зеленчуци всеки ден</a>.</p>
         <p style="margin-top: 10px; opacity: 0.8;">
-            <i class="fas fa-map-marker-alt"></i> с. Рударци, ул. "Михаил Дойчев" №4
+            <i class="fas fa-map-marker-alt"></i> с. Рударци, ул. "Михаил Дойчев" №4 (обл. Перник) | 
+            <i class="fas fa-clock"></i> Пон-Нед: 6:00-20:30
         </p>
     </footer>
 </body>
