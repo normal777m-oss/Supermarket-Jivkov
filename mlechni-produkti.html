@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Млечни продукти и сирена - Супермаркет Живков</title>
+    <meta name="description" content="Млечни продукти и сирена в Супермаркет Живков – само от проверени ферми">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Млечни продукти и сирена - Супермаркет Живков">
+    <meta property="og:description" content="Млечни продукти и сирена от проверени ферми">
+    <meta property="og:image" content="asortiment57.webp">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            line-height: 1.6; 
+            color: #000;
+            background: #fafafa;
+        }
+        
+        /* Навигация */
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            z-index: 100;
+            padding: 15px 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #e65100;
+            text-decoration: none;
+        }
+        
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #e65100;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 25px;
+            background: rgba(230, 81, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            background: #e65100;
+            color: white;
+        }
+        
+        /* Хедър - млечна тематика */
+        .category-header {
+            background: linear-gradient(135deg, #0277bd 0%, #039be5 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .category-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .category-header p {
+            font-size: 1.3em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .category-header i {
+            font-size: 3em;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 50%;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Продуктова мрежа - само каталог */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #0277bd;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-name {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #0277bd;
+            margin-bottom: 5px;
+        }
+        
+        .product-desc {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        /* Информационна секция за качеството (кратка, без цени и произход) */
+        .info-box {
+            background: #e1f5fe;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0 20px;
+            text-align: center;
+            border-left: 5px solid #0277bd;
+        }
+        
+        .info-box i {
+            font-size: 2.5em;
+            color: #0277bd;
+            margin-bottom: 15px;
+        }
+        
+        .info-box h3 {
+            color: #0277bd;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .info-box p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1em;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .category-header h1 { font-size: 2.2em; }
+            .category-header p { font-size: 1.1em; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .info-box { padding: 20px; }
+        }
+        
+        @media (max-width: 480px) {
+            .products-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Живков</a>
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                <span>Обратно</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Хедър -->
+    <div class="category-header">
+        <i class="fas fa-cheese"></i>
+        <h1>Млечни продукти и сирена</h1>
+        <p>Само от проверени ферми</p>
+    </div>
+
+    <main class="container">
+        <!-- Кратка информация (само обща, без конкретни ферми) -->
+        <div class="info-box">
+            <i class="fas fa-certificate"></i>
+            <h3>Проверено качество</h3>
+            <p>Всички млечни продукти в нашия магазин идват от ферми, които лично познаваме и посещаваме. Без изкуствени подобрители, без палмово масло – само истински млечен вкус.</p>
+        </div>
+
+        <!-- Продуктов каталог - само млечни продукти -->
+        <div class="products-grid">
+            <!-- Сирене краве -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Сирене краве" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Сирене краве</div>
+                    <div class="product-desc">Традиционно бяло саламурено сирене</div>
+                </div>
+            </div>
+            
+            <!-- Кашкавал -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Кашкавал" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Кашкавал</div>
+                    <div class="product-desc">Жълт кашкавал от краве мляко</div>
+                </div>
+            </div>
+            
+            <!-- Кисело мляко -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Кисело мляко" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Кисело мляко</div>
+                    <div class="product-desc">Домашно, гъсто и вкусно</div>
+                </div>
+            </div>
+            
+            <!-- Прясно мляко -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Прясно мляко" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Прясно мляко</div>
+                    <div class="product-desc">3.6% масленост, краве</div>
+                </div>
+            </div>
+            
+            <!-- Масло -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Масло" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Масло</div>
+                    <div class="product-desc">Краве масло, 82% масленост</div>
+                </div>
+            </div>
+            
+            <!-- Извара -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Извара" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Извара</div>
+                    <div class="product-desc">Прясна извара за баници и сосове</div>
+                </div>
+            </div>
+            
+            <!-- Сметана -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Сметана" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Сметана</div>
+                    <div class="product-desc">Прясна сметана за готвене и десерти</div>
+                </div>
+            </div>
+            
+            <!-- Сирене биволско -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Сирене биволско" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Сирене биволско</div>
+                    <div class="product-desc">Специално сирене от биволско мляко</div>
+                </div>
+            </div>
+            
+            <!-- Кашкавал пушен -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Кашкавал пушен" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Кашкавал пушен</div>
+                    <div class="product-desc">Пушен кашкавал с характерен аромат</div>
+                </div>
+            </div>
+            
+            <!-- Айрян -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Айрян" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Айрян</div>
+                    <div class="product-desc">Традиционна млечна напитка</div>
+                </div>
+            </div>
+            
+            <!-- Сирене овче -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Сирене овче" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Сирене овче</div>
+                    <div class="product-desc">Салмурено сирене от овче мляко</div>
+                </div>
+            </div>
+            
+            <!-- Маскарпоне -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Маскарпоне" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Маскарпоне</div>
+                    <div class="product-desc">Крема сирене за десерти</div>
+                </div>
+            </div>
+            
+            <!-- Моцарела -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Моцарела" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Моцарела</div>
+                    <div class="product-desc">Прясна моцарела за салати</div>
+                </div>
+            </div>
+            
+            <!-- Пармезан -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Пармезан" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Пармезан</div>
+                    <div class="product-desc">Твърдо италианско сирене</div>
+                </div>
+            </div>
+            
+            <!-- Сирене за топене -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Сирене за топене" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Сирене за топене</div>
+                    <div class="product-desc">Топено сирене, крема</div>
+                </div>
+            </div>
+            
+            <!-- Краве масло -->
+            <div class="product-card">
+                <img src="asortiment57.webp" alt="Краве масло" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Краве масло</div>
+                    <div class="product-desc">Българско краве масло</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Текст, че може да има и други продукти -->
+        <p style="text-align: center; margin-top: 50px; color: #666; font-size: 1.1em;">
+            <i class="fas fa-tint" style="color: #0277bd;"></i> 
+            Предлагаме и други млечни продукти – питайте на място в магазина!
+        </p>
+    </main>
+
+    <footer>
+        <p>© 2026 Супермаркет "Живков" – Рударци. Млечни продукти от проверени ферми.</p>
+        <p style="margin-top: 10px; opacity: 0.8;">
+            <i class="fas fa-map-marker-alt"></i> с. Рударци, ул. "Михаил Дойчев" №4
+        </p>
+    </footer>
+</body>
+</html>
