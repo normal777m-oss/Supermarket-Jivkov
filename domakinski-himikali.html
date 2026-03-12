@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Домакински химикали и хигиена - Супермаркет Живков</title>
-    <meta name="description" content="Домакински химикали и хигиенни продукти в Супермаркет Живков – най-добрите марки за вашето домакинство">
+    <title>Домакински препарати и козметика в Рударци - Супермаркет Живков</title>
+    <meta name="description" content="Магазин за домакински химикали в Рударци - почистващи препарати, перилни средства, хартиени изделия, мокри кърпички и продукти за лична хигиена.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Домакински химикали и хигиена - Супермаркет Живков">
-    <meta property="og:description" content="Най-добрите марки за чист дом и лична хигиена">
+    <meta property="og:title" content="Домакински препарати и козметика в Рударци - Супермаркет Живков">
+    <meta property="og:description" content="Всичко за чист дом и лична хигиена в Рударци - препарати, перилни средства, козметика и хартиени изделия.">
     <meta property="og:image" content="asortiment4.webp">
     
     <!-- Font Awesome -->
@@ -109,7 +109,50 @@
             padding: 40px 20px;
         }
         
-        /* Продуктова мрежа - само каталог */
+        /* SEO текст - локален */
+        .seo-local {
+            text-align: center; 
+            max-width: 800px; 
+            margin: 0 auto 30px auto; 
+            color: #444; 
+            font-size: 1.1em;
+        }
+        
+        .seo-local h2 {
+            color: #00796b; 
+            margin-bottom: 15px; 
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Информационна секция */
+        .info-box {
+            background: #e0f2f1;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0 20px;
+            text-align: center;
+            border-left: 5px solid #00796b;
+        }
+        
+        .info-box i {
+            font-size: 2.5em;
+            color: #00796b;
+            margin-bottom: 15px;
+        }
+        
+        .info-box h3 {
+            color: #00796b;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .info-box p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1em;
+        }
+        
+        /* Продуктова мрежа */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -154,34 +197,6 @@
             font-size: 0.95em;
         }
         
-        /* Информационна секция */
-        .info-box {
-            background: #e0f2f1;
-            border-radius: 16px;
-            padding: 30px;
-            margin: 40px 0 20px;
-            text-align: center;
-            border-left: 5px solid #00796b;
-        }
-        
-        .info-box i {
-            font-size: 2.5em;
-            color: #00796b;
-            margin-bottom: 15px;
-        }
-        
-        .info-box h3 {
-            color: #00796b;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        
-        .info-box p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1em;
-        }
-        
         /* Секции за различните категории */
         .cleaning-section, .paper-section, .personal-care-section, .laundry-section, .kitchen-section {
             margin-top: 50px;
@@ -204,6 +219,15 @@
             margin-top: 60px;
         }
         
+        footer a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
         @media (max-width: 768px) {
             .category-header h1 { font-size: 2.2em; }
             .category-header p { font-size: 1.1em; }
@@ -218,156 +242,162 @@
     </style>
 </head>
 <body>
-    <!-- Навигация -->
+    <!-- Навигация - СТЪПКА 3: Подобрено връщане назад -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Живков</a>
-            <a href="index.html" class="back-link">
+            <a href="index.html#assortment" class="back-link">
                 <i class="fas fa-arrow-left"></i>
-                <span>Обратно</span>
+                <span>Обратно към асортимента</span>
             </a>
         </div>
     </nav>
 
-    <!-- Хедър -->
+    <!-- Хедър - СТЪПКА 1: Оптимизирано H1 с локация -->
     <div class="category-header">
         <i class="fas fa-soap"></i>
-        <h1>Домакински химикали и хигиена</h1>
-        <p>Най-добрите марки за чистота и грижа</p>
+        <h1>Домакински Препарати и Козметика в Рударци</h1>
+        <p>Всичко необходимо за чист дом и лична хигиена от Супермаркет "Живков"</p>
     </div>
 
     <main class="container">
-        <!-- Кратка информация -->
-        <div class="info-box">
-            <i class="fas fa-sparkles"></i>
-            <h3>Качествени продукти за вашия дом</h3>
-            <p>Предлагаме богат избор от домакински препарати и хигиенни продукти от утвърдени марки. Всичко необходимо за поддържане на чистота и свежест в дома ви.</p>
+        <!-- СТЪПКА 2: Локален SEO текст преди info-box -->
+        <div class="seo-local">
+            <h2>Чистота и грижа без компромис</h2>
+            <p>Спестете време и пазарувайте всичко за дома от едно място! В Супермаркет "Живков" (<strong>с. Рударци</strong>) поддържаме пълен асортимент от <strong>почистващи препарати, перилни средства, хартиени изделия и козметика</strong> за цялото семейство.</p>
         </div>
 
-        <!-- Почистващи препарати -->
+        <!-- Информационна кутия - подобрена -->
+        <div class="info-box">
+            <i class="fas fa-sparkles"></i>
+            <h3>Качествени продукти от утвърдени марки</h3>
+            <p>Залагаме на познати и доказани брандове. Независимо дали търсите прах за пране, препарат за съдове или продукти за лична хигиена, при нас ще намерите отлично качество на добри цени.</p>
+        </div>
+
+        <!-- Почистващи препарати - с подобрени alt и описания -->
         <div class="cleaning-section">
             <h2 class="section-title"><i class="fas fa-spray-can-sparkles" style="margin-right: 10px;"></i> Почистващи препарати</h2>
             <div class="products-grid">
                 <!-- Препарат за съдове -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Препарат за съдове" class="product-image">
+                    <img src="asortiment4.webp" alt="Препарат за съдове за ръчно миене" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Препарат за съдове</div>
-                        <div class="product-desc">Ръчно миене, различни марки</div>
+                        <div class="product-desc">За ръчно миене, различни марки и аромати</div>
                     </div>
                 </div>
                 
                 <!-- Препарат за стъкла -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Препарат за стъкла" class="product-image">
+                    <img src="asortiment4.webp" alt="Препарат за стъкла и прозорци" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Препарат за стъкла</div>
-                        <div class="product-desc">За прозорци, огледала, стъкло</div>
+                        <div class="product-desc">За прозорци, огледала, стъклени повърхности</div>
                     </div>
                 </div>
                 
                 <!-- Мултифункционален препарат -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Мултифункционален препарат" class="product-image">
+                    <img src="asortiment4.webp" alt="Мултифункционален почистващ препарат" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Мултифункционален</div>
-                        <div class="product-desc">За всички повърхности</div>
+                        <div class="product-desc">За всички повърхности в дома</div>
                     </div>
                 </div>
                 
                 <!-- Препарат за баня -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Препарат за баня" class="product-image">
+                    <img src="asortiment4.webp" alt="Препарат за баня и тоалетна" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Препарат за баня</div>
-                        <div class="product-desc">За плочки, мивки, тоалетна</div>
+                        <div class="product-desc">За плочки, мивки, вани и тоалетна</div>
                     </div>
                 </div>
                 
                 <!-- Препарат за тоалетна чиния -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Препарат за тоалетна" class="product-image">
+                    <img src="asortiment4.webp" alt="Препарат за тоалетна чиния" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Препарат за тоалетна</div>
-                        <div class="product-desc">Гел, блокчета, освежители</div>
+                        <div class="product-desc">Гел, блокчета, освежители за WC</div>
                     </div>
                 </div>
                 
                 <!-- Препарат за подове -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Препарат за подове" class="product-image">
+                    <img src="asortiment4.webp" alt="Препарат за подове и настилки" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Препарат за подове</div>
-                        <div class="product-desc">За различни видове настилки</div>
+                        <div class="product-desc">За различни видове настилки, с аромат</div>
                     </div>
                 </div>
                 
                 <!-- Почистващи кърпи -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Почистващи кърпи" class="product-image">
+                    <img src="asortiment4.webp" alt="Почистващи кърпи микрофибър" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Почистващи кърпи</div>
-                        <div class="product-desc">Микрофибър, гъби, парцали</div>
+                        <div class="product-desc">Микрофибър, гъби, парцали за чистене</div>
                     </div>
                 </div>
                 
                 <!-- Чистач на фурни -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Чистач на фурни" class="product-image">
+                    <img src="asortiment4.webp" alt="Чистач за фурни и грилове" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Чистач на фурни</div>
-                        <div class="product-desc">Силно действие</div>
+                        <div class="product-desc">Силно действие за мръсотия и загар</div>
                     </div>
                 </div>
                 
-                <!-- Препарат за канали -->
+                <!-- Препарат за канали - СТЪПКА 4: Коригиран текст -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Препарат за канали" class="product-image">
+                    <img src="asortiment4.webp" alt="Препарат за канали и запушвания" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Препарат за канали</div>
-                        <div class="product-desc">Запукания, неприятни миризми</div>
+                        <div class="product-desc">При запушвания и неприятни миризми</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Хартиени изделия и кърпи -->
+        <!-- Хартиени изделия и кърпи - с подобрени описания -->
         <div class="paper-section">
             <h2 class="section-title"><i class="fas fa-toilet-paper" style="margin-right: 10px;"></i> Хартиени изделия и кърпи</h2>
             <div class="products-grid">
                 <!-- Тоалетна хартия -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Тоалетна хартия" class="product-image">
+                    <img src="asortiment4.webp" alt="Тоалетна хартия мека двуслойна" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Тоалетна хартия</div>
-                        <div class="product-desc">Мека, двуслойна, трислойна</div>
+                        <div class="product-desc">Мека, двуслойна, трислойна, различни марки</div>
                     </div>
                 </div>
                 
                 <!-- Хартиени кърпи -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Хартиени кърпи" class="product-image">
+                    <img src="asortiment4.webp" alt="Хартиени кърпи за кухня" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Хартиени кърпи</div>
-                        <div class="product-desc">За кухня, ролки, листове</div>
+                        <div class="product-desc">За кухня, на ролки и листове</div>
                     </div>
                 </div>
                 
                 <!-- Салфетки хартиени -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Хартиени салфетки" class="product-image">
+                    <img src="asortiment4.webp" alt="Хартиени салфетки за хранене" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Хартиени салфетки</div>
-                        <div class="product-desc">Бели, десенирани, цветни</div>
+                        <div class="product-desc">Бели, десенирани, цветни, за всеки повод</div>
                     </div>
                 </div>
                 
                 <!-- Мокри кърпички -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Мокри кърпички" class="product-image">
+                    <img src="asortiment4.webp" alt="Мокри кърпички за бебе и лице" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Мокри кърпички</div>
-                        <div class="product-desc">За бебе, за лице, освежаващи</div>
+                        <div class="product-desc">За бебе, за лице, освежаващи, различни размери</div>
                     </div>
                 </div>
                 
@@ -376,208 +406,208 @@
                     <img src="asortiment4.webp" alt="Дезинфекциращи кърпички" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Дезинфекциращи кърпички</div>
-                        <div class="product-desc">За ръце, повърхности</div>
+                        <div class="product-desc">За ръце и повърхности, антибактериални</div>
                     </div>
                 </div>
                 
                 <!-- Кухненски ролки -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Кухненски ролки" class="product-image">
+                    <img src="asortiment4.webp" alt="Кухненски ролки абсорбиращи" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Кухненски ролки</div>
-                        <div class="product-desc">Абсорбиращи, здрави</div>
+                        <div class="product-desc">Абсорбиращи, здрави, различна дължина</div>
                     </div>
                 </div>
                 
                 <!-- Абсорбираща хартия -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Абсорбираща хартия" class="product-image">
+                    <img src="asortiment4.webp" alt="Абсорбираща хартия за готвене" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Абсорбираща хартия</div>
-                        <div class="product-desc">За сервиране, готвене</div>
+                        <div class="product-desc">За сервиране, отцеждане на храна</div>
                     </div>
                 </div>
                 
                 <!-- Салфетки платнени (еднократни) -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Платнени салфетки" class="product-image">
+                    <img src="asortiment4.webp" alt="Платнени салфетки еднократни" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Платнени салфетки</div>
-                        <div class="product-desc">Еднократни, за гости</div>
+                        <div class="product-desc">Еднократни, меки, за гости и празници</div>
                     </div>
                 </div>
                 
                 <!-- Фолио и хартия за печене -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Фолио и хартия" class="product-image">
+                    <img src="asortiment4.webp" alt="Алуминиево фолио и хартия за печене" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Фолио и хартия</div>
-                        <div class="product-desc">Алуминиево фолио, хартия за печене</div>
+                        <div class="product-desc">Алуминиево фолио, хартия за печене, домакинско фолио</div>
                     </div>
                 </div>
                 
                 <!-- Кекс форми и хартии -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Кекс форми" class="product-image">
+                    <img src="asortiment4.webp" alt="Хартиени форми за кекс" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Кекс форми</div>
-                        <div class="product-desc">Хартиени, силиконови</div>
+                        <div class="product-desc">Хартиени, силиконови, за мъфини и кексчета</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Лична хигиена -->
+        <!-- Лична хигиена - с подобрени описания -->
         <div class="personal-care-section">
-            <h2 class="section-title"><i class="fas fa-hand-holding-heart" style="margin-right: 10px;"></i> Лична хигиена</h2>
+            <h2 class="section-title"><i class="fas fa-hand-holding-heart" style="margin-right: 10px;"></i> Лична хигиена и козметика</h2>
             <div class="products-grid">
                 <!-- Сапун -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Сапун" class="product-image">
+                    <img src="asortiment4.webp" alt="Сапун течен и твърд" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Сапун</div>
-                        <div class="product-desc">Течен, твърд, ароматен</div>
+                        <div class="product-desc">Течен, твърд, ароматен, за ръце</div>
                     </div>
                 </div>
                 
                 <!-- Шампоан -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Шампоан" class="product-image">
+                    <img src="asortiment4.webp" alt="Шампоан за коса" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Шампоан</div>
-                        <div class="product-desc">За нормална, суха, мазна коса</div>
+                        <div class="product-desc">За нормална, суха, мазна коса, балсами</div>
                     </div>
                 </div>
                 
                 <!-- Душ гел -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Душ гел" class="product-image">
+                    <img src="asortiment4.webp" alt="Душ гел и препарати за баня" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Душ гел</div>
-                        <div class="product-desc">Различни аромати</div>
+                        <div class="product-desc">Различни аромати, за мъже и жени</div>
                     </div>
                 </div>
                 
                 <!-- Паста за зъби -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Паста за зъби" class="product-image">
+                    <img src="asortiment4.webp" alt="Паста за зъби избелваща и билкова" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Паста за зъби</div>
-                        <div class="product-desc">Избелваща, билкова, за чувствителни</div>
+                        <div class="product-desc">Избелваща, билкова, за чувствителни зъби</div>
                     </div>
                 </div>
                 
                 <!-- Четка за зъби -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Четка за зъби" class="product-image">
+                    <img src="asortiment4.webp" alt="Четка за зъби ръчна и електрическа" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Четка за зъби</div>
-                        <div class="product-desc">Ръчна, електрическа</div>
+                        <div class="product-desc">Ръчна, електрическа, различна твърдост</div>
                     </div>
                 </div>
                 
                 <!-- Дезодорант -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Дезодорант" class="product-image">
+                    <img src="asortiment4.webp" alt="Дезодорант спрей и стик" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Дезодорант</div>
-                        <div class="product-desc">Спрей, стик, рол-он</div>
+                        <div class="product-desc">Спрей, стик, рол-он, за жени и мъже</div>
                     </div>
                 </div>
                 
                 <!-- Препарат за бръснене -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Препарат за бръснене" class="product-image">
+                    <img src="asortiment4.webp" alt="Препарат за бръснене пяна и гел" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Препарат за бръснене</div>
-                        <div class="product-desc">Пяна, гел, крем</div>
+                        <div class="product-desc">Пяна, гел, крем за гладко бръснене</div>
                     </div>
                 </div>
                 
                 <!-- Самобръсначки -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Самобръсначки" class="product-image">
+                    <img src="asortiment4.webp" alt="Самобръсначки еднократни" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Самобръсначки</div>
-                        <div class="product-desc">Еднократни, с резервни ножчета</div>
+                        <div class="product-desc">Еднократни, с резервни ножчета, за мъже и дами</div>
                     </div>
                 </div>
                 
                 <!-- Памучни тампони -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Памучни тампони" class="product-image">
+                    <img src="asortiment4.webp" alt="Памучни тампони за почистване" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Памучни тампони</div>
-                        <div class="product-desc">За почистване, грим</div>
+                        <div class="product-desc">За почистване на грим и хигиена</div>
                     </div>
                 </div>
                 
                 <!-- Клечки за уши -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Клечки за уши" class="product-image">
+                    <img src="asortiment4.webp" alt="Клечки за уши хигиенни" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Клечки за уши</div>
-                        <div class="product-desc">Хигиенни</div>
+                        <div class="product-desc">Хигиенни, с памучни връхчета</div>
                     </div>
                 </div>
                 
                 <!-- Дамски превръзки -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Дамски превръзки" class="product-image">
+                    <img src="asortiment4.webp" alt="Дамски превръзки и интимна хигиена" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Дамски превръзки</div>
-                        <div class="product-desc">Различни размери</div>
+                        <div class="product-desc">Различни размери, с крилца, без, ежедневни</div>
                     </div>
                 </div>
                 
                 <!-- Тампони -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Тампони" class="product-image">
+                    <img src="asortiment4.webp" alt="Тампони с апликатор и без" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Тампони</div>
-                        <div class="product-desc">С апликатор, без</div>
+                        <div class="product-desc">С апликатор, без, различна абсорбция</div>
                     </div>
                 </div>
                 
                 <!-- Влажни кърпички интимни -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Интимни кърпички" class="product-image">
+                    <img src="asortiment4.webp" alt="Интимни мокри кърпички" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Интимни кърпички</div>
-                        <div class="product-desc">За свежест</div>
+                        <div class="product-desc">За свежест през целия ден</div>
                     </div>
                 </div>
                 
                 <!-- Препарати за интимна хигиена -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Интимна хигиена" class="product-image">
+                    <img src="asortiment4.webp" alt="Гел за интимна хигиена" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Интимна хигиена</div>
-                        <div class="product-desc">Гел, мляко</div>
+                        <div class="product-desc">Гел, мляко, pH баланс</div>
                     </div>
                 </div>
                 
                 <!-- Крем за ръце -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Крем за ръце" class="product-image">
+                    <img src="asortiment4.webp" alt="Крем за ръце подхранващ" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Крем за ръце</div>
-                        <div class="product-desc">Подхранващ, овлажняващ</div>
+                        <div class="product-desc">Подхранващ, овлажняващ, защитен</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Перални препарати -->
+        <!-- Перални препарати - с подобрени описания -->
         <div class="laundry-section">
             <h2 class="section-title"><i class="fas fa-jug-detergent" style="margin-right: 10px;"></i> Перални препарати</h2>
             <div class="products-grid">
                 <!-- Перилен прах -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Перилен прах" class="product-image">
+                    <img src="asortiment4.webp" alt="Перилен прах за бяло и цветно" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Перилен прах</div>
-                        <div class="product-desc">За бяло, цветно, ръчно пране</div>
+                        <div class="product-desc">За бяло, цветно, ръчно и машинно пране</div>
                     </div>
                 </div>
                 
@@ -586,49 +616,49 @@
                     <img src="asortiment4.webp" alt="Течен перилен препарат" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Течен перилен препарат</div>
-                        <div class="product-desc">За цветни тъкани, деликатни</div>
+                        <div class="product-desc">За цветни тъкани, деликатни и вълна</div>
                     </div>
                 </div>
                 
                 <!-- Омекотител -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Омекотител" class="product-image">
+                    <img src="asortiment4.webp" alt="Омекотител за пране" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Омекотител</div>
-                        <div class="product-desc">Различни аромати</div>
+                        <div class="product-desc">Различни аромати, за меко пране</div>
                     </div>
                 </div>
                 
                 <!-- Препарат за премахване на петна -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Премахване на петна" class="product-image">
+                    <img src="asortiment4.webp" alt="Препарат за премахване на петна" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Премахване на петна</div>
-                        <div class="product-desc">Спрей, стик, прах</div>
+                        <div class="product-desc">Спрей, стик, прах за трудни петна</div>
                     </div>
                 </div>
                 
                 <!-- Белина -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Белина" class="product-image">
+                    <img src="asortiment4.webp" alt="Белина за пране" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Белина</div>
-                        <div class="product-desc">Хлорна, кислородна</div>
+                        <div class="product-desc">Хлорна, кислородна, за бели тъкани</div>
                     </div>
                 </div>
                 
                 <!-- Препарат за вълна и коприна -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="За вълна и коприна" class="product-image">
+                    <img src="asortiment4.webp" alt="Препарат за деликатно пране" class="product-image">
                     <div class="product-info">
                         <div class="product-name">За вълна и коприна</div>
-                        <div class="product-desc">Деликатно пране</div>
+                        <div class="product-desc">Деликатно пране на чувствителни тъкани</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Кухненски принадлежности -->
+        <!-- Кухненски принадлежности - с подобрени описания -->
         <div class="kitchen-section">
             <h2 class="section-title"><i class="fas fa-kitchen-set" style="margin-right: 10px;"></i> Кухненски принадлежности</h2>
             <div class="products-grid">
@@ -637,43 +667,43 @@
                     <img src="asortiment4.webp" alt="Гъби за съдове" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Гъби за съдове</div>
-                        <div class="product-desc">Меки, абразивни, целулозни</div>
+                        <div class="product-desc">Меки, абразивни, целулозни, различни размери</div>
                     </div>
                 </div>
                 
                 <!-- Четки за съдове -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Четки за съдове" class="product-image">
+                    <img src="asortiment4.webp" alt="Четки за съдове и бутилки" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Четки за съдове</div>
-                        <div class="product-desc">С дръжка, за бутилки</div>
+                        <div class="product-desc">С дръжка, за бутилки, за тенджери</div>
                     </div>
                 </div>
                 
                 <!-- Кърпи за сушене -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Кърпи за сушене" class="product-image">
+                    <img src="asortiment4.webp" alt="Кърпи за сушене памучни" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Кърпи за сушене</div>
-                        <div class="product-desc">Памучни, микрофибър</div>
+                        <div class="product-desc">Памучни, микрофибър, за кухня</div>
                     </div>
                 </div>
                 
                 <!-- Ръкавици за почистване -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Ръкавици" class="product-image">
+                    <img src="asortiment4.webp" alt="Ръкавици за почистване" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Ръкавици</div>
-                        <div class="product-desc">Латексови, нитрилови</div>
+                        <div class="product-desc">Латексови, нитрилови, различни размери</div>
                     </div>
                 </div>
                 
                 <!-- Четки тоалетна -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Четки тоалетна" class="product-image">
+                    <img src="asortiment4.webp" alt="Четки за тоалетна" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Четки тоалетна</div>
-                        <div class="product-desc">С поставка</div>
+                        <div class="product-desc">С поставка, за хигиена в банята</div>
                     </div>
                 </div>
                 
@@ -682,7 +712,7 @@
                     <img src="asortiment4.webp" alt="Кошчета за боклук" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Кошчета за боклук</div>
-                        <div class="product-desc">Педални, пластмасови</div>
+                        <div class="product-desc">Педални, пластмасови, различни вместимости</div>
                     </div>
                 </div>
                 
@@ -691,7 +721,7 @@
                     <img src="asortiment4.webp" alt="Торби за боклук" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Торби за боклук</div>
-                        <div class="product-desc">Малки, големи, здрави</div>
+                        <div class="product-desc">Малки, големи, здрави, с връзки</div>
                     </div>
                 </div>
                 
@@ -700,7 +730,7 @@
                     <img src="asortiment4.webp" alt="Фолио за свежо съхранение" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Фолио за свежо съхранение</div>
-                        <div class="product-desc">Стреч фолио, кутии</div>
+                        <div class="product-desc">Стреч фолио, кутии за храна</div>
                     </div>
                 </div>
                 
@@ -709,52 +739,52 @@
                     <img src="asortiment4.webp" alt="Замразяващи торбички" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Замразяващи торбички</div>
-                        <div class="product-desc">Различни размери</div>
+                        <div class="product-desc">Различни размери, с цип и без</div>
                     </div>
                 </div>
                 
                 <!-- Алуминиево фолио -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Алуминиево фолио" class="product-image">
+                    <img src="asortiment4.webp" alt="Алуминиево фолио за печене" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Алуминиево фолио</div>
-                        <div class="product-desc">За печене, съхранение</div>
+                        <div class="product-desc">За печене, съхранение, различна дължина</div>
                     </div>
                 </div>
                 
                 <!-- Хартия за печене -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Хартия за печене" class="product-image">
+                    <img src="asortiment4.webp" alt="Хартия за печене незалепваща" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Хартия за печене</div>
-                        <div class="product-desc">Незалепваща</div>
+                        <div class="product-desc">Незалепваща, за тави и блатове</div>
                     </div>
                 </div>
                 
                 <!-- Клечки за зъби (кухненски) -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Клечки за зъби" class="product-image">
+                    <img src="asortiment4.webp" alt="Клечки за зъби дървени" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Клечки за зъби</div>
-                        <div class="product-desc">Дървени, пластмасови</div>
+                        <div class="product-desc">Дървени, пластмасови, за хапване</div>
                     </div>
                 </div>
                 
                 <!-- Сламки за пиене -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Сламки" class="product-image">
+                    <img src="asortiment4.webp" alt="Сламки за пиене хартиени" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Сламки за пиене</div>
-                        <div class="product-desc">Хартиени, пластмасови</div>
+                        <div class="product-desc">Хартиени, пластмасови, цветни</div>
                     </div>
                 </div>
                 
                 <!-- Чаши и прибори за еднократна употреба -->
                 <div class="product-card">
-                    <img src="asortiment4.webp" alt="Чаши и прибори" class="product-image">
+                    <img src="asortiment4.webp" alt="Чаши и прибори за еднократна употреба" class="product-image">
                     <div class="product-info">
                         <div class="product-name">Чаши и прибори</div>
-                        <div class="product-desc">За еднократна употреба</div>
+                        <div class="product-desc">За еднократна употреба, за купони и пикници</div>
                     </div>
                 </div>
             </div>
@@ -763,14 +793,15 @@
         <!-- Текст, че може да има и други -->
         <p style="text-align: center; margin-top: 50px; color: #666; font-size: 1.1em;">
             <i class="fas fa-broom" style="color: #00796b;"></i> 
-            Широк асортимент от домакински стоки и хигиенни продукти – заповядайте да разгледате!
+            Широк асортимент от домакински стоки и хигиенни продукти в <strong>Рударци</strong> – заповядайте да разгледате!
         </p>
     </main>
 
     <footer>
-        <p>© 2026 Супермаркет "Живков" – Рударци. Всичко за чистота и хигиена на едно място.</p>
+        <p>© 2026 Супермаркет "Живков" – Рударци. <a href="index.html#assortment">Всичко за чистота и хигиена на едно място</a>.</p>
         <p style="margin-top: 10px; opacity: 0.8;">
-            <i class="fas fa-map-marker-alt"></i> с. Рударци, ул. "Михаил Дойчев" №4
+            <i class="fas fa-map-marker-alt"></i> с. Рударци, ул. "Михаил Дойчев" №4, обл. Перник | 
+            <i class="fas fa-clock"></i> Пон-Нед: 6:00-20:30
         </p>
     </footer>
 </body>
