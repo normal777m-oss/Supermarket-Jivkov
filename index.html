@@ -36,8 +36,6 @@
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23e65100'>🛒</text></svg>">
     <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23e65100'>🛒</text></svg>">
     
-    <!-- Броячът Count.bg е премахнат оттук – ще се зареди динамично след съгласие -->
-    
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
@@ -295,7 +293,7 @@
             align-items: center;
             justify-content: center;
             background: #e9ecef;
-            color: #4a5568;
+            color: #000000; /* променено от #4a5568 на черно за по-висок контраст */
             font-size: 1.2em;
             z-index: 1;
             text-align: center;
@@ -311,24 +309,25 @@
         .map-placeholder p {
             max-width: 400px;
             margin-bottom: 20px;
+            color: #000000; /* осигурява максимален контраст */
         }
         
         .map-placeholder button {
             background: #e65100;
-            color: white;
+            color: #000000; /* променено от бяло на черно */
             border: none;
             padding: 10px 25px;
             border-radius: 30px;
             font-size: 1em;
             font-weight: 600;
             cursor: pointer;
-            border: none;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             transition: background 0.3s;
         }
         
         .map-placeholder button:hover {
             background: #fb8c00;
+            color: #000000; /* запазваме черния текст */
         }
         
         /* IFRAME на картата - скрит до зареждане */
@@ -856,7 +855,7 @@
 
         .cookie-banner button {
             background: #e65100;
-            color: white;
+            color: #000000; /* променено от бяло на черно */
             border: none;
             padding: 12px 30px;
             border-radius: 40px;
@@ -869,6 +868,7 @@
 
         .cookie-banner button:hover {
             background: #fb8c00;
+            color: #000000;
         }
 
         @media (max-width: 768px) {
@@ -1037,7 +1037,7 @@
         </section>
     </main>
     
-        <!-- Футър -->
+    <!-- Футър с линкове към политиките -->
     <footer>
         <p>&copy; 2026 Супермаркет "Живков" - Рударци. Всички права запазени.</p>
         <p style="margin-top: 15px;">
