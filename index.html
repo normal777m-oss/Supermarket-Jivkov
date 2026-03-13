@@ -36,16 +36,7 @@
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23e65100'>🛒</text></svg>">
     <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23e65100'>🛒</text></svg>">
     
-    <!-- Брояч за посещения Count.bg с внедрен API ключ -->
-    <script 
-        data-host="https://count.bg" 
-        data-dnt="false" 
-        src="https://count.bg/js/script.js" 
-        id="ZwSg9rf6GA" 
-        data-api-key="l0kc35pQqzNamAQPJQikq9IXnSBSh4yWF97WcXNMuljFwI8LSHfzMLkANkDZ5f40"
-        async 
-        defer>
-    </script>
+    <!-- Броячът Count.bg е премахнат оттук – ще се зареди динамично след съгласие -->
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -281,7 +272,7 @@
             border-left: 4px solid #e65100;
         }
         
-        /* Оптимизация за OpenStreetMap карта - зарежда се със закъснение */
+        /* Оптимизация за OpenStreetMap карта - зарежда се само след съгласие */
         .map-container {
             height: 350px;
             border-radius: 12px;
@@ -292,7 +283,7 @@
             position: relative;
         }
         
-        /* Плейсхолдер за картата */
+        /* Плейсхолдер за картата - показва се докато няма съгласие */
         .map-placeholder {
             position: absolute;
             top: 0;
@@ -300,18 +291,44 @@
             width: 100%;
             height: 100%;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             background: #e9ecef;
             color: #4a5568;
             font-size: 1.2em;
             z-index: 1;
+            text-align: center;
+            padding: 20px;
         }
         
         .map-placeholder i {
-            font-size: 2em;
+            font-size: 3em;
             color: #e65100;
-            margin-right: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .map-placeholder p {
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+        
+        .map-placeholder button {
+            background: #e65100;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+        }
+        
+        .map-placeholder button:hover {
+            background: #fb8c00;
         }
         
         /* IFRAME на картата - скрит до зареждане */
@@ -810,6 +827,57 @@
         .hero-button {
             will-change: transform;
         }
+
+        /* Стилове за банера за бисквитки */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            z-index: 3000;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1.1em;
+            backdrop-filter: blur(5px);
+            border-top: 3px solid #e65100;
+        }
+
+        .cookie-banner p {
+            margin: 0;
+            max-width: 800px;
+        }
+
+        .cookie-banner button {
+            background: #e65100;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .cookie-banner button:hover {
+            background: #fb8c00;
+        }
+
+        @media (max-width: 768px) {
+            .cookie-banner {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -935,7 +1003,8 @@
                 <div class="map-container" id="map-container">
                     <div class="map-placeholder" id="map-placeholder">
                         <i class="fas fa-map-marked-alt"></i>
-                        <span>Картата се зарежда...</span>
+                        <p>За да видите картата, моля, приемете бисквитките.</p>
+                        <button id="loadMapBtn" aria-label="Зареждане на картата след съгласие">Зареди карта</button>
                     </div>
                     <iframe 
                         id="map-frame"
@@ -981,6 +1050,12 @@
             <img class="lightbox-image" id="lightboxImage" src="" alt="Разширен изглед">
             <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Следваща снимка"><i class="fas fa-chevron-right"></i></button>
         </div>
+    </div>
+
+    <!-- Банер за съгласие за бисквитки (първоначално видим) -->
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Този сайт използва бисквитки за подобряване на вашето преживяване и за анализиране на трафика. Картата и броячът за посещения се зареждат само след вашето съгласие.</p>
+        <button id="cookie-accept">Съгласен съм</button>
     </div>
 
     <script>
@@ -1057,26 +1132,74 @@
                     }
                 });
             });
-            
-            // Карта - зарежда се след 2 секунди
-            setTimeout(function() {
-                const mapFrame = document.getElementById('map-frame');
-                const mapPlaceholder = document.getElementById('map-placeholder');
-                
+
+            // ========== БАНЕР ЗА БИСКВИТКИ ==========
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const mapFrame = document.getElementById('map-frame');
+            const mapPlaceholder = document.getElementById('map-placeholder');
+            const loadMapBtn = document.getElementById('loadMapBtn');
+
+            // Функция за зареждане на картата
+            function loadMap() {
                 if (mapFrame && mapFrame.dataset.src) {
                     mapFrame.src = mapFrame.dataset.src;
-                    
-                    setTimeout(function() {
+                    setTimeout(() => {
                         mapFrame.classList.add('loaded');
                         if (mapPlaceholder) {
                             mapPlaceholder.style.opacity = '0';
-                            setTimeout(function() {
+                            setTimeout(() => {
                                 mapPlaceholder.style.display = 'none';
                             }, 300);
                         }
                     }, 100);
                 }
-            }, 2000);
+            }
+
+            // Функция за зареждане на брояча Count.bg
+            function loadAnalytics() {
+                // Проверяваме дали скриптът вече не е зареден
+                if (!document.querySelector('script[data-host="https://count.bg"]')) {
+                    const script = document.createElement('script');
+                    script.setAttribute('data-host', 'https://count.bg');
+                    script.setAttribute('data-dnt', 'false');
+                    script.src = 'https://count.bg/js/script.js';
+                    script.id = 'ZwSg9rf6GA';
+                    script.setAttribute('data-api-key', 'l0kc35pQqzNamAQPJQikq9IXnSBSh4yWF97WcXNMuljFwI8LSHfzMLkANkDZ5f40');
+                    script.async = true;
+                    script.defer = true;
+                    document.head.appendChild(script);
+                }
+            }
+
+            // Функция за приемане на бисквитки
+            function acceptCookies() {
+                // Запазваме съгласието в localStorage
+                localStorage.setItem('cookieConsent', 'accepted');
+                // Скриваме банера
+                cookieBanner.style.display = 'none';
+                // Зареждаме картата и аналитиката
+                loadMap();
+                loadAnalytics();
+            }
+
+            // Проверяваме дали вече има съгласие
+            if (localStorage.getItem('cookieConsent') === 'accepted') {
+                // Ако има, скриваме банера и зареждаме ресурсите веднага
+                cookieBanner.style.display = 'none';
+                loadMap();
+                loadAnalytics();
+            } else {
+                // Ако няма съгласие, показваме банера и слушаме за клик
+                cookieBanner.style.display = 'flex'; // гарантираме видимост
+                acceptBtn.addEventListener('click', acceptCookies);
+                // Бутонът в placeholder-а на картата също да води до приемане
+                if (loadMapBtn) {
+                    loadMapBtn.addEventListener('click', function() {
+                        acceptCookies();
+                    });
+                }
+            }
 
             // ========== ГАЛЕРИЯ И LIGHTBOX ==========
             // Генериране на 86 снимки
