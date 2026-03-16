@@ -1206,6 +1206,1305 @@
             }
 
             // ========== ГАЛЕРИЯ И LIGHTBOX ==========
+            // Генериране на 11 снимки (интериор на магазина)
+            const galleryGrid = document.getElementById('galleryGrid');
+            if (galleryGrid) {
+                let html = '';
+                for (let i = 1; i <= 11; i++) {
+                    html += `<div class="gallery-item"><img src="${i}supermarket.rudartsi.interior.webp" alt="Интериор на магазин ${i}" loading="lazy"></div>`;
+                }
+                galleryGrid.innerHTML = html;
+            }
+            
+            // Скролиране на въртележката чрез стрелките
+            const scrollPrevBtn = document.getElementById('scrollPrev');
+            const scrollNextBtn = document.getElementById('scrollNext');
+            
+            if (scrollPrevBtn && scrollNextBtn && galleryGrid) {
+                scrollPrevBtn.addEventListener('click', () => {
+                    galleryGrid.scrollBy({ left: -300, behavior: 'smooth' });
+                });
+                
+                scrollNextBtn.addEventListener('click', () => {
+                    galleryGrid.scrollBy({ left: 300, behavior: 'smooth' });
+                });
+            }
+            
+            // Lightbox функционалност
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImage');
+            const closeBtn = document.getElementById('lightboxClose');
+            const prevBtn = document.getElementById('lightboxPrev');
+            const nextBtn = document.getElementById('lightboxNext');
+            
+            let currentIndex = 0;
+            const images = Array.from(galleryItems).map(item => item.querySelector('img').src);
+            
+            function openLightbox(index) {
+                if (!images.length) return;
+                currentIndex = index;
+                lightboxImg.src = images[currentIndex];
+                lightboxImg.alt = `Снимка ${currentIndex + 1}`;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            function showPrev() {
+                if (!images.length) return;
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                lightboxImg.src = images[currentIndex];
+            }
+            
+            function showNext() {
+                if (!images.length) return;
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                lightboxImg.src = images[currentIndex];
+            }
+            
+            galleryItems.forEach((item, idx) => {
+                item.addEventListener('click', () => openLightbox(idx));
+            });
+            
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', showPrev);
+            nextBtn.addEventListener('click', showNext);
+            
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+                    closeLightbox();
+                }
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (!lightbox.classList.contains('active')) return;
+                
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    showPrev();
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    showNext();
+                }
+            });
+        })();
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 1. ПРИОРИТИЗИРАНЕ НА ИЗОБРАЖЕНИЕТО (FETCH PRIORITY) - най-важно за LCP -->
+    <link rel="preload" as="image" href="magazin.otvyn2.webp" fetchpriority="high">
+    
+    <!-- 2. ПРЕМАХВАНЕ НА БЛОКЕРИТЕ (ASYNC FONTS & ICONS) -->
+    <!-- Font Awesome - асинхронно зареждане -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Google Fonts - асинхронно зареждане -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Noscript варианти за потребители без JavaScript -->
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap">
+    </noscript>
+    
+    <title>Супермаркет "Живков" - Рударци</title>
+    <meta name="description" content="Супермаркет Живков в Рударци – местен магазин с ежедневни доставки, пресни продукти и коректно обслужване. Паркинг пред магазина. Работим за Рударци.">
+    
+    <!-- Open Graph (OG) мета тагове за социални мрежи -->
+    <meta property="og:title" content="Супермаркет Живков – Рударци">
+    <meta property="og:description" content="Местният магазин за ежедневни покупки в Рударци.">
+    <meta property="og:image" content="https://supermarket-rudartsi.eu/magazin.otvyn2.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://supermarket-rudartsi.eu">
+    
+    <!-- Favicon - предотвратява 404 грешки -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23e65100'>🛒</text></svg>">
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23e65100'>🛒</text></svg>">
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            line-height: 1.6; 
+            color: #000000; /* Чисто черно за максимален контраст */
+            background-color: #ffffff;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            color: #000000; /* Черно за максимален контраст */
+        }
+        
+        /* Навигация - поправена ARIA структура */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #e65100; /* Наситено оранжево за по-добър контраст */
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none; /* Премахване на точките от списъка */
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links a {
+            color: #000000; /* Черен текст за максимален контраст */
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .nav-links a:hover {
+            color: #e65100; /* Наситено оранжево при hover */
+            background: rgba(230, 81, 0, 0.1);
+        }
+        .nav-links a.active {
+            color: white;
+            background: linear-gradient(135deg, #e65100 0%, #fb8c00 100%);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: #000000;
+            cursor: pointer;
+        }
+        
+        header { 
+            background: linear-gradient(
+                rgba(0,0,0,0.55),
+                rgba(0,0,0,0.55)
+            ),
+            url('magazin.otvyn2.webp');
+            background-size: cover;
+            background-position: center;
+            color: white; 
+            text-align: center; 
+            padding: 120px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: -80px;
+        }
+        header h1 { 
+            font-size: 3.5em; 
+            font-weight: 700; 
+            margin-bottom: 20px; 
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            max-width: 800px;
+            color: white; /* Бял текст върху тъмен фон */
+        }
+        header .subtitle {
+            font-size: 1.4em; 
+            font-weight: 400; 
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            opacity: 0.95;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            color: white; /* Бял текст върху тъмен фон */
+        }
+        .hero-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #e65100 0%, #fb8c00 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .hero-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        main {
+            display: block;
+        }
+        section { 
+            background: rgba(255,255,255,0.95); 
+            margin: 40px 0; 
+            padding: 45px 35px; 
+            border-radius: 16px; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            scroll-margin-top: 100px;
+        }
+        .contact {
+            background: rgba(255,255,255,0.95);
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .about-image {
+            flex: 0 0 400px;
+            width: 400px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        /* ПОВИШЕН КОНТРАСТ - Всички текстове с максимална четливост */
+        .section-desc, 
+        .about-text p, 
+        .human-touch,
+        address p,
+        .assortment-item,
+        .contact p,
+        .parking-info,
+        .about-standards li,
+        .about-text,
+        address a {
+            color: #000000 !important; /* Чисто черно за максимална четливост */
+        }
+        
+        .about-highlight {
+            background: linear-gradient(135deg, #e65100, #fb8c00);
+            color: #ffffff; /* Бял текст върху тъмен фон */
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+            font-size: 1.2em;
+            font-weight: 500;
+            text-align: center;
+        }
+        .about-standards {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 5px solid #e65100;
+        }
+        .about-standards h3 {
+            color: #e65100;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .about-standards h3 i {
+            font-size: 1.4em;
+        }
+        .about-standards ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .about-standards li {
+            padding: 12px 0;
+            position: relative;
+            padding-left: 25px;
+            font-weight: 500;
+        }
+        .about-standards li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            color: #e65100;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .human-touch {
+            font-style: italic;
+            font-size: 1.1em;
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #e65100;
+        }
+        
+        /* Оптимизация за OpenStreetMap карта - зарежда се само след съгласие */
+        .map-container {
+            height: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            margin-top: 30px;
+            background-color: #f0f0f0; /* Цвят на фона докато се зареди картата */
+            position: relative;
+        }
+        
+        /* Плейсхолдер за картата - показва се докато няма съгласие */
+        .map-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #e9ecef;
+            color: #000000; /* променено от #4a5568 на черно за по-висок контраст */
+            font-size: 1.2em;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .map-placeholder i {
+            font-size: 3em;
+            color: #e65100;
+            margin-bottom: 15px;
+        }
+        
+        .map-placeholder p {
+            max-width: 400px;
+            margin-bottom: 20px;
+            color: #000000; /* осигурява максимален контраст */
+        }
+        
+        .map-placeholder button {
+            background: #e65100;
+            color: #000000; /* променено от бяло на черно */
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+        }
+        
+        .map-placeholder button:hover {
+            background: #fb8c00;
+            color: #000000; /* запазваме черния текст */
+        }
+        
+        /* IFRAME на картата - скрит до зареждане */
+        .map-frame {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .map-frame.loaded {
+            opacity: 1;
+        }
+        
+        .parking-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border-left: 5px solid #28a745;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #000000 !important; /* Черен текст за контраст */
+        }
+        .parking-info i {
+            font-size: 1.4em;
+            color: #28a745;
+        }
+        .promotions {
+            background: linear-gradient(135deg, #e65100 0%, #fb8c00 100%);
+            color: white;
+            text-align: center;
+            padding: 35px;
+        }
+        .promotions h2 {
+            color: white;
+            margin-bottom: 25px;
+        }
+        .promotions p {
+            font-size: 1.3em;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: white; /* Бял текст върху оранжев фон */
+        }
+        .promotions .cta {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: background 0.3s;
+        }
+        .promotions .cta:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        h2 { 
+            color: #e65100; /* Наситено оранжево */
+            font-size: 2.5em; 
+            margin-bottom: 30px; 
+            text-align: center;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #e65100, #fb8c00);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+        
+        /* Асортимент грид със снимки */
+        .assortment-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            list-style: none;
+            padding: 0;
+        }
+        
+        /* Стилове за линковете в асортимент грида - запазваме оригиналния дизайн */
+        .assortment-grid a {
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        
+        .assortment-item { 
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); 
+            border-radius: 16px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: 500;
+        }
+        .assortment-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .assortment-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .assortment-text {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .contact p { 
+            font-size: 1.2em; 
+            margin-bottom: 20px; 
+            display: flex; 
+            align-items: center; 
+            gap: 15px;
+            color: #000000; /* Черен текст за контраст */
+        }
+        .contact i { 
+            font-size: 1.5em; 
+            color: #28a745; 
+            width: 30px;
+        }
+        /* Стил за Facebook иконата и линка в контактите - с висок контраст */
+        .contact .fa-facebook { 
+            color: #0a5c9e !important; /* По-тъмен син за по-добър контраст (контрастно съотношение > 7:1) */
+        }
+        .contact a[href*="facebook.com"] {
+            color: #0a5c9e !important; /* Тъмносин за максимален контраст */
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .contact a[href*="facebook.com"]:hover {
+            color: #e65100 !important; /* Оранжев при hover */
+        }
+        
+        footer { 
+            background: linear-gradient(135deg, #333 0%, #222 100%); 
+            color: white; 
+            text-align: center; 
+            padding: 40px 20px; 
+            font-size: 1.1em;
+        }
+        .shop-photo {
+            background: rgba(255,255,255,0.95);
+            margin: 40px auto;
+            max-width: 900px;
+            padding: 45px 35px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .shop-photo img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+        }
+        
+        /* ========== СЕКЦИЯ ГАЛЕРИЯ (ВЪРТЕЛЕЖКА) ========== */
+        .gallery-section {
+            background: rgba(255,255,255,0.95);
+            margin: 40px 0;
+            padding: 45px 35px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .gallery-grid {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding-bottom: 20px; /* Място за скролбара */
+            /* Красив оранжев скролбар за Firefox */
+            scrollbar-width: thin;
+            scrollbar-color: #e65100 #f1f1f1;
+            width: 100%;
+        }
+
+        /* Красив оранжев скролбар за Chrome/Safari/Edge */
+        .gallery-grid::-webkit-scrollbar {
+            height: 10px;
+        }
+        .gallery-grid::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+        .gallery-grid::-webkit-scrollbar-thumb {
+            background: #e65100;
+            border-radius: 5px;
+        }
+
+        .gallery-item {
+            flex: 0 0 280px; /* Всяка снимка ще е с фиксирана ширина */
+            scroll-snap-align: start;
+            position: relative;
+            cursor: pointer;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 4/3;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Бутони за навигация на въртележката (за компютър) */
+        .carousel-btn {
+            position: absolute;
+            top: calc(50% - 10px); /* Центриране спрямо снимките, без скролбара */
+            transform: translateY(-50%);
+            background: white;
+            color: #e65100;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-btn:hover {
+            background: #e65100;
+            color: white;
+        }
+        
+        .carousel-btn.prev { left: -15px; }
+        .carousel-btn.next { right: -15px; }
+
+        /* Lightbox - модален прозорец - подобрена версия */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.92);
+            backdrop-filter: blur(5px);
+            display: flex;
+            visibility: hidden;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            pointer-events: none;
+        }
+        .lightbox.active {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            border: 3px solid rgba(255,255,255,0.1);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .lightbox-close:hover {
+            background: #e65100;
+            transform: scale(1.1);
+        }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .lightbox-nav:hover {
+            background: #e65100;
+            transform: translateY(-50%) scale(1.1);
+        }
+        .lightbox-prev {
+            left: 20px;
+        }
+        .lightbox-next {
+            right: 20px;
+        }
+        
+        /* Мобилен вариант за lightbox и карусел */
+        @media (max-width: 768px) {
+            .lightbox-close {
+                top: 10px;
+                right: 10px;
+            }
+            .lightbox-nav {
+                width: 45px;
+                height: 45px;
+                font-size: 24px;
+            }
+            .lightbox-prev {
+                left: 10px;
+            }
+            .lightbox-next {
+                right: 10px;
+            }
+            
+            .carousel-btn { display: none; } /* На телефон се скролва удобно с пръст */
+            .gallery-item { flex: 0 0 240px; } /* Малко по-малки снимки на телефон */
+            .gallery-grid { padding-bottom: 15px; }
+        }
+        
+        @media (max-width: 768px) { 
+            nav {
+                padding: 10px 0;
+            }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                gap: 15px;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+            .nav-links a {
+                display: block;
+                padding: 12px 20px;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            body {
+                padding-top: 70px;
+            }
+            header { 
+                padding: 80px 20px;
+                min-height: 80vh;
+                margin-top: -70px;
+            }
+            header h1 { 
+                font-size: 2.5em; 
+                max-width: 100%;
+            }
+            header .subtitle { 
+                font-size: 1.2em; 
+                max-width: 100%;
+            }
+            .hero-button {
+                padding: 14px 30px;
+                font-size: 1em;
+            }
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-image {
+                width: 100%;
+                max-width: 400px;
+                flex: none;
+            }
+            .map-container {
+                height: 250px;
+            }
+            section, .shop-photo, .gallery-section { 
+                margin: 20px auto; 
+                padding: 25px 20px; 
+                max-width: 900px; 
+                border-radius: 12px; 
+            }
+            h2 { font-size: 2em; }
+            .assortment-grid { grid-template-columns: 1fr; }
+            .promotions { padding: 25px 20px; }
+            .promotions p { font-size: 1.1em; }
+            .human-touch {
+                font-size: 1em;
+                padding: 15px;
+            }
+            .parking-info {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            section {
+                scroll-margin-top: 80px;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 { 
+                font-size: 2em; 
+            }
+            header .subtitle { 
+                font-size: 1.1em; 
+            }
+            .hero-button {
+                padding: 12px 25px;
+                font-size: 0.95em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+        }
+
+        /* Добавени стилове за фокус състояния за по-добра достъпност */
+        a:focus-visible, button:focus-visible {
+            outline: 3px solid #e65100;
+            outline-offset: 3px;
+        }
+
+        /* Леко подобрение на производителността - само най-необходимите анимации */
+        .hero-button {
+            will-change: transform;
+        }
+
+        /* Стилове за банера за бисквитки */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            z-index: 3000;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1.1em;
+            backdrop-filter: blur(5px);
+            border-top: 3px solid #e65100;
+        }
+
+        .cookie-banner p {
+            margin: 0;
+            max-width: 800px;
+        }
+
+        .cookie-banner button {
+            background: #e65100;
+            color: #000000; /* променено от бяло на черно */
+            border: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .cookie-banner button:hover {
+            background: #fb8c00;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .cookie-banner {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация - поправена с правилна ARIA структура -->
+    <nav aria-label="Главна навигация">
+        <div class="nav-container">
+            <a href="#" class="logo">Живков</a>
+            <button class="mobile-menu-btn" aria-label="Меню">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home" class="active" aria-current="page">Начало</a></li>
+                <li><a href="#assortment">Асортимент</a></li>
+                <li><a href="#about">За нас</a></li>
+                <li><a href="#gallery">Галерия</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Основно съдържание в <main> таг -->
+    <main>
+        <!-- Херо секция -->
+        <header id="home">
+            <h1>Супермаркет „Живков" – Рударци</h1>
+            <p class="subtitle">Местният магазин за ежедневни покупки</p>
+            <a href="#assortment" class="hero-button" aria-label="Виж какво предлагаме в магазина">Виж какво предлагаме</a>
+        </header>
+        
+        <div class="container">
+            <!-- Асортимент със снимки - с кликване към подстраници (правилен SEO начин) -->
+            <section id="assortment" aria-labelledby="assortment-heading">
+                <h2 id="assortment-heading">Нашият асортимент</h2>
+                <div class="assortment-grid">
+                    <!-- Свежи плодове и зеленчуци - води към отделна страница -->
+                    <a href="plodove-i-zelenchuci.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                        <img src="asortiment85.webp" alt="Свежи плодове и зеленчуци" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Свежи плодове и зеленчуци – от градина директно на щанда</div>
+                    </a>
+                    
+                    <!-- Млечни продукти и сирена - води към отделна страница -->
+                    <a href="mlechni-produkti.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                        <img src="asortiment57.webp" alt="Млечни продукти и сирена" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Млечни продукти и сирена – само от проверени ферми</div>
+                    </a>
+                    
+                    <!-- Хляб и сладкарски изделия - води към отделна страница -->
+                    <a href="hlqb-i-sladki.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                        <img src="asortiment34.webp" alt="Хляб и сладкарски изделия" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Хляб и сладкарски изделия – всеки ден пресни</div>
+                    </a>
+                    
+                    <!-- Месо и колбаси - води към отделна страница -->
+                    <a href="meso-i-kolbasi.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                        <img src="asortiment66.webp" alt="Месо и колбаси" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Месо и колбаси – подбрани марки</div>
+                    </a>
+                    
+                    <!-- Напитки и алкохол - води към отделна страница -->
+                    <a href="napitki-i-alkohol.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                        <img src="asortiment2.webp" alt="Напитки и алкохол" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Напитки и алкохол – пълна гама вина</div>
+                    </a>
+                    
+                    <!-- Домакински химикали и хигиена - води към отделна страница -->
+                    <a href="domakinski-himikali.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                        <img src="asortiment4.webp" alt="Домакински химикали и хигиена" class="assortment-img" loading="lazy">
+                        <div class="assortment-text">Домакински химикали и хигиена – най-добрите марки</div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- За нас -->
+            <section id="about" aria-labelledby="about-heading">
+                <h2 id="about-heading">За нас</h2>
+                <div class="about-content">
+                    <img src="image1.webp" width="400" height="300" alt="Снимка на Супермаркет Живков - магазинът отвътре" class="about-image">
+                    <div class="about-text">
+                        <div class="about-highlight">
+                            Местен магазин, не верига. Познаваме клиентите си.
+                        </div>
+                        
+                        <div class="about-standards">
+                            <h3><i class="fas fa-bolt" aria-hidden="true"></i>Нашите правила</h3>
+                            <ul>
+                                <li>Не продаваме всичко — продаваме това, което бихме дали на семейството си</li>
+                                <li>Ако нещо не става — го махаме, дори да се продава</li>
+                                <li>По-добре по-малък избор, отколкото компромис</li>
+                            </ul>
+                        </div>
+
+                        <div class="human-touch">
+                            „Работим тук всеки ден и държим магазинът да е такъв, в какъвто бихме искали ние да пазаруваме."
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== ГАЛЕРИЯ (ВЪРТЕЛЕЖКА) ========== -->
+            <section id="gallery" class="gallery-section" aria-labelledby="gallery-heading">
+                <h2 id="gallery-heading">Галерия</h2>
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev" id="scrollPrev" aria-label="Превърти наляво"><i class="fas fa-chevron-left"></i></button>
+                    
+                    <div class="gallery-grid" id="galleryGrid">
+                        <!-- Снимките ще се генерират динамично от JavaScript -->
+                    </div>
+                    
+                    <button class="carousel-btn next" id="scrollNext" aria-label="Превърти надясно"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+            
+            <!-- Контакти - БЕЗ ТЕЛЕФОН -->
+            <section id="contact" class="contact" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Контакти и адрес</h2>
+                <address style="font-style: normal;">
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i><strong>Адрес:</strong> с. Рударци, обл. Перник, ул. "Михаил Дойчев" №4, п.к. 2343</p>
+                    <p><i class="fas fa-clock" aria-hidden="true"></i><strong>Работно време:</strong> Понеделник - Неделя: 6:00 - 20:30 ч.</p>
+                    <!-- Добавен Facebook линк с подобрен контраст -->
+                    <p><i class="fab fa-facebook" aria-hidden="true" style="color: #0a5c9e;"></i><strong style="color: #000000;">Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61587435893469" target="_blank" rel="noopener noreferrer" style="color: #0a5c9e; text-decoration: underline; font-weight: 600;">Супермаркет Живков</a></p>
+                </address>
+                
+                <div class="map-container" id="map-container">
+                    <div class="map-placeholder" id="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>За да видите картата, моля, приемете бисквитките.</p>
+                        <button id="loadMapBtn" aria-label="Зареждане на картата след съгласие">Зареди карта</button>
+                    </div>
+                    <iframe 
+                        id="map-frame"
+                        class="map-frame"
+                        data-src="https://www.openstreetmap.org/export/embed.html?bbox=23.16%2C42.58%2C23.17%2C42.585&layer=mapnik&marker=42.5839949%2C23.1658921" 
+                        title="Карта на супермаркета Живков в Рударци"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+                
+                <div class="parking-info">
+                    <i class="fas fa-parking" aria-hidden="true"></i>
+                    <strong>Паркиране пред магазина</strong>
+                </div>
+            </section>
+            
+            <!-- Промоции -->
+            <section class="promotions" aria-labelledby="promo-heading">
+                <h2 id="promo-heading">Предложения</h2>
+                <p><strong>Седмични промоции – на място в магазина</strong></p>
+                <p>Вижте актуалните цени директно на щанда. Винаги имаме изненади!</p>
+                <a href="#contact" class="cta" aria-label="Заповядайте в магазина за повече информация">Заповядай в магазина</a>
+            </section>
+        </div>
+
+        <!-- Допълнителна снимка -->
+        <section class="shop-photo" aria-label="Снимка на магазина отвън">
+            <img src="magazin.otvyn1.webp" width="800" height="600" alt="Супермаркет Живков отвън - фасада на магазина">
+        </section>
+    </main>
+    
+    <!-- Футър с линкове към политиките -->
+    <footer>
+        <p>&copy; 2026 Супермаркет "Живков" - Рударци. Всички права запазени.</p>
+        <p style="margin-top: 15px;">
+            <a href="privacy.html" style="color: white; text-decoration: underline; margin: 0 10px;">Политика за поверителност</a> | 
+            <a href="cookies.html" style="color: white; text-decoration: underline; margin: 0 10px;">Политика за бисквитки</a>
+        </p>
+    </footer>
+
+    <!-- Lightbox структура -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Затвори галерията"><i class="fas fa-times"></i></button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Предишна снимка"><i class="fas fa-chevron-left"></i></button>
+            <img class="lightbox-image" id="lightboxImage" src="" alt="Разширен изглед">
+            <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Следваща снимка"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Банер за съгласие за бисквитки (първоначално видим) -->
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Този сайт използва бисквитки за подобряване на вашето преживяване и за анализиране на трафика. Картата и броячът за посещения се зареждат само след вашето съгласие.</p>
+        <button id="cookie-accept">Съгласен съм</button>
+    </div>
+
+    <script>
+        (function() {
+            // Мобилно меню
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Активен линк в навигацията при скрол
+            const sections = document.querySelectorAll('section, header');
+            const navItems = document.querySelectorAll('.nav-links a');
+            let sectionPositions = [];
+
+            function calculatePositions() {
+                sectionPositions = Array.from(sections).map(section => ({
+                    id: section.getAttribute('id'),
+                    top: section.offsetTop - 100,
+                    bottom: section.offsetTop + section.offsetHeight - 100
+                }));
+            }
+
+            window.addEventListener('load', calculatePositions);
+            window.addEventListener('resize', calculatePositions);
+
+            function setActiveLink() {
+                const scrollPosition = window.scrollY;
+                let current = '';
+
+                for (const pos of sectionPositions) {
+                    if (scrollPosition >= pos.top && scrollPosition < pos.bottom) {
+                        current = pos.id;
+                    }
+                }
+
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    item.removeAttribute('aria-current');
+                    if (item.getAttribute('href') === `#${current}`) {
+                        item.classList.add('active');
+                        item.setAttribute('aria-current', 'page');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', setActiveLink, { passive: true });
+            
+            // Плавно скролиране
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        targetElement.setAttribute('tabindex', '-1');
+                        targetElement.focus({ preventScroll: true });
+                    }
+                });
+            });
+
+            // ========== БАНЕР ЗА БИСКВИТКИ ==========
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const mapFrame = document.getElementById('map-frame');
+            const mapPlaceholder = document.getElementById('map-placeholder');
+            const loadMapBtn = document.getElementById('loadMapBtn');
+
+            // Функция за зареждане на картата
+            function loadMap() {
+                if (mapFrame && mapFrame.dataset.src) {
+                    mapFrame.src = mapFrame.dataset.src;
+                    setTimeout(() => {
+                        mapFrame.classList.add('loaded');
+                        if (mapPlaceholder) {
+                            mapPlaceholder.style.opacity = '0';
+                            setTimeout(() => {
+                                mapPlaceholder.style.display = 'none';
+                            }, 300);
+                        }
+                    }, 100);
+                }
+            }
+
+            // Функция за зареждане на брояча Count.bg
+            function loadAnalytics() {
+                // Проверяваме дали скриптът вече не е зареден
+                if (!document.querySelector('script[data-host="https://count.bg"]')) {
+                    const script = document.createElement('script');
+                    script.setAttribute('data-host', 'https://count.bg');
+                    script.setAttribute('data-dnt', 'false');
+                    script.src = 'https://count.bg/js/script.js';
+                    script.id = 'ZwSg9rf6GA';
+                    script.setAttribute('data-api-key', 'l0kc35pQqzNamAQPJQikq9IXnSBSh4yWF97WcXNMuljFwI8LSHfzMLkANkDZ5f40');
+                    script.async = true;
+                    script.defer = true;
+                    document.head.appendChild(script);
+                }
+            }
+
+            // Функция за приемане на бисквитки
+            function acceptCookies() {
+                // Запазваме съгласието в localStorage
+                localStorage.setItem('cookieConsent', 'accepted');
+                // Скриваме банера
+                cookieBanner.style.display = 'none';
+                // Зареждаме картата и аналитиката
+                loadMap();
+                loadAnalytics();
+            }
+
+            // Проверяваме дали вече има съгласие
+            if (localStorage.getItem('cookieConsent') === 'accepted') {
+                // Ако има, скриваме банера и зареждаме ресурсите веднага
+                cookieBanner.style.display = 'none';
+                loadMap();
+                loadAnalytics();
+            } else {
+                // Ако няма съгласие, показваме банера и слушаме за клик
+                cookieBanner.style.display = 'flex'; // гарантираме видимост
+                acceptBtn.addEventListener('click', acceptCookies);
+                // Бутонът в placeholder-а на картата също да води до приемане
+                if (loadMapBtn) {
+                    loadMapBtn.addEventListener('click', function() {
+                        acceptCookies();
+                    });
+                }
+            }
+
+            // ========== ГАЛЕРИЯ И LIGHTBOX ==========
             // Генериране на 86 снимки
             const galleryGrid = document.getElementById('galleryGrid');
             if (galleryGrid) {
