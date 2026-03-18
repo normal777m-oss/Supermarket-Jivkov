@@ -695,6 +695,99 @@
             right: 20px;
         }
         
+        /* ========== СЕКЦИЯ ЗА ОТЗИВИ (TESTIMONIALS) ========== */
+        .testimonials {
+            background: rgba(255,255,255,0.95);
+            margin: 40px 0;
+            padding: 45px 35px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .testimonials-grid {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            flex: 1 1 280px;
+            max-width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #e65100;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .testimonial-text::before {
+            content: '\201C';
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
+            color: #e65100;
+            opacity: 0.3;
+            position: absolute;
+            left: -10px;
+            top: -20px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #e65100;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-date {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .testimonials-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .rating-summary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #f8f9fa;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-size: 1.2em;
+        }
+
+        .stars {
+            color: #ffc107;
+            letter-spacing: 2px;
+        }
+
+        .rating-link {
+            color: #e65100;
+            font-weight: 600;
+            text-decoration: underline;
+            margin-left: 15px;
+        }
+
         /* Мобилен вариант */
         @media (max-width: 768px) {
             .lightbox-close {
@@ -716,6 +809,18 @@
             .carousel-btn { display: none; }
             .gallery-item { flex: 0 0 240px; }
             .gallery-grid { padding-bottom: 15px; }
+            
+            .testimonials-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .testimonial-card {
+                max-width: 100%;
+            }
+            .rating-summary {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
         
         @media (max-width: 768px) { 
@@ -780,7 +885,7 @@
             .map-container {
                 height: 250px;
             }
-            section, .shop-photo, .gallery-section { 
+            section, .shop-photo, .gallery-section, .testimonials { 
                 margin: 20px auto; 
                 padding: 25px 20px; 
                 max-width: 900px; 
@@ -907,6 +1012,7 @@
                 <li><a href="#assortment">Асортимент</a></li>
                 <li><a href="#about">За нас</a></li>
                 <li><a href="#gallery">Галерия</a></li>
+                <li><a href="#testimonials">Отзиви</a></li>
                 <li><a href="#contact">Контакти</a></li>
             </ul>
         </div>
@@ -993,6 +1099,50 @@
                 </div>
             </section>
             
+            <!-- ========== НОВА СЕКЦИЯ: ОТЗИВИ ========== -->
+            <section id="testimonials" class="testimonials" aria-labelledby="testimonials-heading">
+                <h2 id="testimonials-heading">Какво казват нашите клиенти</h2>
+                <div class="testimonials-grid">
+                    <!-- Отзив 1: Павел Димитров -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            Страхотен персонал и много добър магазин. Препоръчвам.
+                        </div>
+                        <div class="testimonial-author">Павел Димитров</div>
+                        <div class="testimonial-date">преди месец</div>
+                    </div>
+                    <!-- Отзив 2: Abra Kadabra -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            Любим магазин със страхотни какички продавачки, чудесни към моето дете, което е различно, супер сте!
+                        </div>
+                        <div class="testimonial-author">Abra Kadabra</div>
+                        <div class="testimonial-date">преди 8 месеца</div>
+                    </div>
+                    <!-- Отзив 3: Martin Kolev -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            Рударци - Супера и строителният магазин 💯👌
+                        </div>
+                        <div class="testimonial-author">Martin Kolev</div>
+                        <div class="testimonial-date">преди 5 месеца</div>
+                    </div>
+                </div>
+                <div class="testimonials-footer">
+                    <div class="rating-summary">
+                        <span class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </span>
+                        <span><strong>4.4</strong> от 102 отзива в</span>
+                        <a href="https://maps.app.goo.gl/avG2qh2MDfhJAWgg8" target="_blank" rel="noopener noreferrer" class="rating-link">Google Maps</a>
+                    </div>
+                </div>
+            </section>
+            
             <!-- Контакти и адрес -->
             <section id="contact" class="contact" aria-labelledby="contact-heading">
                 <h2 id="contact-heading">Контакти и адрес</h2>
@@ -1066,6 +1216,62 @@
         <button id="cookie-accept">Приемам</button>
         <button id="cookie-reject" class="reject">Отказ</button>
     </div>
+
+    <!-- Структурирани данни (schema.org) за отзиви и рейтинг -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Супермаркет Живков",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Михаил Дойчев №4",
+            "addressLocality": "Рударци",
+            "addressRegion": "Перник",
+            "postalCode": "2343",
+            "addressCountry": "BG"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.4",
+            "reviewCount": "102",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Павел Димитров" },
+                "reviewBody": "Страхотен персонал и много добър магазин. Препоръчвам.",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                },
+                "datePublished": "2026-02-18"
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Abra Kadabra" },
+                "reviewBody": "Любим магазин със страхотни какички продавачки, чудесни към моето дете, което е различно, супер сте!",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                },
+                "datePublished": "2025-07-18"
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Martin Kolev" },
+                "reviewBody": "Рударци - Супера и строителният магазин 💯👌",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                },
+                "datePublished": "2025-10-18"
+            }
+        ]
+    }
+    </script>
 
     <script>
         (function() {
