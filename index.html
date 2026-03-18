@@ -36,6 +36,9 @@
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23e65100'>🛒</text></svg>">
     <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23e65100'>🛒</text></svg>">
     
+    <!-- Каноничен URL (добра практика) -->
+    <link rel="canonical" href="https://supermarket-rudartsi.eu">
+    
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
@@ -80,7 +83,7 @@
         .nav-links {
             display: flex;
             gap: 30px;
-            list-style: none; /* Премахване на точките от списъка */
+            list-style: none;
             margin: 0;
             padding: 0;
         }
@@ -89,7 +92,7 @@
             padding: 0;
         }
         .nav-links a {
-            color: #000000; /* Черен текст за максимален контраст */
+            color: #000000;
             text-decoration: none;
             font-weight: 500;
             font-size: 1.1em;
@@ -99,7 +102,7 @@
             display: inline-block;
         }
         .nav-links a:hover {
-            color: #e65100; /* Наситено оранжево при hover */
+            color: #e65100;
             background: rgba(230, 81, 0, 0.1);
         }
         .nav-links a.active {
@@ -139,7 +142,7 @@
             margin-bottom: 20px; 
             text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
             max-width: 800px;
-            color: white; /* Бял текст върху тъмен фон */
+            color: white;
         }
         header .subtitle {
             font-size: 1.4em; 
@@ -148,7 +151,7 @@
             margin: 0 auto 40px auto;
             opacity: 0.95;
             text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-            color: white; /* Бял текст върху тъмен фон */
+            color: white;
         }
         .hero-button {
             display: inline-block;
@@ -199,7 +202,6 @@
             flex: 1;
             min-width: 300px;
         }
-        /* ПОВИШЕН КОНТРАСТ - Всички текстове с максимална четливост */
         .section-desc, 
         .about-text p, 
         .human-touch,
@@ -210,12 +212,12 @@
         .about-standards li,
         .about-text,
         address a {
-            color: #000000 !important; /* Чисто черно за максимална четливост */
+            color: #000000 !important;
         }
         
         .about-highlight {
             background: linear-gradient(135deg, #e65100, #fb8c00);
-            color: #ffffff; /* Бял текст върху тъмен фон */
+            color: #ffffff;
             padding: 20px;
             border-radius: 12px;
             margin: 30px 0;
@@ -277,11 +279,10 @@
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0,0,0,0.12);
             margin-top: 30px;
-            background-color: #f0f0f0; /* Цвят на фона докато се зареди картата */
+            background-color: #f0f0f0;
             position: relative;
         }
         
-        /* Плейсхолдер за картата - показва се докато няма съгласие */
         .map-placeholder {
             position: absolute;
             top: 0;
@@ -293,7 +294,7 @@
             align-items: center;
             justify-content: center;
             background: #e9ecef;
-            color: #000000; /* променено от #4a5568 на черно за по-висок контраст */
+            color: #000000;
             font-size: 1.2em;
             z-index: 1;
             text-align: center;
@@ -309,12 +310,12 @@
         .map-placeholder p {
             max-width: 400px;
             margin-bottom: 20px;
-            color: #000000; /* осигурява максимален контраст */
+            color: #000000;
         }
         
         .map-placeholder button {
             background: #e65100;
-            color: #000000; /* променено от бяло на черно */
+            color: #ffffff; /* променено от черно на бяло за контраст */
             border: none;
             padding: 10px 25px;
             border-radius: 30px;
@@ -327,10 +328,9 @@
         
         .map-placeholder button:hover {
             background: #fb8c00;
-            color: #000000; /* запазваме черния текст */
+            color: #ffffff;
         }
         
-        /* IFRAME на картата - скрит до зареждане */
         .map-frame {
             width: 100%;
             height: 100%;
@@ -355,7 +355,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            color: #000000 !important; /* Черен текст за контраст */
+            color: #000000 !important;
         }
         .parking-info i {
             font-size: 1.4em;
@@ -375,7 +375,7 @@
             font-size: 1.3em;
             font-weight: 500;
             margin-bottom: 20px;
-            color: white; /* Бял текст върху оранжев фон */
+            color: white;
         }
         .promotions .cta {
             display: inline-block;
@@ -392,7 +392,7 @@
             background: rgba(255,255,255,0.3);
         }
         h2 { 
-            color: #e65100; /* Наситено оранжево */
+            color: #e65100;
             font-size: 2.5em; 
             margin-bottom: 30px; 
             text-align: center;
@@ -408,7 +408,6 @@
             border-radius: 2px;
         }
         
-        /* Асортимент грид със снимки */
         .assortment-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -417,7 +416,6 @@
             padding: 0;
         }
         
-        /* Стилове за линковете в асортимент грида - запазваме оригиналния дизайн */
         .assortment-grid a {
             text-decoration: none;
             display: block;
@@ -453,25 +451,27 @@
             display: flex; 
             align-items: center; 
             gap: 15px;
-            color: #000000; /* Черен текст за контраст */
+            color: #000000;
         }
         .contact i { 
             font-size: 1.5em; 
             color: #28a745; 
             width: 30px;
         }
-        /* Стил за Facebook иконата и линка в контактите - с висок контраст */
         .contact .fa-facebook { 
-            color: #0a5c9e !important; /* По-тъмен син за по-добър контраст (контрастно съотношение > 7:1) */
+            color: #0a5c9e !important;
         }
         .contact a[href*="facebook.com"] {
-            color: #0a5c9e !important; /* Тъмносин за максимален контраст */
+            color: #0a5c9e !important;
             font-weight: 600;
             text-decoration: underline;
             text-underline-offset: 3px;
         }
         .contact a[href*="facebook.com"]:hover {
-            color: #e65100 !important; /* Оранжев при hover */
+            color: #e65100 !important;
+        }
+        .contact .fa-envelope {
+            color: #e65100 !important;
         }
         
         footer { 
@@ -522,14 +522,12 @@
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
-            padding-bottom: 20px; /* Място за скролбара */
-            /* Красив оранжев скролбар за Firefox */
+            padding-bottom: 20px;
             scrollbar-width: thin;
             scrollbar-color: #e65100 #f1f1f1;
             width: 100%;
         }
 
-        /* Красив оранжев скролбар за Chrome/Safari/Edge */
         .gallery-grid::-webkit-scrollbar {
             height: 10px;
         }
@@ -543,7 +541,7 @@
         }
 
         .gallery-item {
-            flex: 0 0 280px; /* Всяка снимка ще е с фиксирана ширина */
+            flex: 0 0 280px;
             scroll-snap-align: start;
             position: relative;
             cursor: pointer;
@@ -571,10 +569,15 @@
             transform: scale(1.05);
         }
 
-        /* Бутони за навигация на въртележката (за компютър) */
+        /* Фокус състояние за галерията */
+        .gallery-item:focus-visible {
+            outline: 3px solid #e65100;
+            outline-offset: 3px;
+        }
+
         .carousel-btn {
             position: absolute;
-            top: calc(50% - 10px); /* Центриране спрямо снимките, без скролбара */
+            top: calc(50% - 10px);
             transform: translateY(-50%);
             background: white;
             color: #e65100;
@@ -600,7 +603,7 @@
         .carousel-btn.prev { left: -15px; }
         .carousel-btn.next { right: -15px; }
 
-        /* Lightbox - модален прозорец - подобрена версия */
+        /* Lightbox - модален прозорец */
         .lightbox {
             position: fixed;
             top: 0;
@@ -692,7 +695,7 @@
             right: 20px;
         }
         
-        /* Мобилен вариант за lightbox и карусел */
+        /* Мобилен вариант */
         @media (max-width: 768px) {
             .lightbox-close {
                 top: 10px;
@@ -710,8 +713,8 @@
                 right: 10px;
             }
             
-            .carousel-btn { display: none; } /* На телефон се скролва удобно с пръст */
-            .gallery-item { flex: 0 0 240px; } /* Малко по-малки снимки на телефон */
+            .carousel-btn { display: none; }
+            .gallery-item { flex: 0 0 240px; }
             .gallery-grid { padding-bottom: 15px; }
         }
         
@@ -817,12 +820,12 @@
         }
 
         /* Добавени стилове за фокус състояния за по-добра достъпност */
-        a:focus-visible, button:focus-visible {
+        a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
             outline: 3px solid #e65100;
             outline-offset: 3px;
         }
 
-        /* Леко подобрение на производителността - само най-необходимите анимации */
+        /* Леко подобрение на производителността */
         .hero-button {
             will-change: transform;
         }
@@ -853,9 +856,14 @@
             max-width: 800px;
         }
 
+        .cookie-banner a {
+            color: #fb8c00;
+            text-decoration: underline;
+        }
+
         .cookie-banner button {
             background: #e65100;
-            color: #000000; /* променено от бяло на черно */
+            color: #ffffff; /* бял текст за контраст */
             border: none;
             padding: 12px 30px;
             border-radius: 40px;
@@ -868,7 +876,13 @@
 
         .cookie-banner button:hover {
             background: #fb8c00;
-            color: #000000;
+        }
+
+        .cookie-banner button.reject {
+            background: #555;
+        }
+        .cookie-banner button.reject:hover {
+            background: #666;
         }
 
         @media (max-width: 768px) {
@@ -881,7 +895,7 @@
     </style>
 </head>
 <body>
-    <!-- Навигация - поправена с правилна ARIA структура -->
+    <!-- Навигация -->
     <nav aria-label="Главна навигация">
         <div class="nav-container">
             <a href="#" class="logo">Живков</a>
@@ -898,7 +912,7 @@
         </div>
     </nav>
 
-    <!-- Основно съдържание в <main> таг -->
+    <!-- Основно съдържание -->
     <main>
         <!-- Херо секция -->
         <header id="home">
@@ -908,42 +922,31 @@
         </header>
         
         <div class="container">
-            <!-- Асортимент със снимки - с кликване към подстраници (правилен SEO начин) -->
+            <!-- Асортимент със снимки -->
             <section id="assortment" aria-labelledby="assortment-heading">
                 <h2 id="assortment-heading">Нашият асортимент</h2>
                 <div class="assortment-grid">
-                    <!-- Свежи плодове и зеленчуци - води към отделна страница -->
-                    <a href="plodove-i-zelenchuci.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                    <a href="plodove-i-zelenchuci.html" class="assortment-item">
                         <img src="asortiment85.webp" alt="Свежи плодове и зеленчуци" class="assortment-img" loading="lazy">
                         <div class="assortment-text">Свежи плодове и зеленчуци – от градина директно на щанда</div>
                     </a>
-                    
-                    <!-- Млечни продукти и сирена - води към отделна страница -->
-                    <a href="mlechni-produkti.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                    <a href="mlechni-produkti.html" class="assortment-item">
                         <img src="asortiment57.webp" alt="Млечни продукти и сирена" class="assortment-img" loading="lazy">
                         <div class="assortment-text">Млечни продукти и сирена – само от проверени ферми</div>
                     </a>
-                    
-                    <!-- Хляб и сладкарски изделия - води към отделна страница -->
-                    <a href="hlqb-i-sladki.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                    <a href="hlqb-i-sladki.html" class="assortment-item">
                         <img src="asortiment34.webp" alt="Хляб и сладкарски изделия" class="assortment-img" loading="lazy">
                         <div class="assortment-text">Хляб и сладкарски изделия – всеки ден пресни</div>
                     </a>
-                    
-                    <!-- Месо и колбаси - води към отделна страница -->
-                    <a href="meso-i-kolbasi.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                    <a href="meso-i-kolbasi.html" class="assortment-item">
                         <img src="asortiment66.webp" alt="Месо и колбаси" class="assortment-img" loading="lazy">
                         <div class="assortment-text">Месо и колбаси – подбрани марки</div>
                     </a>
-                    
-                    <!-- Напитки и алкохол - води към отделна страница -->
-                    <a href="napitki-i-alkohol.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                    <a href="napitki-i-alkohol.html" class="assortment-item">
                         <img src="asortiment2.webp" alt="Напитки и алкохол" class="assortment-img" loading="lazy">
                         <div class="assortment-text">Напитки и алкохол – пълна гама вина</div>
                     </a>
-                    
-                    <!-- Домакински химикали и хигиена - води към отделна страница -->
-                    <a href="domakinski-himikali.html" class="assortment-item" style="text-decoration: none; display: block; color: inherit;">
+                    <a href="domakinski-himikali.html" class="assortment-item">
                         <img src="asortiment4.webp" alt="Домакински химикали и хигиена" class="assortment-img" loading="lazy">
                         <div class="assortment-text">Домакински химикали и хигиена – най-добрите марки</div>
                     </a>
@@ -976,7 +979,7 @@
                 </div>
             </section>
             
-            <!-- ========== ГАЛЕРИЯ (ВЪРТЕЛЕЖКА) ========== -->
+            <!-- Галерия (въртележка) -->
             <section id="gallery" class="gallery-section" aria-labelledby="gallery-heading">
                 <h2 id="gallery-heading">Галерия</h2>
                 <div class="carousel-wrapper">
@@ -990,14 +993,15 @@
                 </div>
             </section>
             
-            <!-- Контакти - БЕЗ ТЕЛЕФОН -->
+            <!-- Контакти и адрес -->
             <section id="contact" class="contact" aria-labelledby="contact-heading">
                 <h2 id="contact-heading">Контакти и адрес</h2>
                 <address style="font-style: normal;">
                     <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i><strong>Адрес:</strong> с. Рударци, обл. Перник, ул. "Михаил Дойчев" №4, п.к. 2343</p>
                     <p><i class="fas fa-clock" aria-hidden="true"></i><strong>Работно време:</strong> Понеделник - Неделя: 6:00 - 20:30 ч.</p>
-                    <!-- Добавен Facebook линк с подобрен контраст -->
                     <p><i class="fab fa-facebook" aria-hidden="true" style="color: #0a5c9e;"></i><strong style="color: #000000;">Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61587435893469" target="_blank" rel="noopener noreferrer" style="color: #0a5c9e; text-decoration: underline; font-weight: 600;">Супермаркет Живков</a></p>
+                    <!-- Добавен имейл за контакт -->
+                    <p><i class="fas fa-envelope" aria-hidden="true" style="color: #e65100;"></i><strong style="color: #000000;">Имейл:</strong> <a href="mailto:info@supermarket-rudartsi.eu" style="color: #e65100; text-decoration: underline; font-weight: 600;">info@supermarket-rudartsi.eu</a></p>
                 </address>
                 
                 <div class="map-container" id="map-container">
@@ -1037,7 +1041,7 @@
         </section>
     </main>
     
-    <!-- Футър с линкове към политиките -->
+    <!-- Футър -->
     <footer>
         <p>&copy; 2026 Супермаркет "Живков" - Рударци. Всички права запазени.</p>
         <p style="margin-top: 15px;">
@@ -1046,7 +1050,7 @@
         </p>
     </footer>
 
-    <!-- Lightbox структура -->
+    <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
         <div class="lightbox-content">
             <button class="lightbox-close" id="lightboxClose" aria-label="Затвори галерията"><i class="fas fa-times"></i></button>
@@ -1056,27 +1060,36 @@
         </div>
     </div>
 
-    <!-- Банер за съгласие за бисквитки (първоначално видим) -->
+    <!-- Банер за съгласие за бисквитки -->
     <div id="cookie-banner" class="cookie-banner">
-        <p>Този сайт използва бисквитки за подобряване на вашето преживяване и за анализиране на трафика. Картата и броячът за посещения се зареждат само след вашето съгласие.</p>
-        <button id="cookie-accept">Съгласен съм</button>
+        <p>Този сайт използва бисквитки за анализ на трафика чрез Count.bg и за показване на карта от OpenStreetMap. Картата и броячът се зареждат само след вашето съгласие. Можете да прочетете повече в <a href="cookies.html">Политиката за бисквитки</a>.</p>
+        <button id="cookie-accept">Приемам</button>
+        <button id="cookie-reject" class="reject">Отказ</button>
     </div>
 
     <script>
         (function() {
+            // Утилита за безопасен избор на елемент
+            function getElement(selector) {
+                const el = document.querySelector(selector);
+                if (!el) console.warn('Element not found:', selector);
+                return el;
+            }
+
             // Мобилно меню
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            
-            mobileMenuBtn.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-            });
-            
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.classList.remove('active');
+            const mobileMenuBtn = getElement('.mobile-menu-btn');
+            const navLinks = getElement('.nav-links');
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
                 });
-            });
+                
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                    });
+                });
+            }
             
             // Активен линк в навигацията при скрол
             const sections = document.querySelectorAll('section, header');
@@ -1138,17 +1151,19 @@
             });
 
             // ========== БАНЕР ЗА БИСКВИТКИ ==========
-            const cookieBanner = document.getElementById('cookie-banner');
-            const acceptBtn = document.getElementById('cookie-accept');
-            const mapFrame = document.getElementById('map-frame');
-            const mapPlaceholder = document.getElementById('map-placeholder');
-            const loadMapBtn = document.getElementById('loadMapBtn');
+            const cookieBanner = getElement('#cookie-banner');
+            const acceptBtn = getElement('#cookie-accept');
+            const rejectBtn = getElement('#cookie-reject');
+            const mapFrame = getElement('#map-frame');
+            const mapPlaceholder = getElement('#map-placeholder');
+            const loadMapBtn = getElement('#loadMapBtn');
 
             // Функция за зареждане на картата
             function loadMap() {
                 if (mapFrame && mapFrame.dataset.src) {
                     mapFrame.src = mapFrame.dataset.src;
-                    setTimeout(() => {
+                    // Използваме load event за по-точно определяне на зареждането
+                    mapFrame.addEventListener('load', function onLoad() {
                         mapFrame.classList.add('loaded');
                         if (mapPlaceholder) {
                             mapPlaceholder.style.opacity = '0';
@@ -1156,13 +1171,13 @@
                                 mapPlaceholder.style.display = 'none';
                             }, 300);
                         }
-                    }, 100);
+                        mapFrame.removeEventListener('load', onLoad);
+                    });
                 }
             }
 
             // Функция за зареждане на брояча Count.bg
             function loadAnalytics() {
-                // Проверяваме дали скриптът вече не е зареден
                 if (!document.querySelector('script[data-host="https://count.bg"]')) {
                     const script = document.createElement('script');
                     script.setAttribute('data-host', 'https://count.bg');
@@ -1178,47 +1193,58 @@
 
             // Функция за приемане на бисквитки
             function acceptCookies() {
-                // Запазваме съгласието в localStorage
                 localStorage.setItem('cookieConsent', 'accepted');
-                // Скриваме банера
-                cookieBanner.style.display = 'none';
-                // Зареждаме картата и аналитиката
+                if (cookieBanner) cookieBanner.style.display = 'none';
                 loadMap();
                 loadAnalytics();
             }
 
-            // Проверяваме дали вече има съгласие
-            if (localStorage.getItem('cookieConsent') === 'accepted') {
-                // Ако има, скриваме банера и зареждаме ресурсите веднага
-                cookieBanner.style.display = 'none';
+            // Функция за отказ на бисквитки
+            function rejectCookies() {
+                localStorage.setItem('cookieConsent', 'rejected');
+                if (cookieBanner) cookieBanner.style.display = 'none';
+                // НЕ зареждаме карта и аналитика
+            }
+
+            // Проверка за съществуващо съгласие
+            const consent = localStorage.getItem('cookieConsent');
+            if (consent === 'accepted') {
+                if (cookieBanner) cookieBanner.style.display = 'none';
                 loadMap();
                 loadAnalytics();
+            } else if (consent === 'rejected') {
+                if (cookieBanner) cookieBanner.style.display = 'none';
+                // Не зареждаме нищо
             } else {
-                // Ако няма съгласие, показваме банера и слушаме за клик
-                cookieBanner.style.display = 'flex'; // гарантираме видимост
-                acceptBtn.addEventListener('click', acceptCookies);
-                // Бутонът в placeholder-а на картата също да води до приемане
-                if (loadMapBtn) {
-                    loadMapBtn.addEventListener('click', function() {
-                        acceptCookies();
-                    });
-                }
+                // Все още няма избор, показваме банера
+                if (cookieBanner) cookieBanner.style.display = 'flex';
+            }
+
+            // Слагаме слушатели само ако бутоните съществуват
+            if (acceptBtn) acceptBtn.addEventListener('click', acceptCookies);
+            if (rejectBtn) rejectBtn.addEventListener('click', rejectCookies);
+            if (loadMapBtn) {
+                loadMapBtn.addEventListener('click', function() {
+                    // Ако потребителят кликне върху бутона в placeholder-а, това се счита за приемане
+                    acceptCookies();
+                });
             }
 
             // ========== ГАЛЕРИЯ И LIGHTBOX ==========
-            // Генериране на 11 снимки (интериор на магазина)
-            const galleryGrid = document.getElementById('galleryGrid');
+            const galleryGrid = getElement('#galleryGrid');
             if (galleryGrid) {
                 let html = '';
                 for (let i = 1; i <= 11; i++) {
-                    html += `<div class="gallery-item"><img src="${i}supermarket.rudartsi.interior.webp" alt="Интериор на магазин ${i}" loading="lazy"></div>`;
+                    html += `<div class="gallery-item" tabindex="0" role="button" aria-label="Снимка ${i} от интериора">`;
+                    html += `<img src="${i}supermarket.rudartsi.interior.webp" alt="Интериор на магазин ${i}" loading="lazy">`;
+                    html += `</div>`;
                 }
                 galleryGrid.innerHTML = html;
             }
             
-            // Скролиране на въртележката чрез стрелките
-            const scrollPrevBtn = document.getElementById('scrollPrev');
-            const scrollNextBtn = document.getElementById('scrollNext');
+            // Скролиране на въртележката
+            const scrollPrevBtn = getElement('#scrollPrev');
+            const scrollNextBtn = getElement('#scrollNext');
             
             if (scrollPrevBtn && scrollNextBtn && galleryGrid) {
                 scrollPrevBtn.addEventListener('click', () => {
@@ -1232,57 +1258,69 @@
             
             // Lightbox функционалност
             const galleryItems = document.querySelectorAll('.gallery-item');
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightboxImage');
-            const closeBtn = document.getElementById('lightboxClose');
-            const prevBtn = document.getElementById('lightboxPrev');
-            const nextBtn = document.getElementById('lightboxNext');
+            const lightbox = getElement('#lightbox');
+            const lightboxImg = getElement('#lightboxImage');
+            const closeBtn = getElement('#lightboxClose');
+            const prevBtn = getElement('#lightboxPrev');
+            const nextBtn = getElement('#lightboxNext');
             
             let currentIndex = 0;
             const images = Array.from(galleryItems).map(item => item.querySelector('img').src);
             
             function openLightbox(index) {
-                if (!images.length) return;
+                if (!images.length || !lightbox || !lightboxImg) return;
                 currentIndex = index;
                 lightboxImg.src = images[currentIndex];
                 lightboxImg.alt = `Снимка ${currentIndex + 1}`;
                 lightbox.classList.add('active');
                 document.body.style.overflow = 'hidden';
+                // Фокусираме върху lightbox за клавиатурна навигация
+                lightbox.focus();
             }
             
             function closeLightbox() {
+                if (!lightbox) return;
                 lightbox.classList.remove('active');
                 document.body.style.overflow = '';
             }
             
             function showPrev() {
-                if (!images.length) return;
+                if (!images.length || !lightboxImg) return;
                 currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
                 lightboxImg.src = images[currentIndex];
             }
             
             function showNext() {
-                if (!images.length) return;
+                if (!images.length || !lightboxImg) return;
                 currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
                 lightboxImg.src = images[currentIndex];
             }
             
+            // Отваряне при клик или натискане на Enter (за достъпност)
             galleryItems.forEach((item, idx) => {
                 item.addEventListener('click', () => openLightbox(idx));
+                item.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(idx);
+                    }
+                });
             });
             
-            closeBtn.addEventListener('click', closeLightbox);
-            prevBtn.addEventListener('click', showPrev);
-            nextBtn.addEventListener('click', showNext);
+            if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+            if (prevBtn) prevBtn.addEventListener('click', showPrev);
+            if (nextBtn) nextBtn.addEventListener('click', showNext);
             
-            lightbox.addEventListener('click', function(e) {
-                if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
-                    closeLightbox();
-                }
-            });
+            if (lightbox) {
+                lightbox.addEventListener('click', function(e) {
+                    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+                        closeLightbox();
+                    }
+                });
+            }
             
             document.addEventListener('keydown', function(e) {
-                if (!lightbox.classList.contains('active')) return;
+                if (!lightbox || !lightbox.classList.contains('active')) return;
                 
                 if (e.key === 'Escape') {
                     closeLightbox();
@@ -1292,6 +1330,14 @@
                 } else if (e.key === 'ArrowRight') {
                     e.preventDefault();
                     showNext();
+                }
+            });
+
+            // Добавяме възможност за затваряне на банера с Escape, ако е отворен
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && cookieBanner && cookieBanner.style.display !== 'none') {
+                    // По желание може да се затвори, но обикновено банерите не се затварят с Escape.
+                    // Тук не правим нищо, за да не объркваме потребителя.
                 }
             });
         })();
